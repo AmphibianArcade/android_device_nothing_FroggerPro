@@ -81,6 +81,20 @@ int64_t msFromNs(int64_t nanos) {
     return nanos / nanosecondsInAMillsecond;
 }
 
+bool patchWristTiltSensor(V2_1::SensorInfo& sensor) {
+    if (sensor.typeAsString != "android.sensor.wrist_tilt_gesture") {
+        return true;
+    }
+
+    sensor.type = V2_1::SensorType::PICK_UP_GESTURE;
+    sensor.typeAsString = SENSOR_STRING_TYPE_PICK_UP_GESTURE;
+    sensor.flags |= (SENSOR_FLAG_ONE_SHOT_MODE | SENSOR_FLAG_WAKE_UP);
+    sensor.maxRange = 1;
+
+    return true;
+}
+
+
 HalProxy::HalProxy() {
     static const std::string kMultiHalConfigFiles[] = {"/vendor/etc/sensors/hals.conf",
                                                        "/odm/etc/sensors/hals.conf"};
@@ -496,6 +510,10 @@ void HalProxy::initializeSensorList() {
                     ALOGV("Loaded sensor: %s", sensor.name.c_str());
                     sensor.sensorHandle = setSubHalIndex(sensor.sensorHandle, subHalIndex);
                     setDirectChannelFlags(&sensor, mSubHalList[subHalIndex]);
+                    bool keep = patchWristTiltSensor(sensor);
+                    if (!keep) {
+                        continue;
+                    }
                     mSensors[sensor.sensorHandle] = sensor;
                 }
             }
