@@ -1,0 +1,11 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# Fingerprint
+/dev/goodix_fp   0660   system   system
+
+# Haptics
+/dev/rt6010_haptic   0660   system   system
+/dev/ics_sfdc   0660   system   system

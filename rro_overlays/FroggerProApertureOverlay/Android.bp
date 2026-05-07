@@ -1,0 +1,16 @@
+//
+// SPDX-FileCopyrightText: The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+runtime_resource_overlay {
+    name: "FroggerProApertureDevOverlay",
+    manifest: "AndroidDevManifest.xml",
+    device_specific: true,
+}
+
+runtime_resource_overlay {
+    name: "FroggerProApertureOverlay",
+    manifest: "AndroidManifest.xml",
+    device_specific: true,
+}

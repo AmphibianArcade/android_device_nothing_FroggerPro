@@ -1,0 +1,27 @@
+on post-fs-data
+    mkdir /mnt/vendor/persist/haptic 0770 system system
+    chown system system /mnt/vendor/persist/haptic/cali_data
+    chown system system /mnt/vendor/persist/haptic/sample_param
+    chown system system /mnt/vendor/persist/haptic/RT_sample_param
+    chown system system /sys/class/leds/vibrator_nt/f0
+    chown system system /sys/class/leds/vibrator_nt/f0_en
+    chown system system /sys/class/leds/vibrator_nt/daq_en
+    chown system system /sys/class/leds/vibrator_nt/daq_duration
+    chown system system /sys/class/leds/vibrator_nt/daq_data
+    chown system system /sys/class/leds/vibrator_nt/adc_offset
+    chown system system /sys/class/leds/vibrator_nt/gain
+    chown system system /sys/class/leds/vibrator_nt/vbst
+    chown system system /sys/class/leds/vibrator_nt/brake_en
+    chown system system /sys/class/leds/vibrator_nt/state
+    chown system system /sys/class/leds/vibrator_nt/play
+    chown system system /sys/class/leds/vibrator_nt/stream_start
+    chown system system /sys/class/leds/vibrator_nt/stream_data
+    chown system system /sys/class/leds/vibrator_nt/chip_id
+    chown system system /sys/class/leds/vibrator_nt/resistance
+
+service vendor.vibrator /vendor/bin/hw/android.hardware.vibrator.service.froggerpro-richtap
+    class hal
+    user system
+    group system input
+    setenv RICHTAP_DEVICE_PATH /dev/rt6010_haptic
+    setenv ENV_RICHTAP_CONFIG_PATH /odm/etc/aac_richtap.config

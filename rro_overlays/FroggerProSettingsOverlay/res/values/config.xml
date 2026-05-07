@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <!-- Whether to handle slot change events -->
+    <bool name="config_handle_sim_slot_change">true</bool>
+
+    <!-- Whether to show Smooth Display feature in Settings Options -->
+    <bool name="config_show_smooth_display">true</bool>
+</resources>
