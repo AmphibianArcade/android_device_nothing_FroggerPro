@@ -10,15 +10,12 @@ aw882xx_dlkm.ko
 bam_dma.ko
 bcl_soc.ko
 boot_stats.ko
-bootinfo.ko
 bt_fm_swr.ko
 btfm_slim_codec.ko
 btfmcodec.ko
 btpower.ko
 bwmon.ko
 c1dcvs_scmi_v2.ko
-cable_detect.ko
-cable_state.ko
 camera.ko
 cdsprm.ko
 cfg80211.ko
@@ -58,7 +55,6 @@ drm_display_helper.ko
 drm_dp_aux_bus.ko
 dwc3-msm.ko
 dynpf_scmi.ko
-errcode.ko
 eud.ko
 evacc-tuna.ko
 f_fs_ipc_log.ko
@@ -88,7 +84,6 @@ hdmi_dlkm.ko
 heap_mem_ext_v01.ko
 hung_task_enh.ko
 hvc_gunyah.ko
-hwinfo.ko
 hwmon.ko
 i2c-msm-geni.ko
 i3c-master-msm-geni.ko
@@ -141,16 +136,6 @@ msm_video.ko
 msm-eva.ko
 msm-mmrm.ko
 nb7vpq904m.ko
-nothing_bootloader_log.ko
-nothing_check_parts.ko
-nothing_disk_usage.ko
-nothing_performance.ko
-nothing_rdump.ko
-nothing_secure_element.ko
-nothing_task_info.ko
-nothing_task_io.ko
-nothing_task_meminfo.ko
-nothing_value_check.ko
 nt_display_notifier.ko
 ntfs3.ko
 panel_event_notifier.ko
@@ -247,7 +232,6 @@ rmnet_perf.ko
 rmnet_sch.ko
 rmnet_shs.ko
 rmnet_wlan.ko
-rpmb_state.ko
 rproc_qcom_common.ko
 secure_state.ko
 sgm38120-regulator.ko
@@ -255,7 +239,6 @@ si_core_module.ko
 slc_mpam.ko
 slim-qcom-ngd-ctrl.ko
 slimbus.ko
-slot_check.ko
 smcinvoke_dlkm.ko
 smem-mailbox.ko
 smmu_proxy_dlkm.ko
