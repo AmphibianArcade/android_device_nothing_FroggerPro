@@ -101,6 +101,20 @@ PRODUCT_COPY_FILES += \
 # HWUI
 TARGET_USES_VULKAN := true
 
+# Init
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init/fstab.default:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.default
+
+PRODUCT_PACKAGES += \
+    fstab.default \
+    init.class_main.sh \
+    init.qcom.early_boot.sh \
+    init.qcom.rc \
+    init.qcom.recovery.rc \
+    init.qcom.sh \
+    init.target.rc \
+    ueventd.qcom.rc
+
 # Kernel
 PRODUCT_ENABLE_UFFD_GC := true
 
@@ -112,6 +126,8 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # Recovery 
 $(call soong_config_set_bool,recovery,target_recovery_uses_qti_drm,true)
+
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/init/fstab.default
 
 # Update engine
 PRODUCT_PACKAGES += \
