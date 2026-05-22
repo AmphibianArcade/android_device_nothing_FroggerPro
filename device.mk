@@ -95,3 +95,12 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
+
+# WiFi
+PRODUCT_PACKAGES += \
+    android.hardware.wifi-service \
+    hostapd \
+    libwifi-hal-ctrl \
+    libwifi-hal-qcom \
+    wpa_supplicant \
+    wpa_supplicant.conf
