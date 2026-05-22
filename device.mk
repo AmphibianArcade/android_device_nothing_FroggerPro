@@ -137,6 +137,13 @@ $(call soong_config_set_bool,recovery,target_recovery_uses_qti_drm,true)
 
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/init/fstab.default
 
+# Sku properties
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/sku/build_EEA.prop:$(TARGET_COPY_OUT_ODM)/etc/build_EEA.prop \
+    $(LOCAL_PATH)/sku/build_IND.prop:$(TARGET_COPY_OUT_ODM)/etc/build_IND.prop \
+    $(LOCAL_PATH)/sku/build_JPN.prop:$(TARGET_COPY_OUT_ODM)/etc/build_JPN.prop \
+    $(LOCAL_PATH)/sku/build_TUR.prop:$(TARGET_COPY_OUT_ODM)/etc/build_TUR.prop
+
 # Update engine
 PRODUCT_PACKAGES += \
     update_engine \
