@@ -141,6 +141,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
 
+# USB
+PRODUCT_PACKAGES += \
+    android.hardware.usb-service.qti \
+    android.hardware.usb.gadget-service.qti \
+    init.qcom.usb.rc \
+    init.qcom.usb.sh
+
 # WiFi
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service \
