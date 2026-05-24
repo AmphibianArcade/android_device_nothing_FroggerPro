@@ -1273,13 +1273,8 @@ vendor/lib64/vendor.qti.diaghal@1.0.so
 vendor/lib64/vendor.qti.hardware.dpmaidlservice-V1-ndk.so
 
 # DRM
-vendor/bin/hw/android.hardware.drm-service.clearkey
-vendor/etc/init/android.hardware.drm-service.clearkey.rc
 vendor/etc/init/android.hardware.drm@1.1-service.wfdhdcp.rc
-vendor/etc/vintf/manifest/android.hardware.drm-service.clearkey.xml
 vendor/etc/vintf/manifest/android.hardware.drm-service.xml
-vendor/lib64/mediacas/libclearkeycasplugin.so
-vendor/lib64/mediadrm/libdrmclearkeyplugin.so
 vendor/lib64/libcpion.so
 vendor/lib64/liboemcrypto.so
 vendor/lib64/libtrustedapploader.so
