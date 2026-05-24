@@ -10,11 +10,15 @@ from extract_utils.fixups_blob import (
 )
 from extract_utils.fixups_lib import (
     lib_fixups,
+    lib_fixups_user_type,
 )
 from extract_utils.main import (
     ExtractUtils,
     ExtractUtilsModule,
 )
+
+def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):
+    return f'{lib}_{partition}' if partition == 'vendor' else None
 
 namespace_imports = [
     'hardware/qcom-caf/sm8750',
@@ -24,8 +28,20 @@ namespace_imports = [
     'vendor/qcom/opensource/dataservices',
 ]
 
-blob_fixups: blob_fixups_user_type = {
+lib_fixups: lib_fixups_user_type = {
+    **lib_fixups,
+    (
+        'libtensorflowlite_jni',
+    ): lib_fixup_vendor_suffix,
+}
 
+blob_fixups: blob_fixups_user_type = {
+    (
+        'vendor/lib64/libVoiceSdk.so',
+        'vendor/lib64/libcapiv2uvvendor.so',
+        'vendor/lib64/liblistensoundmodel2vendor.so',
+    ): blob_fixup()
+        .replace_needed('libtensorflowlite_c.so', 'libtensorflowlite_c_vendor.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
