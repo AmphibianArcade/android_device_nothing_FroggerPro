@@ -1,0 +1,9 @@
+<!--
+     SPDX-FileCopyrightText: 2026 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<manifest version="1.0" type="device" target-level="8">
+    <hal format="aidl" override="true">
+        <name>android.hardware.secure_element</name>
+    </hal>
+</manifest>

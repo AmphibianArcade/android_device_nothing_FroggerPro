@@ -182,6 +182,20 @@ TARGET_USERIMAGES_USE_F2FS := true
 # SEPolicy
 include device/qcom/sepolicy_vndr/SEPolicy.mk
 
+# VINTF
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
+    $(DEVICE_PATH)/vintf/framework_matrix_nothing.xml \
+    hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml
+DEVICE_FRAMEWORK_MANIFEST_FILE += $(DEVICE_PATH)/vintf/framework_manifest.xml
+DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix.xml
+
+ODM_MANIFEST_FILES += $(DEVICE_PATH)/vintf/manifest_FroggerPro.xml
+ODM_MANIFEST_SKUS := JPN
+ODM_MANIFEST_JPN_FILES := $(DEVICE_PATH)/vintf/manifest_JPN.xml
+
+DEVICE_MANIFEST_SKUS += kera
+DEVICE_MANIFEST_KERA_FILES += $(DEVICE_PATH)/vintf/manifest_kera.xml
+
 # WiFi
 BOARD_WLAN_DEVICE := qcwcn
 BOARD_HOSTAPD_DRIVER := NL80211
