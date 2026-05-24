@@ -2475,11 +2475,6 @@ vendor/etc/debug_policy/apdp_fulldump_PROD.mbn
 vendor/etc/debug_policy/apdp_minidump.mbn
 vendor/etc/default-permissions/com.qualcomm.qti.cne.xml
 vendor/etc/default-permissions/vendor.qti.data.txpwradmin.xml
-vendor/etc/displayconfig/display_id_4630946916234099603.xml
-vendor/etc/displayconfig/display_id_4630947039571902850.xml
-vendor/etc/displayconfig/display_id_4630947039571902851.xml
-vendor/etc/displayconfig/display_id_4630947050240568210.xml
-vendor/etc/displayconfig/display_id_4630947075271898515.xml
 vendor/etc/dpm_vndr/vendor.dpm.conf
 vendor/etc/eva/facedetection/bias.dat
 vendor/etc/eva/facedetection/weight.dat
