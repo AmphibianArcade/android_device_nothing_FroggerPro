@@ -2068,12 +2068,6 @@ vendor/lib64/vendor.qti.hardware.vibratorSel.impl.so
 # Vibrator firmware
 vendor/firmware/haptic_rtp.bin
 
-# Weaver
-vendor/bin/hw/android.hardware.weaver-service-spu-qti
-vendor/bin/hw/android.hardware.weaver-service.thales
-vendor/etc/init/android.hardware.weaver-service-spu-qti.rc
-vendor/lib64/ese_weaver_thales.so
-vendor/lib64/libjc_weaver_transport.so
 
 # Wi-Fi
 system_ext/lib64/vendor.qti.hardware.wigig.netperftuner@1.0.so
@@ -2204,7 +2198,6 @@ odm/overlayfs_origin/system_ext/noth/priv-app/FT_Terminal_Test_FroggerPro/Conf_M
 odm/overlayfs_origin/system_ext/noth/priv-app/FT_Terminal_Test_FroggerPro/FT_Terminal_Test_FroggerPro.apk
 odm/overlayfs_origin/system_ext/noth/priv-app/GFLincoln/GFLincoln.apk
 odm/overlayfs_origin/vendor/etc/init/android.hardware.security.keymint-service.strongbox-thales.rc
-odm/overlayfs_origin/vendor/etc/init/android.hardware.weaver-service.thales.rc
 odm/overlayfs_origin/vendor/etc/vintf/manifest/android.hardware.security.keymint-service.strongbox-thales.xml
 odm/overlayfs_origin/vendor/etc/vintf/manifest/android.hardware.security.sharedsecret-service.strongbox-thales.xml
 odm/overlayfs_origin/vendor/etc/vintf/manifest/android.hardware.weaver-service.thales.xml
