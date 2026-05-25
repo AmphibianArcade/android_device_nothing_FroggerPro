@@ -1385,11 +1385,6 @@ vendor/etc/lowi.conf
 vendor/etc/sap.conf
 vendor/etc/xtwifi.conf
 
-# Health
-vendor/bin/hw/android.hardware.health-service.qti
-vendor/etc/init/android.hardware.health-service.qti.rc
-vendor/etc/vintf/manifest/android.hardware.health-service.qti.xml
-
 # Identity
 vendor/bin/hw/android.hardware.identity-service-qti
 vendor/etc/init/android.hardware.identity-service-qti.rc
