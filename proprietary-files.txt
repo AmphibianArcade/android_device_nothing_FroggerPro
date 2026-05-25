@@ -2170,12 +2170,6 @@ odm/etc/sysconfig/sku_TUR/tmada.xml
 odm/etc/vintf/manifest_JPN.xml
 odm/etc/aac_richtap.config
 odm/etc/ueventd.rc
-odm/overlayfs_origin/system_ext/ldu/app/LiveDemo.apk
-odm/overlayfs_origin/system_ext/ldu/app/LiveDemoCommunity.apk
-odm/overlayfs_origin/system_ext/ldu/app/LiveDemoEssentialSearch.apk
-odm/overlayfs_origin/system_ext/noth/priv-app/FT_Terminal_Test_FroggerPro/Conf_MultipleTest_0xda.ini
-odm/overlayfs_origin/system_ext/noth/priv-app/FT_Terminal_Test_FroggerPro/FT_Terminal_Test_FroggerPro.apk
-odm/overlayfs_origin/system_ext/noth/priv-app/GFLincoln/GFLincoln.apk
 odm/overlayfs_origin/vendor/etc/init/android.hardware.security.keymint-service.strongbox-thales.rc
 odm/overlayfs_origin/vendor/etc/vintf/manifest/android.hardware.security.keymint-service.strongbox-thales.xml
 odm/overlayfs_origin/vendor/etc/vintf/manifest/android.hardware.security.sharedsecret-service.strongbox-thales.xml
@@ -2184,8 +2178,6 @@ vendor/apex/com.android.hardware.cas.apex
 vendor/apex/com.google.android.widevine-12498615.apex
 vendor/app/CACertService/CACertService.apk
 vendor/app/ConnectionSecurityService/ConnectionSecurityService.apk
-vendor/app/NothingAiService/NothingAiService.apk
-vendor/app/NothingEngineerService/NothingEngineerService.apk
 vendor/app/QFingerprintService/QFingerprintService.apk
 vendor/app/TrustZoneAccessService/TrustZoneAccessService.apk
 vendor/app/TxPwrAdmin/TxPwrAdmin.apk
@@ -2194,10 +2186,8 @@ vendor/bin/hw/audiohalservice.qti
 vendor/bin/hw/diagzn
 vendor/bin/hw/sxrservice
 vendor/bin/hw/vendor.cnce.hardware.facsvc@2.0-service
-vendor/bin/hw/vendor.noth.hardware.camera-service
 vendor/bin/hw/vendor.noth.hardware.charge-service
 vendor/bin/hw/vendor.noth.hardware.sensor.sensor_extension-service
-vendor/bin/hw/vendor.noth.hardware.stability-service
 vendor/bin/hw/vendor.noth.hardware.thermal-service
 vendor/bin/hw/vendor.nothing.hardware.biometrics.fingerprint-service
 vendor/bin/hw/vendor.qti.hardware.c2pa-aidl-service-qti
@@ -2284,14 +2274,6 @@ vendor/bin/mlid
 vendor/bin/mm-audio-ftm
 vendor/bin/myftm
 vendor/bin/nicmd
-vendor/bin/noth_bsp_daemon
-vendor/bin/nt_ddr_test
-vendor/bin/nt_error_report
-vendor/bin/nt_error_report_prop_event
-vendor/bin/nt_gen_zramwriteback_fstab
-vendor/bin/nt_minidump_extractor
-vendor/bin/nt_rdump_tool
-vendor/bin/nt_verify_partition
 vendor/bin/ntf-service
 vendor/bin/pktlogconf
 vendor/bin/pm-proxy
@@ -2415,9 +2397,6 @@ vendor/etc/init/ims-dataservice-daemon.rc
 vendor/etc/init/imsdaemon.rc
 vendor/etc/init/init.debug_policy.rc
 vendor/etc/init/init.embmssl_server.rc
-vendor/etc/init/init.nothing_printk.rc
-vendor/etc/init/init.nt_cit.rc
-vendor/etc/init/init.nt_logtool.rc
 vendor/etc/init/init.ntf.rc
 vendor/etc/init/init.qccvendor.rc
 vendor/etc/init/init.qlm-service.rc
@@ -2435,13 +2414,6 @@ vendor/etc/init/loc-launcher.rc
 vendor/etc/init/memtrack_qti.rc
 vendor/etc/init/nfc-service-st.rc
 vendor/etc/init/nicmd.rc
-vendor/etc/init/noth_bsp_daemon.rc
-vendor/etc/init/nt_error_report.rc
-vendor/etc/init/nt_minidump_extractor.rc
-vendor/etc/init/nt_rdump_tool.rc
-vendor/etc/init/nt_task_io.rc
-vendor/etc/init/nt_verify_partition.rc
-vendor/etc/init/nt_zramwriteback.rc
 vendor/etc/init/power.stats.rc
 vendor/etc/init/poweropt-service.rc
 vendor/etc/init/qconfig.rc
@@ -2461,7 +2433,6 @@ vendor/etc/init/vendor.dpmd.rc
 vendor/etc/init/vendor.noth.hardware.camera-service.rc
 vendor/etc/init/vendor.noth.hardware.charge-service.rc
 vendor/etc/init/vendor.noth.hardware.sensor.sensor_extension-service.rc
-vendor/etc/init/vendor.noth.hardware.stability-service.rc
 vendor/etc/init/vendor.noth.hardware.thermal-service.rc
 vendor/etc/init/vendor.nothing.hardware.biometrics.fingerprint-service.rc
 vendor/etc/init/vendor.qsap.qapeservice.rc
@@ -2585,7 +2556,6 @@ vendor/etc/vintf/manifest/vendor.cnce.hardware.facsvc@2.0-service.xml
 vendor/etc/vintf/manifest/vendor.noth.hardware.camera-service.xml
 vendor/etc/vintf/manifest/vendor.noth.hardware.charge-service.xml
 vendor/etc/vintf/manifest/vendor.noth.hardware.sensor.sensor_extension-service.xml
-vendor/etc/vintf/manifest/vendor.noth.hardware.stability-service.xml
 vendor/etc/vintf/manifest/vendor.noth.hardware.thermal-service.xml
 vendor/etc/vintf/manifest/vendor.nothing.hardware.biometrics.fingerprint-service.xml
 vendor/etc/vintf/manifest/vendor.qti.camera.aon-impl.xml
@@ -3341,7 +3311,6 @@ vendor/lib64/vendor.noth.hardware.camera-V1-ndk.so
 vendor/lib64/vendor.noth.hardware.camera-service-impl.so
 vendor/lib64/vendor.noth.hardware.charge-V1-ndk.so
 vendor/lib64/vendor.noth.hardware.sensor.sensor_extension-V1-ndk_platform.so
-vendor/lib64/vendor.noth.hardware.stability-V1-ndk.so
 vendor/lib64/vendor.noth.hardware.thermal-V1-ndk.so
 vendor/lib64/vendor.qti.MemHal-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.ListenSoundModelAidl-V1-ndk.so
