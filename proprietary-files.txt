@@ -1308,11 +1308,7 @@ vendor/etc/vintf/manifest/vendor.qti.hardware.dsp-service.xml
 vendor/lib64/vendor.qti.hardware.dsp-V1-ndk.so
 
 # Face
-vendor/bin/hw/android.hardware.biometrics.face-service.noth
-vendor/etc/init/android.hardware.biometrics.face-service.noth.rc
-vendor/etc/vintf/manifest/android.hardware.biometrics.face-service.noth.xml
 vendor/lib64/libcamera2ndk_vendor.so
-vendor/lib64/libstfaceunlockppl.so
 
 # Fingerprint
 system_ext/lib64/vendor.qti.hardware.fingerprint@1.0.so
@@ -2695,7 +2691,6 @@ vendor/etc/gpfspath_oem_config.xml
 vendor/etc/hal_uuid_map_JPN.xml
 vendor/etc/hal_uuid_map_config.xml
 vendor/etc/init.qti.fm.sh
-vendor/etc/license.lic
 vendor/etc/linker.config.pb
 vendor/etc/mem_logger_config.xml
 vendor/etc/microphone_characteristics.xml
