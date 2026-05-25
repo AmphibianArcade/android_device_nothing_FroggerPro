@@ -2205,7 +2205,6 @@ vendor/bin/hw/vendor.qti.hardware.display.demura-service
 vendor/bin/hw/vendor.qti.hardware.lights.service
 vendor/bin/hw/vendor.qti.hardware.memtrack-service
 vendor/bin/hw/vendor.qti.hardware.minkipcbinder@1.0-service
-vendor/bin/hw/vendor.qti.hardware.spu-service
 vendor/bin/hw/vendor.qti.psiclient@1.0-service
 vendor/bin/hw/xrcommservice
 vendor/bin/hw/xrcommservicehal
@@ -2323,7 +2322,6 @@ vendor/bin/qwes_cli
 vendor/bin/qwesd
 vendor/bin/rpmbClient
 vendor/bin/sec_log_enabler
-vendor/bin/sec_nvm
 vendor/bin/setfattr
 vendor/bin/sfdc_param_calibration
 vendor/bin/sg_write_buffer
@@ -2333,7 +2331,6 @@ vendor/bin/smcinvoke_example
 vendor/bin/smcinvoke_skeleton
 vendor/bin/smcinvoke_skeleton_cpp
 vendor/bin/snapdragon_services
-vendor/bin/spdaemon
 vendor/bin/spectraltool
 vendor/bin/spu_install_keybox
 vendor/bin/sputesthal
@@ -2429,9 +2426,7 @@ vendor/etc/init/init.qti.display_boot.rc
 vendor/etc/init/init.qti.fm.rc
 vendor/etc/init/init.qti.media.rc
 vendor/etc/init/init.qti.qcv.rc
-vendor/etc/init/init.spdaemon.rc
 vendor/etc/init/init.st.felica.rc
-vendor/etc/init/init.vendor.qti.hardware.spu.service.rc
 vendor/etc/init/init.vendor.sensors.rc
 vendor/etc/init/init.vendor.wlan.rc
 vendor/etc/init/init_fan_service.rc
