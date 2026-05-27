@@ -49,7 +49,15 @@ BOARD_BOOTCONFIG := \
     androidboot.usbcontroller=a600000.dwc3 \
     androidboot.vendor.qspa=true
 
+BOARD_USES_GENERIC_KERNEL_IMAGE := true
+BOARD_KERNEL_BASE := 0x00000000
+BOARD_KERNEL_PAGESIZE := 4096
+BOARD_KERNEL_IMAGE_NAME := Image
+
 TARGET_KERNEL_SOURCE := kernel/nothing/sm7750
+TARGET_KERNEL_CONFIG += \
+    vendor/froggerpro_perf.config \
+    gki_defconfig
 
 # Kernel modules
 BOARD_SYSTEM_KERNEL_MODULES_LOAD := $(strip $(shell sed 's/#.*$$//;/^$$/d' $(DEVICE_PATH)/modules.load.system_dlkm))
