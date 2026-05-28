@@ -147,6 +147,10 @@ PRODUCT_ENABLE_UFFD_GC := true
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rro_overlays/partition_order.xml:$(TARGET_COPY_OUT_PRODUCT)/overlay/partition_order.xml
 
+# Partitions
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+PRODUCT_BUILD_RECOVERY_IMAGE := true
+
 # Properties
 TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
