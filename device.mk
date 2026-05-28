@@ -102,6 +102,10 @@ PRODUCT_PACKAGES += \
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
+# Fastboot
+PRODUCT_PACKAGES += \
+    android.hardware.fastboot-service.example_recovery \
+    fastbootd
 
 # Graphics
 PRODUCT_COPY_FILES += \
