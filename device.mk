@@ -5,6 +5,10 @@
 
 DEVICE_PATH := device/nothing/FroggerPro
 
+PRODUCT_SOONG_NAMESPACES += \
+    $(DEVICE_PATH) \
+    vendor/qcom/opensource/usb/etc
+
 $(call inherit-product, hardware/qcom-caf/common/common.mk)
 
 # AAPT
