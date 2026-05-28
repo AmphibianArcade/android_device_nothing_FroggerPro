@@ -1,0 +1,3 @@
+# Fingerprint
+persist.vendor.overlay.fp_model     u:object_r:vendor_fingerprint_prop:s0
+persist.vendor.overlay.fp_vendor    u:object_r:vendor_fingerprint_prop:s0

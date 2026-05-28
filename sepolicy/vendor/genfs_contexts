@@ -1,0 +1,6 @@
+# Fingerprint
+genfscon proc /touchpanel/fod_mode         u:object_r:vendor_proc_fingerprint:s0
+genfscon sysfs /panel_feature/fp_status    u:object_r:vendor_sysfs_fingerprint:s0
+
+# Wakeup
+genfscon sysfs /devices/platform/soc/soc:goodix_fp/wakeup                       u:object_r:sysfs_wakeup:s0

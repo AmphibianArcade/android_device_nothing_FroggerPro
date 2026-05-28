@@ -1,0 +1,2 @@
+# Fingerprint
+type vendor_proc_fingerprint, fs_type, proc_type;

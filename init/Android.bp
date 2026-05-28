@@ -54,3 +54,10 @@ sh_binary {
     src: "init.qcom.sh",
     vendor: true,
 }
+
+prebuilt_etc {
+    name: "ueventd.froggerpro.rc",
+    filename: "ueventd.froggerpro.rc",
+    src: "ueventd.froggerpro.rc",
+    device_specific: true,
+}
