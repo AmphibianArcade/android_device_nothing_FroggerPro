@@ -56,8 +56,9 @@ BOARD_KERNEL_IMAGE_NAME := Image
 
 TARGET_KERNEL_SOURCE := kernel/nothing/sm7750
 TARGET_KERNEL_CONFIG += \
-    vendor/froggerpro_perf.config \
-    gki_defconfig
+    gki_defconfig \
+    vendor/sun_perf.config \
+    vendor/froggerpro_perf.config 
 
 # Kernel modules
 BOARD_SYSTEM_KERNEL_MODULES_LOAD := $(strip $(shell sed 's/#.*$$//;/^$$/d' $(DEVICE_PATH)/modules.load.system_dlkm))
@@ -98,11 +99,11 @@ TARGET_KERNEL_EXT_MODULES := \
     qcom/opensource/eva-kernel \
     qcom/opensource/graphics-kernel \
     qcom/opensource/spu-kernel \
+    qcom/opensource/touch-drivers \
     qcom/opensource/video-driver \
     qcom/opensource/wlan/platform \
     qcom/opensource/wlan/qcacld-3.0 \
-    qcom/opensource/bt-kernel \
-    nxp/opensource/driver
+    qcom/opensource/bt-kernel
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
