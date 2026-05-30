@@ -60,7 +60,6 @@ evacc-tuna.ko
 f_fs_ipc_log.ko
 frpc-adsprpc.ko
 fsa4480-i2c.ko
-ft3683g.ko
 gh_ctrl.ko
 gh_irq_lend.ko
 gh_mem_notifier.ko
@@ -76,9 +75,8 @@ governor_msm_adreno_tz.ko
 gpr_dlkm.ko
 gpu_dump_skip_cdev.ko
 gsim.ko
-haptic.ko
+awinic_haptic.ko
 hapticdrv.ko
-hardware_id_Froggerpro.ko
 hdcp_qseecom_dlkm.ko
 hdmi_dlkm.ko
 heap_mem_ext_v01.ko
@@ -156,12 +154,7 @@ q2spi-geni.ko
 q6_dlkm.ko
 q6_notifier_dlkm.ko
 q6_pdr_dlkm.ko
-qbt_handler.ko
-qca_cld3_kiwi_v2.ko
-qca_cld3_peach_v2.ko
-qca_cld3_peach.ko
 qca_cld3_qca6750.ko
-qca_cld3_wcn7750.ko
 qce50_dlkm.ko
 qcedev-mod_dlkm.ko
 qcom_cpuss_sleep_stats_v4.ko
@@ -214,7 +207,6 @@ qti-fixed-regulator.ko
 qti-glink-adc.ko
 qti-ocp-notifier.ko
 qts.ko
-r8125.ko
 radio-i2c-rtc6226-qca.ko
 rdbg.ko
 reboot-mode.ko
@@ -232,7 +224,6 @@ rmnet_sch.ko
 rmnet_shs.ko
 rmnet_wlan.ko
 rproc_qcom_common.ko
-secure_state.ko
 sgm38120-regulator.ko
 si_core_module.ko
 slc_mpam.ko
@@ -258,9 +249,7 @@ stm_console.ko
 stm_core.ko
 stm_ftrace.ko
 stm_heartbeat.ko
-stm_nfc_i2c.ko
 stm_p_ost.ko
-stm_st54se_gpio.ko
 stub_dlkm.ko
 swr_ctrl_dlkm.ko
 swr_dlkm.ko
@@ -270,7 +259,6 @@ sync_fence.ko
 synx-driver.ko
 sys_pm_vx.ko
 sysmon_subsystem_stats.ko
-tfa98xx_dlkm.ko
 thermal_config.ko
 tmecom-intf.ko
 touchpanel_event_notify.ko
@@ -290,7 +278,6 @@ wcd938x_slave_dlkm.ko
 wcd939x_dlkm.ko
 wcd939x_slave_dlkm.ko
 wcd9xxx_dlkm.ko
-wl28681-regulator.ko
 wlan_firmware_service.ko
 wsa883x_dlkm.ko
 wsa884x_dlkm.ko
