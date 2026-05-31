@@ -23,6 +23,7 @@ def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):
 namespace_imports = [
     'hardware/qcom-caf/sm8750',
     'hardware/qcom-caf/wlan',
+    'hardware/qcom-caf/wlan/qcwcn',
     'vendor/qcom/opensource/commonsys/display',
     'vendor/qcom/opensource/commonsys-intf/display',
     'vendor/qcom/opensource/dataservices',
