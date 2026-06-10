@@ -1383,6 +1383,12 @@ vendor/bin/hw/android.hardware.identity-service-qti
 vendor/etc/init/android.hardware.identity-service-qti.rc
 vendor/lib64/libqtiidentitycredential.so
 
+# Init 
+vendor/etc/init/hw/init.qti.kernel.rc
+vendor/etc/init/hw/init.qti.kernel.target.rc
+vendor/bin/vendor_modprobe.sh
+vendor/bin/system_dlkm_modprobe.sh
+
 # IPA
 vendor/bin/ipacm-diag
 vendor/etc/init/ipacm-diag.rc
