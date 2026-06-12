@@ -35,10 +35,6 @@ BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)/dtb
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/dtbo.img
 
-# HIDL
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
-    hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml
-
 # Init Boot
 BOARD_INIT_BOOT_HEADER_VERSION := 4
 BOARD_MKBOOTIMG_INIT_ARGS += --header_version $(BOARD_INIT_BOOT_HEADER_VERSION)
@@ -205,8 +201,9 @@ ODM_MANIFEST_FILES += $(DEVICE_PATH)/vintf/manifest_FroggerPro.xml
 ODM_MANIFEST_SKUS := JPN
 ODM_MANIFEST_JPN_FILES := $(DEVICE_PATH)/vintf/manifest_JPN.xml
 
-DEVICE_MANIFEST_SKUS += kera
-DEVICE_MANIFEST_KERA_FILES += $(DEVICE_PATH)/vintf/manifest_kera.xml
+DEVICE_MANIFEST_FILE += \
+    $(DEVICE_PATH)/vintf/manifest_kera.xml \
+    $(AUDIO_HAL_DIR)/configs/sun/manifest_audio_qti_services.xml
 
 # WiFi
 BOARD_WLAN_DEVICE := qcwcn

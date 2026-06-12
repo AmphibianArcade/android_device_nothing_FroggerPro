@@ -49,8 +49,10 @@ AUDIO_HAL_DIR := hardware/qcom-caf/sm8750/audio/primary-hal
 AUDIO_PAL_DIR := hardware/qcom-caf/sm8750/audio/pal
 
 # API
+PRODUCT_HIDL_ENABLED := true
+PRODUCT_SHIPPING_API_LEVEL := 35
 BOARD_SHIPPING_API_LEVEL := 202404
-PRODUCT_SHIPPING_API_LEVEL := 36
+BOARD_API_FROZEN := true
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -130,7 +132,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.health-service.qti \
     android.hardware.health-service.qti_recovery
-
+    
+# HIDL
+PRODUCT_PACKAGES += \
+    hwservicemanager \
+    android.hidl.base@1.0 \
+    android.hidl.allocator@1.0-service \
+    android.hidl.manager@1.0 \
+    android.hidl.manager@1.0.vendor
 
 # HWUI
 TARGET_USES_VULKAN := true
