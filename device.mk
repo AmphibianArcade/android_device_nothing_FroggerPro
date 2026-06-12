@@ -217,3 +217,5 @@ PRODUCT_PACKAGES += \
     libwifi-hal-qcom \
     wpa_supplicant \
     wpa_supplicant.conf
+
+$(call inherit-product, vendor/nothing/FroggerPro/FroggerPro-vendor.mk)
