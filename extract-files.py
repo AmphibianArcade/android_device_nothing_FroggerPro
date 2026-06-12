@@ -43,6 +43,21 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/liblistensoundmodel2vendor.so',
     ): blob_fixup()
         .replace_needed('libtensorflowlite_c.so', 'libtensorflowlite_c_vendor.so'),
+    'vendor/etc/init/nicmd.rc': blob_fixup()
+        .regex_replace(
+            r'(service\s+vendor\.nicmd\s+/system/vendor/bin/nicmd\s*\n\s*class\s+main)',
+            r'\1\n    user root\n    group root'
+        ),
+    'vendor/etc/init/vendor.dpmd.rc': blob_fixup()
+        .regex_replace(
+            r'(service\s+vendor\.dpmd\s+/vendor/bin/vendor\.dpmd\s*\n)',
+            r'\1    user root\n'
+        ),
+    'vendor/etc/init/qms.rc': blob_fixup()
+        .regex_replace(
+            r'(service\s+vendor\.qms\s+/vendor/bin/qms\s*\n)',
+            r'\1    user root\n'
+        ),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
