@@ -18,6 +18,9 @@ AB_OTA_PARTITIONS += \
     vendor_boot \
     vendor_dlkm
 
+# Assert
+TARGET_OTA_ASSERT_DEVICE := FroggerPro
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := sun
 
