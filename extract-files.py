@@ -58,6 +58,11 @@ blob_fixups: blob_fixups_user_type = {
             r'(service\s+vendor\.qms\s+/vendor/bin/qms\s*\n)',
             r'\1    user root\n'
         ),
+    'vendor/etc/perf/perfconfigstore.xml': blob_fixup()
+        .regex_replace(
+                r'(<Prop Name="vendor\.debug\.enable\.memperfd".*?Value=")true(")',
+                r'\1false\2'
+    ),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
