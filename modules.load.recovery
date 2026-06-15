@@ -292,7 +292,7 @@ coresight-remote-etm.ko
 coresight-tmc-sec.ko
 coresight-qmi.ko
 coresight-uetm.ko
-st_fts.ko
+focaltech_fts.ko
 stm_core.ko
 stm_p_ost.ko
 stm_console.ko

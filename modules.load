@@ -277,7 +277,7 @@ spss_utils.ko
 synx-driver.ko
 ipclite_test.ko
 atmel_mxt_ts.ko
-st_fts.ko
+focaltech_fts.ko
 qts.ko
 msm_video.ko
 msm_kgsl.ko
