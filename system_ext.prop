@@ -25,4 +25,4 @@ ro.telephony.sim_slots.count=2
 telephony.active_modems.max_count=2
 
 # Virtualization
-ro.config.isolated_compilation_enabled=true
+ro.config.isolated_compilation_enabled=false
