@@ -177,6 +177,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rro_overlays/partition_order.xml:$(TARGET_COPY_OUT_PRODUCT)/overlay/partition_order.xml
 
+PROCDUCT_ENFORCE_RRO_TARGETS := *
+
 PRODUCT_PACKAGES += \
     FrameworksResFroggerPro \
     FroggerProSettingsProviderOverlay \
