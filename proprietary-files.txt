@@ -2081,14 +2081,9 @@ vendor/lib64/vendor.qti.hardware.wifi.wifilearner-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.wigig.netperftuner@1.0.so
 
 # Wi-Fi configs
-vendor/etc/wifi/kiwi_v2/WCNSS_qcom_cfg.ini
-vendor/etc/wifi/peach/WCNSS_qcom_cfg.ini
-vendor/etc/wifi/peach_v2/WCNSS_qcom_cfg.ini
-vendor/etc/wifi/qca6750/WCNSS_qcom_cfg.ini
-vendor/etc/wifi/wcn7750/WCNSS_qcom_cfg.ini
+vendor/etc/wifi/qca6750/WCNSS_qcom_cfg.ini;SYMLINK=vendor/firmware/wlan/qca_cld/qca6750/WCNSS_qcom_cfg.ini
 vendor/etc/wifi/p2p_supplicant_overlay.conf
 vendor/etc/wifi/vendor_cmd.xml
-vendor/etc/wifi/wpa_supplicant.conf
 vendor/etc/wifi/wpa_supplicant_overlay.conf
 
 # Wi-Fi Display
