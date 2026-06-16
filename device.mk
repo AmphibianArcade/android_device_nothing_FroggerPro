@@ -177,6 +177,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rro_overlays/partition_order.xml:$(TARGET_COPY_OUT_PRODUCT)/overlay/partition_order.xml
 
+PRODUCT_PACKAGES += \
+    FrameworksResFroggerPro \
+    FroggerProSettingsProviderOverlay \
+    SystemUIFroggerPro \
+    WifiResFroggerPro 
+
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_BUILD_RECOVERY_IMAGE := true

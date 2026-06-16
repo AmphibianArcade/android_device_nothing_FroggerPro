@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Default for Settings.Global.DEVICE_NAME $1=MANUFACTURER $2=MODEL-->
+    <string name="def_device_name">Nothing Phone (4a) Pro</string>
+
+    <!-- Default for Settings.Global.DEVICE_NAME $1=MODEL-->
+    <string name="def_device_name_simple">Phone (4a) Pro</string>
+</resources>

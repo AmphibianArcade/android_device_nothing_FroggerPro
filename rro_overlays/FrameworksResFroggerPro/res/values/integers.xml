@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Stability requirements in milliseconds for accepting a new brightness level.  This is used
+        for debouncing the light sensor.  Different constants are used to debounce the light sensor
+        when adapting to brighter or darker environments.  This parameter controls how quickly
+        brightness changes occur in response to an observed change in light level that exceeds the
+        hysteresis threshold. -->
+    <integer name="config_autoBrightnessBrighteningLightDebounce">1000</integer>
+    <integer name="config_autoBrightnessDarkeningLightDebounce">2000</integer>
+
+    <!-- Timeout (in milliseconds) after which we remove the effects any user interactions might've
+        had on the brightness mapping. This timeout doesn't start until we transition to a
+        non-interactive display policy so that we don't reset while users are using their devices,
+        but also so that we don't erroneously keep the short-term model if the device is dozing
+        but the display is fully on. -->
+    <integer name="config_autoBrightnessShortTermModelTimeout">120000</integer>
+
+    <!-- Maximum color temperature, in Kelvin, supported by display white balance. -->
+    <integer name="config_displayWhiteBalanceColorTemperatureMax">7400</integer>
+
+    <!-- Minimum color temperature, in Kelvin, supported by display white balance. -->
+    <integer name="config_displayWhiteBalanceColorTemperatureMin">4300</integer>
+
+    <!-- Duration, in milliseconds, of the display white balance animated transitions when decreasing cct. -->
+    <integer name="config_displayWhiteBalanceTransitionTimeDecrease">3000</integer>
+
+    <!-- Duration, in milliseconds, of the display white balance animated transitions when increasing cct. -->
+    <integer name="config_displayWhiteBalanceTransitionTimeIncrease">3000</integer>
+
+    <!-- Default color temperature, in Kelvin, to tint the screen when Night display is
+         activated. -->
+    <integer name="config_nightDisplayColorTemperatureDefault">2700</integer>
+
+    <!-- Maximum color temperature, in Kelvin, supported by Night display. -->
+    <integer name="config_nightDisplayColorTemperatureMax">4280</integer>
+
+    <!-- Minimum color temperature, in Kelvin, supported by Night display. -->
+    <integer name="config_nightDisplayColorTemperatureMin">2500</integer>
+
+    <!-- Default strength, in percentage, of bright color reduction when activated. -->
+    <integer name="config_reduceBrightColorsStrengthDefault">25</integer>
+
+    <!-- Maximum strength, in percentage, supported by bright color reduction. -->
+    <integer name="config_reduceBrightColorsStrengthMax">60</integer>
+
+</resources>
