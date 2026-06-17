@@ -240,6 +240,7 @@ PRODUCT_COPY_FILES += \
 # WiFi
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service \
+    firmware_wlanmdsp.otaupdate_symlink \
     hostapd \
     libwifi-hal-ctrl \
     libwifi-hal-qcom \
