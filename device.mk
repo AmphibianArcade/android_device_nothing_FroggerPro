@@ -101,6 +101,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml
 
+# DebugFS
+PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
+
 # DRM 
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey \
