@@ -212,6 +212,9 @@ $(call soong_config_set_bool,recovery,target_recovery_uses_qti_drm,true)
 
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/init/fstab.default
 
+# Storage 
+$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
+
 # Sku properties
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/sku/build_EEA.prop:$(TARGET_COPY_OUT_ODM)/etc/build_EEA.prop \
