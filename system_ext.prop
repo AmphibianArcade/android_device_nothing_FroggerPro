@@ -17,6 +17,9 @@ persist.bluetooth.leaudio.notify.idle.during.call=true
 persist.vendor.bluetooth.haltest=true
 ro.bluetooth.leaudio_offload.supported=true
 
+# Display
+sys.brightness.disable_gamma_conversion=true
+
 # DPM
 persist.vendor.dpm.feature=11
 
