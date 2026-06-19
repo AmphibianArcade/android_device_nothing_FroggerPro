@@ -2189,7 +2189,6 @@ vendor/bin/hw/vendor.noth.hardware.thermal-service
 vendor/bin/hw/vendor.nothing.hardware.biometrics.fingerprint-service
 vendor/bin/hw/vendor.qti.hardware.c2pa-aidl-service-qti
 vendor/bin/hw/vendor.qti.hardware.display.demura-service
-vendor/bin/hw/vendor.qti.hardware.lights.service
 vendor/bin/hw/vendor.qti.hardware.minkipcbinder@1.0-service
 vendor/bin/hw/vendor.qti.psiclient@1.0-service
 vendor/bin/hw/xrcommservice
@@ -2435,7 +2434,6 @@ vendor/etc/init/vendor.qti.audio-adsprpc-service.rc
 vendor/etc/init/vendor.qti.diag.rc
 vendor/etc/init/vendor.qti.hardware.c2pa-aidl-service-qti.rc
 vendor/etc/init/vendor.qti.hardware.display.demura-service.rc
-vendor/etc/init/vendor.qti.hardware.lights.service.rc
 vendor/etc/init/vendor.qti.hardware.minkipcbinder@1.0-service.rc
 vendor/etc/init/vendor.qti.psiclient@1.0-service.rc
 vendor/etc/init/vendor.qti.qspa-service.rc
@@ -2557,7 +2555,6 @@ vendor/etc/vintf/manifest/vendor.qti.diag.hal.service.xml
 vendor/etc/vintf/manifest/vendor.qti.hardware.c2pa-aidl-service.xml
 vendor/etc/vintf/manifest/vendor.qti.hardware.display.demura-service.xml
 vendor/etc/vintf/manifest/vendor.qti.hardware.hexlp-service.xml
-vendor/etc/vintf/manifest/vendor.qti.hardware.lights.service.xml
 vendor/etc/vintf/manifest/vendor.qti.hardware.minkipcbinder-service.xml
 vendor/etc/vintf/manifest/vendor.qti.hardware.tetheroffload.service.xml
 vendor/etc/vintf/manifest/vendor.qti.ims.imscmaidlservice.xml
