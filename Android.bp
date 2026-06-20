@@ -1,4 +1,7 @@
 soong_namespace {
+    imports: [
+        "vendor/nothing/FroggerPro"
+    ],
 }
 
 install_symlink {
