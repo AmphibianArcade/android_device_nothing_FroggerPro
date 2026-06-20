@@ -233,6 +233,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/sku/build_JPN.prop:$(TARGET_COPY_OUT_ODM)/etc/build_JPN.prop \
     $(LOCAL_PATH)/sku/build_TUR.prop:$(TARGET_COPY_OUT_ODM)/etc/build_TUR.prop
 
+# Telephony
+PRODUCT_PACKAGES += \
+    qcrilNrDb_vendor
+
 # Update engine
 PRODUCT_PACKAGES += \
     update_engine \
