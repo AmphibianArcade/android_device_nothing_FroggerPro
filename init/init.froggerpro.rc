@@ -1,0 +1,7 @@
+on charger
+    start vendor.charge-default-poweroff
+
+service vendor.charge-default-poweroff /vendor/bin/hw/vendor.noth.hardware.charge-service
+    class core
+    group system
+    disabled

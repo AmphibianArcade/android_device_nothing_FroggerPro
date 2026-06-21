@@ -61,3 +61,10 @@ prebuilt_etc {
     src: "ueventd.froggerpro.rc",
     device_specific: true,
 }
+
+prebuilt_etc {
+    name: "init.froggerpro.rc",
+    src: "init.froggerpro.rc",
+    sub_dir: "init/hw",
+    device_specific: true,
+}

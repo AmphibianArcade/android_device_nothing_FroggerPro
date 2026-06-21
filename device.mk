@@ -161,6 +161,7 @@ PRODUCT_PACKAGES += \
     init.qcom.recovery.rc \
     init.qcom.sh \
     init.target.rc \
+    init.froggerpro.rc \
     ueventd.qcom.rc \
     ueventd.froggerpro.rc
 
