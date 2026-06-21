@@ -198,6 +198,7 @@ PRODUCT_COPY_FILES += \
 PROCDUCT_ENFORCE_RRO_TARGETS := *
 
 PRODUCT_PACKAGES += \
+    CarrierConfigResCommon_Vendor \
     FrameworksResFroggerPro \
     FroggerProSettingsProviderOverlay \
     SystemUIFroggerPro \
