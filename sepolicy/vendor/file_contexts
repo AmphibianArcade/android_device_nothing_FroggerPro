@@ -1,3 +1,6 @@
 # Fingerprint
 /dev/goodix_fp                                                              u:object_r:fingerprint_device:s0
-/vendor/bin/hw/vendor.nothing\.hardware\.biometrics\.fingerprint-service    u:object_r:hal_fingerprint_default_exec:s0
+
+# Vibrator
+/dev/aw86927_haptic                                                         u:object_r:aac_richtap_device:s0
+/vendor/bin/hw/android\.hardware\.vibrator\.service\.froggerpro      u:object_r:hal_vibrator_default_exec:s0

@@ -1,0 +1,10 @@
+on boot
+    chown system system /dev/aw86927_haptic
+    chmod 0600 /dev/aw86927_haptic
+
+service vendor.vibrator /vendor/bin/hw/android.hardware.vibrator.service.froggerpro
+    class late_start
+    user system
+    group system input
+    setenv RICHTAP_DEVICE_PATH /dev/aw86927_haptic
+    setenv ENV_RICHTAP_CONFIG_PATH /odm/etc/aac_richtap.config
