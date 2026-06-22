@@ -162,8 +162,7 @@ PRODUCT_PACKAGES += \
     init.qcom.sh \
     init.target.rc \
     init.froggerpro.rc \
-    ueventd.qcom.rc \
-    ueventd.froggerpro.rc
+    ueventd.qcom.rc
 
 # IPACM
 PRODUCT_PACKAGES += \

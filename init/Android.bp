@@ -56,13 +56,6 @@ sh_binary {
 }
 
 prebuilt_etc {
-    name: "ueventd.froggerpro.rc",
-    filename: "ueventd.froggerpro.rc",
-    src: "ueventd.froggerpro.rc",
-    device_specific: true,
-}
-
-prebuilt_etc {
     name: "init.froggerpro.rc",
     src: "init.froggerpro.rc",
     sub_dir: "init/hw",

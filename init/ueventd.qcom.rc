@@ -621,3 +621,6 @@ subsystem mem_buf_vm
 
 # IPA Events
 /dev/ipa_events         0660   radio      radio
+
+# Fingerprint (Goodix)
+/dev/goodix_fp    0660    system    system
