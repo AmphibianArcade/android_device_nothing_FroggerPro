@@ -251,6 +251,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.sensors-service.multihal \
+    sensors.froggerpro \
     sensors.dynamic_sensor_hal
 
 # Storage 
