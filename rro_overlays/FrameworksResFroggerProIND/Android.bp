@@ -4,6 +4,6 @@
 //
 
 runtime_resource_overlay {
-    name: "FrameworksResFroggerPro",
+    name: "FrameworksResFroggerProIND",
     vendor: true,
 }

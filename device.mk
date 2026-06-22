@@ -200,7 +200,9 @@ PROCDUCT_ENFORCE_RRO_TARGETS := *
 
 PRODUCT_PACKAGES += \
     CarrierConfigResCommon_Vendor \
+    FrameworksResCommon_Vendor \
     FrameworksResFroggerPro \
+    FrameworksResFroggerProIND \
     FroggerProSettingsProviderOverlay \
     SystemUIFroggerPro \
     WifiResFroggerPro 
