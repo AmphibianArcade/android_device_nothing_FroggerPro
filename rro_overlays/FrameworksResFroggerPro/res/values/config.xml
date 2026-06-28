@@ -334,6 +334,9 @@
          auto-brightness. If unset, then it just gets the default sensor of type TYPE_LIGHT. -->
     <string name="config_displayLightSensorType" translatable="false">android.sensor.light</string>
 
+    <!-- Type of the tap sensor. Empty if tap is not supported. -->
+    <string name="config_dozeTapSensorType" translatable="false">org.lineageos.sensor.single_tap</string>
+
     <!-- MMS user agent string -->
     <string translatable="false" name="config_mms_user_agent">Android-Mms/2.0</string>
 
