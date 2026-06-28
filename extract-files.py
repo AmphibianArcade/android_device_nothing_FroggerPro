@@ -38,6 +38,21 @@ lib_fixups: lib_fixups_user_type = {
 
 blob_fixups: blob_fixups_user_type = {
     (
+        'system_ext/lib64/libwfddisplayconfig.so',
+        'vendor/bin/qguard',
+        'vendor/lib64/libaodoptfeature.so',
+        'vendor/lib64/libapengine.so',
+        'vendor/lib64/libcamerapoweroptfeature.so',
+        'vendor/lib64/libgamepoweroptfeature.so',
+        'vendor/lib64/liboffscreenpoweroptfeature.so',
+        'vendor/lib64/libpsmoptfeature.so',
+        'vendor/lib64/libqcodec2_utils.so',
+        'vendor/lib64/libqti-perfd.so',
+        'vendor/lib64/libvideooptfeature.so',
+        'vendor/lib64/libwfddisplayconfig_vendor.so',
+    ): blob_fixup()
+        .replace_needed('vendor.qti.hardware.display.config-V5-ndk.so', 'vendor.qti.hardware.display.config-V12-ndk.so'),
+    (
         'vendor/lib64/libVoiceSdk.so',
         'vendor/lib64/libcapiv2uvvendor.so',
         'vendor/lib64/liblistensoundmodel2vendor.so',
