@@ -271,6 +271,7 @@ qrng_dlkm.ko
 hdcp_qseecom_dlkm.ko
 smmu_proxy_dlkm.ko
 smcinvoke_dlkm.ko
+stm_nfc_i2c.ko
 tz_log_dlkm.ko
 spcom.ko
 spss_utils.ko

@@ -100,7 +100,8 @@ TARGET_KERNEL_EXT_MODULES := \
     qcom/opensource/video-driver \
     qcom/opensource/wlan/platform \
     qcom/opensource/wlan/qcacld-3.0/.qca6750 \
-    qcom/opensource/bt-kernel
+    qcom/opensource/bt-kernel \
+    st/opensource/driver
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
