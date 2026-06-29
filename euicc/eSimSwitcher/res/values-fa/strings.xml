@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    SPDX-FileCopyrightText: 2025 The LineageOS Project
+    SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="esim_settings_title">تنظیمات سیم‌کارت مجازی</string>
+    <string name="esim_toggle_title">eSIM</string>
+    <string name="esim_toggle_summary">برای استفاده از سیم‌کارت مجازی، پیکربندی یک اپراتور را بارگیری و فعال کنید</string>
+    <string name="esim_toggle_dialog">اگر سیم مجازی را فعال کنید سیم‌کارت دوم شما غیرفعال خواهد شد. آیا ادامه می‌دهید؟</string>
+    <string name="esim_toggle_dialog_cancel">لغو</string>
+    <string name="esim_toggle_dialog_ok">فعال‌سازی</string>
+</resources>

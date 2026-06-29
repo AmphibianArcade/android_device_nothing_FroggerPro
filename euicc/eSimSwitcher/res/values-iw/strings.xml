@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    SPDX-FileCopyrightText: 2025 The LineageOS Project
+    SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="esim_settings_title">הגדרות eSIM</string>
+    <string name="esim_toggle_title">eSIM</string>
+    <string name="esim_toggle_summary">יש להוריד ולהפעיל את פרופיל ההפעלה כדי להשתמש בסים וירטואלי</string>
+    <string name="esim_toggle_dialog">סים 2 יושבת אם יופעל eSIM. להפעיל בכל זאת?</string>
+    <string name="esim_toggle_dialog_cancel">ביטול</string>
+    <string name="esim_toggle_dialog_ok">הפעלה</string>
+</resources>

@@ -171,6 +171,8 @@ $(foreach sku, EEA JPN ROW TUR, \
     $(eval PRODUCT_COPY_FILES += \
         frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_$(sku)/android.hardware.telephony.euicc.xml))
 
+PRODUCT_PACKAGES += \
+    NothingEsimSwitcher
 
 # Fastboot
 PRODUCT_PACKAGES += \
