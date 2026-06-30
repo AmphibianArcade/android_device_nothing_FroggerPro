@@ -78,6 +78,8 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/soundfx/libquasar.so',
     ): blob_fixup()
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
+    'vendor/lib64/libqcodec2_core.so': blob_fixup()
+        .add_needed('libcodec2_shim.so'),
     'vendor/lib64/libmorpho_RapidEffect.so': blob_fixup()
         .clear_symbol_version('AHardwareBuffer_allocate')
         .clear_symbol_version('AHardwareBuffer_describe')
