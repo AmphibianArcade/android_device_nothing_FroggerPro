@@ -78,6 +78,8 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/soundfx/libquasar.so',
     ): blob_fixup()
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
+    'vendor/etc/media_codecs_kera_v1.xml': blob_fixup()
+        .regex_replace('.*media_codecs_(google_audio|google_c2|google_telephony|google_video|vendor_audio).*\n', ''),
     'vendor/lib64/libqcodec2_core.so': blob_fixup()
         .add_needed('libcodec2_shim.so')
         .replace_needed('android.hardware.graphics.common-V5-ndk.so','android.hardware.graphics.common-V7-ndk.so'),
