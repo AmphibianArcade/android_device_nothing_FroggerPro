@@ -78,6 +78,12 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/soundfx/libquasar.so',
     ): blob_fixup()
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
+    (
+        'vendor/lib64/libjc_keymint-thales.so',
+        'vendor/bin/hw/android.hardware.security.keymint-service.strongbox-thales',
+    ): blob_fixup()
+        .replace_needed('android.hardware.security.keymint-V3-ndk.so', 'android.hardware.security.keymint-V4-ndk.so')
+        .remove_needed('android.hardware.security.keymint-V2-ndk.so'),
     ( 
         'vendor/lib64/camera/components/com.qti.node.dewarp.so',
         'vendor/lib64/com.nothing.camera.postproc@1.0-service-impl.so',
