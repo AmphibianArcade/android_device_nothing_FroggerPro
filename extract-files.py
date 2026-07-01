@@ -84,6 +84,11 @@ blob_fixups: blob_fixups_user_type = {
     ): blob_fixup()
         .replace_needed('android.hardware.security.keymint-V3-ndk.so', 'android.hardware.security.keymint-V4-ndk.so')
         .remove_needed('android.hardware.security.keymint-V2-ndk.so'),
+    (
+        'vendor/lib64/com.nothing.camera.postproc-V1-ndk_platform.so',
+        'vendor/lib64/libsxrservice.so',
+    ): blob_fixup()
+        .replace_needed('android.hardware.common-V2-ndk_platform.so', 'android.hardware.common-V2-ndk.so'),
     ( 
         'vendor/lib64/camera/components/com.qti.node.dewarp.so',
         'vendor/lib64/com.nothing.camera.postproc@1.0-service-impl.so',
