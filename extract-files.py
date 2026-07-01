@@ -78,6 +78,16 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/soundfx/libquasar.so',
     ): blob_fixup()
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
+    ( 
+        'vendor/lib64/camera/components/com.qti.node.dewarp.so',
+        'vendor/lib64/com.nothing.camera.postproc@1.0-service-impl.so',
+        'vendor/lib64/hw/com.qti.chi.override.so',
+        'vendor/lib64/libcamximageformatutils.so',
+        'vendor/lib64/libchifeature2.so',
+        'vendor/lib64/libqvrservice.so',
+        'vendor/lib64/vendor.qti.hardware.camera.offlinecamera-service-impl.so',
+    ): blob_fixup()
+        .remove_needed('android.hardware.graphics.allocator-V1-ndk.so'),
     'vendor/etc/media_codecs_kera_v1.xml': blob_fixup()
         .regex_replace('.*media_codecs_(google_audio|google_c2|google_telephony|google_video|vendor_audio).*\n', ''),
     'vendor/lib64/libqcodec2_core.so': blob_fixup()
