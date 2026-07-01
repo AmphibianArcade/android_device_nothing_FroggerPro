@@ -58,6 +58,6 @@ sh_binary {
 prebuilt_etc {
     name: "init.froggerpro.rc",
     src: "init.froggerpro.rc",
-    sub_dir: "init/hw",
+    sub_dir: "init",
     device_specific: true,
 }
