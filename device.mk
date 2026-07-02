@@ -137,10 +137,12 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 TARGET_SCREEN_DENSITY := 420
 
 PRODUCT_PACKAGES += \
+    android.hardware.graphics.composer3-V2-ndk.vendor \
     android.hardware.graphics.mapper@4.0-impl-qti-display \
     init.qti.display_boot.rc \
     init.qti.display_boot.sh \
     libfilefinder \
+    libgralloc.qti \
     mapper.qti \
     vendor.qti.hardware.display.allocator-service \
     vendor.qti.hardware.display.composer-service \
