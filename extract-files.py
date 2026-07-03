@@ -21,6 +21,7 @@ def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):
     return f'{lib}_{partition}' if partition == 'vendor' else None
 
 namespace_imports = [
+    'hardware/qcom-caf/common/libqti-perfd-client',
     'hardware/qcom-caf/sm8750',
     'hardware/qcom-caf/wlan',
     'hardware/qcom-caf/wlan/qcwcn',
