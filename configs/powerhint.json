@@ -1,6 +1,23 @@
 {
     "Nodes": [
         {
+            "Name": "GPUMinFreq",
+            "Path": "/sys/class/kgsl/kgsl-3d0/devfreq/min_freq",
+            "Values": [
+                "724000000",
+                "1150000000",
+                "1075000000",
+                "900000000",
+                "975000000",
+                "796000000",
+                "645000000",
+                "515000000",
+                "345000000",
+                "259000000"
+            ],
+            "ResetOnInit": true
+        },
+        {
             "Name": "sysKernelMsmPerformanceParametersCpuMinFreq",
             "Path": "/sys/kernel/msm_performance/parameters/cpu_min_freq",
             "Values": [
@@ -448,6 +465,18 @@
         }
     ],
     "Actions": [
+        {
+            "PowerHint": "INTERACTION",
+            "Node": "GPUMinFreq",
+            "Value": "724000000",
+            "Duration": 0
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "GPUMinFreq",
+            "Value": "900000000",
+            "Duration": 2000
+        },
         {
             "PowerHint": "SUSTAINED_PERFORMANCE",
             "Node": "sysKernelMsmPerformanceParametersCpuMinFreq",
