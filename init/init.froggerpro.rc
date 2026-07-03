@@ -11,3 +11,8 @@ on boot
     chown system system /proc/touchpanel/fod_mode
     chmod 0666 /sys/panel_feature/fp_status
     chown system system /sys/panel_feature/fp_status
+
+on property:sys.boot_completed=1
+
+    # Enable PowerHAL hint processing
+    setprop vendor.powerhal.init 1
