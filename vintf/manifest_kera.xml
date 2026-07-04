@@ -3,12 +3,6 @@
      SPDX-License-Identifier: BSD-3-Clause
 -->
 <manifest version="8.0" type="device" target-level="202404">
-        <!-- NFC HAL service -->
-    <hal format="aidl">
-        <name>android.hardware.nfc</name>
-        <version>1</version>
-        <fqname>INfc/default</fqname>
-    </hal>
     <hal format="aidl">
         <name>android.hardware.gatekeeper</name>
         <fqname>IGatekeeper/default</fqname>

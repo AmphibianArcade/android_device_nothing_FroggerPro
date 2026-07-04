@@ -1843,7 +1843,6 @@ vendor/lib64/libvmmem.so
 vendor/etc/public.libraries.txt
 
 # NFC
-vendor/bin/hw/android.hardware.nfc-service-st
 vendor/lib64/libstfactory-vendor.so
 vendor/lib64/nfc_nci.st21nfc.st.so
 

@@ -251,6 +251,7 @@ PRODUCT_PACKAGES += \
 
 # NFC
 PRODUCT_PACKAGES += \
+    android.hardware.nfc-service.st \
     com.android.nfc_extras
 
 PRODUCT_COPY_FILES += \
