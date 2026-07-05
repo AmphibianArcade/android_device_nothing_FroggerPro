@@ -91,7 +91,6 @@ PRODUCT_PACKAGES += \
     libhfp_pal \
     libhotword_intf \
     libloudnessenhanceraidl \
-    libmodulebluetoothdefault.qti \
     libpalclient \
     libpaleventnotifier \
     libpalipcservice \
