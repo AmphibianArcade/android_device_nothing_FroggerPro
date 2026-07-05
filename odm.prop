@@ -1,2 +1,4 @@
 # Vnd FWK
 ro.vendor.qti.va_odm.support=1
+
+import /odm/etc/build_${ro.boot.hardware.sku}.prop
