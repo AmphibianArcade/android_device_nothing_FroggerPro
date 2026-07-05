@@ -463,10 +463,6 @@ PRODUCT_VENDOR_PROPERTIES += \
     vendor.keymint.retry_timer=5 \
     vendor.spu.rkp_enabled=true
 
-# Lights
-PRODUCT_PACKAGES += \
-    android.hardware.light-service.lineage
-
 # Media
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
