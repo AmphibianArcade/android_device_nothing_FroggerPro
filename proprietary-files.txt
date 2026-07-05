@@ -41,6 +41,7 @@ vendor/app/com.qualcomm.qti.gpudrivers.sun.api35/com.qualcomm.qti.gpudrivers.sun
 vendor/bin/C2PAInternetService
 vendor/bin/adpl
 vendor/bin/adsprpcd
+vendor/bin/aw882xx_cali
 vendor/bin/cdsprpcd
 vendor/bin/cnd
 vendor/bin/cnss-daemon

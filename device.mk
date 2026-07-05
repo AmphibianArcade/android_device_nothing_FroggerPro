@@ -70,7 +70,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     audioadsprpcd \
     audiohalservice.qti \
-    aw882xx_cali \
     lib_bt_aptx \
     lib_bt_ble \
     lib_bt_bundle \
