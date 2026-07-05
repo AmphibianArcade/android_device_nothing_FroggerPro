@@ -25,10 +25,6 @@ PRODUCT_PACKAGES += \
     checkpoint_gc \
     otapreopt_script
 
-PRODUCT_VENDOR_PROPERTIES += \
-    ro.virtual_ab.compression.threads=true \
-    ro.virtual_ab.merge_delay_seconds=180
-
 PRODUCT_VIRTUAL_AB_COMPRESSION_METHOD := lz4
 
 # API
@@ -46,13 +42,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.vulkan.version-1_3.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.version-1_3.xml \
     frameworks/native/data/etc/android.software.opengles.deqp.level-2023-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.opengles.deqp.level.xml \
     frameworks/native/data/etc/android.software.vulkan.deqp.level-2023-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.vulkan.deqp.level.xml
-
-PRODUCT_VENDOR_PROPERTIES += \
-    graphics.gpu.profiler.support=true \
-    ro.gfx.driver.1=com.qualcomm.qti.gpudrivers.sun.api35 \
-    ro.hardware.egl=adreno \
-    ro.hardware.vulkan=adreno \
-    ro.opengles.version=196610
 
 # Audio
 $(call soong_config_set_bool, qtiaudio, aw882xx_smartpa, true)
@@ -115,129 +104,14 @@ PRODUCT_PACKAGES += \
     libvolumelistener \
     qtiaudiohalvendorextn
 
-PRODUCT_PRODUCT_PROPERTIES += \
-    aaudio.hw_burst_min_usec=2000 \
-    aaudio.mmap_exclusive_policy=2 \
-    aaudio.mmap_policy=2 \
-    af.fast_track_multiplier=1 \
-    audio.deep_buffer.media=true \
-    audio.offload.min.duration.secs=30 \
-    audio.offload.video=true \
-    audio.sys.mute.latency.factor=2 \
-    audio.sys.noisy.broadcast.delay=500 \
-    audio.sys.offload.pstimeout.secs=3 \
-    audio.sys.routing.latency=0 \
-    audio.timecheck.timeout_duration_ms=8000 \
-    ro.af.client_heap_size_kbyte=7168 \
-    ro.audio.monitorRotation=true
-
-PRODUCT_SYSTEM_EXT_PROPERTIES += \
-    ro.audio.ihaladaptervendorextension_enabled=true
-
-PRODUCT_VENDOR_PROPERTIES += \
-    aaudio.hw_burst_min_usec=2000 \
-    aaudio.mmap_exclusive_policy=2 \
-    aaudio.mmap_policy=2 \
-    audio.spatializer.pose_predictor_type=1 \
-    ro.audio.flinger_standbytime_ms=2000 \
-    ro.audio.spatializer_enabled=true \
-    ro.audio.stereo_spatialization_enabled=true \
-    vendor.audio.adm.buffering.ms=2 \
-    vendor.audio.c2.preferred=true \
-    vendor.audio.compress_capture.aac=false \
-    vendor.audio.compress_capture.enabled=false \
-    vendor.audio.feature.a2dp_offload.enable=true \
-    vendor.audio.feature.battery_listener.enable=true \
-    vendor.audio.feature.dmabuf.cma.memory.enable=false \
-    vendor.audio.feature.hfp.enable=true \
-    vendor.audio.feature.kpi_optimize.enable=true \
-    vendor.audio.flac.sw.decoder.24bit=true \
-    vendor.audio.hal.aidl.enabled=true \
-    vendor.audio.hal.output.suspend.supported=true \
-    vendor.audio.hdr.record.enable=false \
-    vendor.audio.hdr.spf.record.enable=false \
-    vendor.audio.hw.aac.encoder=false \
-    vendor.audio.offload.buffer.size.kb=32 \
-    vendor.audio.offload.multiple.enabled=false \
-    vendor.audio.offload.track.enable=true \
-    vendor.audio.ull_record_period_multiplier=2 \
-    vendor.audio.use.sw.alac.decoder=true \
-    vendor.audio.use.sw.ape.decoder=true \
-    vendor.audio.use.sw.mpegh.decoder=true \
-    vendor.audio.volume.headset.gain.depcal=true \
-    vendor.audio_hal.period_size=192 \
-    vendor.audio_hal.timecheck_timeoutMS=8000 \
-    vendor.qc2audio.per_frame.flac.dec.enabled=true
-    vendor.qc2audio.suspend.enabled=true
-
 # Bluetooth
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth_le.xml \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml
 
-PRODUCT_PRODUCT_PROPERTIES += \
-    bluetooth.device_id.vendor_id=0x001D \
-    bluetooth.profile.a2dp.source.enabled=true \
-    bluetooth.profile.avrcp.controller.enabled=true \
-    bluetooth.profile.avrcp.target.enabled=true \
-    bluetooth.profile.bas.client.enabled=true \
-    bluetooth.profile.gatt.enabled=true \
-    bluetooth.profile.hfp.ag.enabled=true \
-    bluetooth.profile.hid.device.enabled=true \
-    bluetooth.profile.hid.host.enabled=true \
-    bluetooth.profile.map.server.enabled=true \
-    bluetooth.profile.opp.enabled=true \
-    bluetooth.profile.pbap.server.enabled=true
-
-PRODUCT_SYSTEM_EXT_PROPERTIES += \
-    bluetooth.core.le.max_number_of_concurrent_connections=10 \
-    bluetooth.device.class_of_device=90,2,12 \
-    bluetooth.hfp.codec_aptx_voice.enabled=true \
-    bluetooth.hfp.swb.aptx.power_management.enabled=true \
-    bluetooth.leaudio.dual_bidirection_swb.supported=true \
-    bluetooth.profile.pan.nap.enabled=true \
-    bluetooth.profile.pan.panu.enabled=true \
-    bluetooth.profile.pbap.sim.enabled=true \
-    bluetooth.profile.sap.server.enabled=true \
-    persist.bluetooth.leaudio.bypass_allow_list=false \
-    persist.bluetooth.leaudio.notify.idle.during.call=true \
-    persist.bluetooth.leaudio_offload.disabled=false \
-    persist.vendor.bluetooth.haltest=true \
-    ro.bluetooth.leaudio_offload.supported=true
-
-PRODUCT_VENDOR_PROPERTIES += \
-    bluetooth.profile.asha.central.enabled=true \
-    bluetooth.profile.bap.broadcast.assist.enabled=true \
-    bluetooth.profile.bap.broadcast.source.enabled=true \
-    bluetooth.profile.bap.unicast.client.enabled=true \
-    bluetooth.profile.ccp.server.enabled=true \
-    bluetooth.profile.csip.set_coordinator.enabled=true \
-    bluetooth.profile.hap.client.enabled=true \
-    bluetooth.profile.mcp.server.enabled=true \
-    bluetooth.profile.vcp.controller.enabled=true \
-    persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac \
-    persist.bluetooth.a2dp_offload.disabled=false \
-    persist.bluetooth.leaudio_offload.disabled=false \
-    persist.sys.fflag.override.settings_bluetooth_hearing_aid=true \
-    persist.vendor.bluetooth.modem_nv_support=true \
-    persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac \
-    persist.vendor.bt.aac_frm_ctl.enabled=true \
-    persist.vendor.bt.aac_vbr_frm_ctl.enabled=true \
-    persist.vendor.qcom.bluetooth.aac_vbr_ctl.enabled=true \
-    persist.vendor.qcom.bluetooth.aptxadaptiver2_1_support=true \
-    persist.vendor.qcom.bluetooth.dualmode_transport_support=true \
-    persist.vendor.qcom.bluetooth.fmd_config_info=80:0C:60:90:0F:00:00:14:01 \
-    persist.vendor.qcom.bluetooth.fmd_header=8:02:01:06:18:16:AA:FE:40 \
-    persist.vendor.qcom.bluetooth.lossless_aptx_adaptive_le.enabled=true \
-    ro.bluetooth.a2dp_offload.supported=true \
-    ro.vendor.bluetooth.btconfigstore=false
-
 # Biometrics
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
-
-PRODUCT_PRODUCT_PROPERTIES += \
-    masterclear.allow_retain_esim_profiles_after_fdr=true
 
 # Boot Control
 PRODUCT_PACKAGES += \
@@ -255,30 +129,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.config-V2-ndk.vendor
 
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.camerax.extensions.enabled=true
-
-# DPM
-PRODUCT_SYSTEM_EXT_PROPERTIES += \
-    persist.vendor.dpm.feature=11
-
-PRODUCT_VENDOR_PROPERTIES += \
-    persist.vendor.dpm.vndr.feature=11
-
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey
 
-PRODUCT_VENDOR_PROPERTIES += \
-    drm.service.enabled=true
-
 # Dalvik
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
-
-# Data
-PRODUCT_VENDOR_PROPERTIES += \
-    persist.vendor.data.mutualex.mode=wifipreferred \
-    persist.vendor.data.qms.stx_disable=true
 
 # Display
 PRODUCT_COPY_FILES += \
@@ -305,56 +161,12 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.snapalloc-impl \
     vendor.qti.hardware.memtrack-service
 
-PRODUCT_SYSTEM_EXT_PROPERTIES += \
-    ro.view.vrr.velocity_threshold=120@0 \
-    sys.brightness.disable_gamma_conversion=true
-
-PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.display.set_doze_fps_modeid=4 \
-    vendor.display.comp_mask=0 \
-    vendor.display.disable_3d_adaptive_tm=1 \
-    vendor.display.disable_cwb_idle_fallback=1 \
-    vendor.display.disable_dynamic_fps=1 \
-    vendor.display.disable_excl_rect=0 \
-    vendor.display.disable_excl_rect_partial_fb=1 \
-    vendor.display.disable_hw_recovery_dump=1 \
-    vendor.display.disable_offline_rotator=1 \
-    vendor.display.disable_scaler=0 \
-    vendor.display.disable_sdr_dimming=0 \
-    vendor.display.disable_sdr_histogram=1 \
-    vendor.display.disable_stc_dimming=1 \
-    vendor.display.enable_async_powermode=0 \
-    vendor.display.enable_async_vds_creation=1 \
-    vendor.display.enable_display_extensions=1 \
-    vendor.display.enable_dpps_dynamic_fps=1 \
-    vendor.display.enable_early_wakeup=1 \
-    vendor.display.enable_fp_unlock_Optimization=1 \
-    vendor.display.enable_hdr10_gpu_target=1 \
-    vendor.display.enable_ic_hw_roundedcorner=1 \
-    vendor.display.enable_optimize_refresh=0 \
-    vendor.display.enable_rc_support=1 \
-    vendor.display.enable_rounded_corner=1 \
-    vendor.display.use_layer_ext=1 \
-    vendor.display.use_smooth_motion=1 \
-    vendor.display.vds_allow_hwc=1 \
-    vendor.gralloc.disable_ubwc=0 \
-    vendor.gralloc.enable_logs=0 \
-    vendor.gralloc.enable_snapalloc=1
-
 # eUICC
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_EEA/android.hardware.telephony.euicc.xml \
     frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_JPN/android.hardware.telephony.euicc.xml \
     frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_ROW/android.hardware.telephony.euicc.xml \
     frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_TUR/android.hardware.telephony.euicc.xml
-
-# FRP
-PRODUCT_VENDOR_PROPERTIES += \
-    ro.frp.pst=/dev/block/bootdevice/by-name/frp
-
-# FUSE
-PRODUCT_VENDOR_PROPERTIES += \
-    persist.sys.fuse.passthrough.enable=true
 
 # Fastboot
 PRODUCT_PACKAGES += \
@@ -367,44 +179,6 @@ PRODUCT_COPY_FILES += \
 # Graphics
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator-V1-ndk.vendor
-
-PRODUCT_VENDOR_PROPERTIES += \
-    debug.egl.hw=0 \
-    debug.graphics.game_default_frame_rate.disabled=0 \
-    debug.hwui.8bit_hdr_headroom=8 \
-    debug.sf.auto_latch_unsignaled=1 \
-    debug.sf.disable_client_composition_cache=1 \
-    debug.sf.early.app.duration=13666666 \
-    debug.sf.early.sf.duration=10500000 \
-    debug.sf.earlyGl.app.duration=13666666 \
-    debug.sf.earlyGl.sf.duration=10500000 \
-    debug.sf.enable_advanced_sf_phase_offset=1 \
-    debug.sf.enable_gl_backpressure=1 \
-    debug.sf.hw=0 \
-    debug.sf.latch_unsignaled=0 \
-    debug.sf.late.app.duration=13666666 \
-    debug.sf.late.sf.duration=10500000 \
-    debug.sf.predict_hwc_composition_strategy=0 \
-    debug.sf.region_sampling_period_ns=300000000 \
-    debug.sf.region_sampling_timer_timeout_ns=300000000 \
-    debug.sf.treat_170m_as_sRGB=1 \
-    debug.sf.use_phase_offsets_as_durations=1 \
-    persist.sys.sf.color_mode=0 \
-    persist.sys.sf.color_saturation=1.0 \
-    persist.sys.sf.native_mode=260 \
-    ro.surface_flinger.clear_slots_with_set_layer_buffer=false \
-    ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
-    ro.surface_flinger.game_default_frame_rate_override=60 \
-    ro.surface_flinger.has_HDR_display=true \
-    ro.surface_flinger.has_wide_color_display=true \
-    ro.surface_flinger.max_frame_buffer_acquired_buffers=3 \
-    ro.surface_flinger.max_virtual_display_dimension=4096 \
-    ro.surface_flinger.protected_contents=true \
-    ro.surface_flinger.set_idle_timer_ms=550 \
-    ro.surface_flinger.set_touch_timer_ms=200 \
-    ro.surface_flinger.use_color_management=true \
-    ro.surface_flinger.use_content_detection_for_refresh_rate=true \
-    ro.surface_flinger.wcg_composition_dataspace=143261696
 
 # HIDL
 PRODUCT_HIDL_ENABLED := true
@@ -429,10 +203,6 @@ PRODUCT_PACKAGES += \
     IPACM_cfg.xml \
     ipacm
 
-# Incremental FS
-PRODUCT_VENDOR_PROPERTIES += \
-    ro.incremental.enable=yes
-
 # Init
 PRODUCT_PACKAGES += \
     fstab.default \
@@ -456,13 +226,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.hardware_keystore_V3.xml
 
-PRODUCT_VENDOR_PROPERTIES += \
-    ro.crypto.metadata_init_delete_all_keys.enabled=true \
-    ro.hardware.keystore_desede=true \
-    vendor.gatekeeper.is_security_level_spu=0 \
-    vendor.keymint.retry_timer=5 \
-    vendor.spu.rkp_enabled=true
-
 # Media
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
@@ -470,18 +233,6 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_c2_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_c2_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_c2_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_c2_video.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_telephony.xml
-
-PRODUCT_PRODUCT_PROPERTIES += \
-    media.recorder.show_manufacturer_and_model=true \
-    media.stagefright.audio.deep=false
-
-PRODUCT_VENDOR_PROPERTIES += \
-    debug.c2.use_dmabufheaps=1 \
-    debug.stagefright.c2inputsurface=-1 \
-    debug.stagefright.ccodec=4 \
-    debug.stagefright.omx_default_rank=0 \
-    media.c2.hal.selection=aidl \
-    ro.mediaserver.64b.enable=true
 
 # NFC
 PRODUCT_COPY_FILES += \
@@ -493,10 +244,6 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.nfc-service.st
-
-# OEM Unlock
-PRODUCT_VENDOR_PROPERTIES += \
-    ro.oem_unlock_supported=1
 
 # Overlays
 PRODUCT_ENFORCE_RRO_TARGETS := *
@@ -512,11 +259,6 @@ PRODUCT_PACKAGES += \
     FroggerProTelephonyOverlay \
     FroggerProWifiOverlay
 
-# PASR
-PRODUCT_VENDOR_PROPERTIES += \
-    vendor.pasr.activemode.enabled=false \
-    vendor.power.pasr.enabled=false
-
 # Page Size
 PRODUCT_CHECK_PREBUILT_MAX_PAGE_SIZE := false
 
@@ -529,20 +271,15 @@ PRODUCT_PACKAGES += \
     vendor_dsp_mountpoint \
     vendor_firmware_mnt_mountpoint
 
-# Performance
-PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.extension_library=libqti-perfd-client.so \
-    ro.vendor.perf-hal.ver=3.0 \
-    ro.vendor.perf.scroll_opt=1 \
-    vendor.perf.framepacing.enable=1
-
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti
 
 # Properties
-PRODUCT_SYSTEM_EXT_PROPERTIES += \
-    ro.product.property_source_order=odm,vendor,product,system_ext,system
+TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
+TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
+TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/system_ext.prop
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # Project ID Quota
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
@@ -552,40 +289,8 @@ PRODUCT_PACKAGES += \
     qspa_vendor.rc \
     vendor.qti.qspa-service
 
-# QSPM
-PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.qspm.enable=true
-
-# QTI VND FWK
-PRODUCT_ODM_PROPERTIES += \
-    ro.vendor.qti.va_odm.support=1
-
-PRODUCT_SYSTEM_EXT_PROPERTIES += \
-    ro.vendor.qti.va_aosp.support=1
-
-# RCS
-PRODUCT_VENDOR_PROPERTIES += \
-    persist.vendor.rcs.singlereg.feature=1
-
-# RIL
-PRODUCT_VENDOR_PROPERTIES += \
-    persist.radio.multisim.config=dsds \
-    persist.vendor.radio.apm_sim_not_pwdn=1 \
-    persist.vendor.radio.custom_ecc=1 \
-    persist.vendor.radio.enableadvancedscan=true \
-    persist.vendor.radio.procedure_bytes=SKIP \
-    persist.vendor.radio.sib16_support=1
-
 # Ramdisk
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
-
-# SoC
-PRODUCT_VENDOR_PROPERTIES += \
-    ro.soc.manufacturer=QTI
-
-# SSR
-PRODUCT_VENDOR_PROPERTIES += \
-    persist.vendor.ssr.restart_level=ALL_ENABLE
 
 # Security
 BOOT_SECURITY_PATCH := 2026-04-05
@@ -609,9 +314,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.sensors-service.multihal \
     sensors.dynamic_sensor_hal
-
-PRODUCT_VENDOR_PROPERTIES += \
-    persist.vendor.sensors.debug.hal=e
 
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
@@ -638,13 +340,6 @@ PRODUCT_PACKAGES += \
     qti_telephony_hidl_wrapper_prd.xml \
     qti_telephony_utils.xml
 
-PRODUCT_SYSTEM_EXT_PROPERTIES += \
-    ro.telephony.sim_slots.count=3 \
-    telephony.active_modems.max_count=2
-
-PRODUCT_VENDOR_PROPERTIES += \
-    ro.telephony.default_network=26,26
-
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal-service.qti
@@ -662,19 +357,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_SOONG_NAMESPACES += \
     vendor/qcom/opensource/usb/etc
-
-PRODUCT_VENDOR_PROPERTIES += \
-    sys.usb.mtp.batchcancel=1 \
-    sys.vendor.shutdown.waittime=500 \
-    vendor.usb.controller=a600000.dwc3 \
-    vendor.usb.diag.func.name=ffs \
-    vendor.usb.dpl.inst.name=dpl \
-    vendor.usb.qdss.inst.name=qdss_sw \
-    vendor.usb.rmnet.func.name=gsi \
-    vendor.usb.rmnet.inst.name=rmnet \
-    vendor.usb.rndis.func.name=gsi \
-    vendor.usb.use_ffs_mtp=1 \
-    vendor.usb.use_gadget_hal=1
 
 # Update Engine
 PRODUCT_PACKAGES += \
@@ -712,11 +394,3 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf
 
-PRODUCT_VENDOR_PROPERTIES += \
-    wifi.aware.interface=wifi-aware0
-
-# Widevine
-PRODUCT_VENDOR_PROPERTIES += \
-    vendor.wv.oemcrypto.debug.enable_external_display_check=false \
-    vendor.wv.oemcrypto.debug.enable_hlos_data_path=true \
-    vendor.wv.oemcrypto.debug.enable_prov40=true
