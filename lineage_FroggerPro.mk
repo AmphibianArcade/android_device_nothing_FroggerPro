@@ -14,14 +14,14 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_system_ext.mk)
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_vendor.mk)
 
-$(call inherit-product, device/nothing/froggerpro/device.mk)
+$(call inherit-product, device/nothing/FroggerPro/device.mk)
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 PRODUCT_BRAND := Nothing
-PRODUCT_DEVICE := froggerpro
+PRODUCT_DEVICE := FroggerPro
 PRODUCT_MANUFACTURER := Nothing
 PRODUCT_MODEL := A069P
-PRODUCT_NAME := lineage_froggerpro
+PRODUCT_NAME := lineage_FroggerPro
 
 PRODUCT_GMS_CLIENTID_BASE := android-nothing
 

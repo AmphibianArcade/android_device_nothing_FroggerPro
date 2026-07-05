@@ -4,4 +4,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_froggerpro.mk
+    $(LOCAL_DIR)/lineage_FroggerPro.mk

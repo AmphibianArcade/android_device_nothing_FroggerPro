@@ -3,10 +3,10 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/nothing/froggerpro
+DEVICE_PATH := device/nothing/FroggerPro
 
 include build/make/target/board/BoardConfigMainlineCommon.mk
-include vendor/nothing/froggerpro/BoardConfigVendor.mk
+include vendor/nothing/FroggerPro/BoardConfigVendor.mk
 
 # A/B
 AB_OTA_UPDATER := true
