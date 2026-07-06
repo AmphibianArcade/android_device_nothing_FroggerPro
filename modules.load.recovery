@@ -144,6 +144,7 @@ nb7vpq904m.ko
 nvmem_qcom-spmi-sdam.ko
 nvmem_qfprom.ko
 panel_event_notifier.ko
+touchpanel_event_notify.ko
 pci-msm-drv.ko
 pcie-pdc.ko
 pdr_interface.ko

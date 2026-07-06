@@ -55,6 +55,7 @@ sysmon_subsystem_stats.ko
 cdsprm.ko
 adsp_sleepmon.ko
 panel_event_notifier.ko
+touchpanel_event_notify.ko
 spmi-pmic-err-debug.ko
 qti_pmic_glink.ko
 altmode-glink.ko
