@@ -23,5 +23,5 @@ service vendor.vibrator /vendor/bin/hw/android.hardware.vibrator.service.frogger
     class hal
     user system
     group system input
-    setenv RICHTAP_DEVICE_PATH /dev/rt6010_haptic
+    setenv RICHTAP_DEVICE_PATH /dev/aw86927_haptic
     setenv ENV_RICHTAP_CONFIG_PATH /odm/etc/aac_richtap.config

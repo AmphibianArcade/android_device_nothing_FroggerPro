@@ -187,7 +187,8 @@ qrtr-mhi.ko
 aw37004-regulator.ko
 focaltech_ft3683g.ko
 goodix_fp.ko
-rt6010_haptic.ko
+hapticdrv.ko
+awinic_haptic.ko
 sgm38120-regulator.ko
 touch_event_notifier.ko
 adsp_loader_dlkm.ko

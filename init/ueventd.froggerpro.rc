@@ -7,5 +7,5 @@
 /dev/goodix_fp   0660   system   system
 
 # Haptics
-/dev/rt6010_haptic   0660   system   system
+/dev/aw86927_haptic   0660   system   system
 /dev/ics_sfdc   0660   system   system
