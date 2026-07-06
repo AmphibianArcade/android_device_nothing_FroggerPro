@@ -85,7 +85,6 @@ glink_pkt.ko
 glink_probe.ko
 governor_gpubw_mon.ko
 governor_msm_adreno_tz.ko
-gpio-pca953x.ko
 gpu_dump_skip_cdev.ko
 gpucc-kera.ko
 gpucc-sun.ko

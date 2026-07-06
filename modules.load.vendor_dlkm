@@ -5,7 +5,6 @@ mhi_dev_uci.ko
 mhi_dev_satellite.ko
 pinctrl-spmi-gpio.ko
 pinctrl-spmi-mpp.ko
-gpio-pca953x.ko
 pci-msm-drv.ko
 clk-scmi.ko
 evacc-tuna.ko
