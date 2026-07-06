@@ -63,7 +63,7 @@ eud.ko
 evacc-sun.ko
 evacc-tuna.ko
 f_fs_ipc_log.ko
-focaltech_ft3683g.ko
+focaltech_fts.ko
 fsa4480-i2c.ko
 gcc-kera.ko
 gcc-sun.ko

@@ -184,7 +184,7 @@ qrtr-smd.ko
 qrtr-tun.ko
 qrtr-mhi.ko
 aw37004-regulator.ko
-focaltech_ft3683g.ko
+focaltech_fts.ko
 goodix_fp.ko
 hapticdrv.ko
 awinic_haptic.ko
