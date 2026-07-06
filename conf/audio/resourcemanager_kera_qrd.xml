@@ -44,8 +44,14 @@
         <param key="logging_level" value ="3" />
         <param key="context_manager_enable" value ="true" />
         <param key="lpi_logging_enable" value ="false" />
+        <!-- change PAL_DEVICE_OUT_ULTRASOUND_DEDICATED backend name when set it to true -->
+        <param key="upd_dedicated_be" value ="false" />
         <param key="signal_handler" value ="true" />
         <param key="device_mux_config" value ="false" />
+        <param key="upd_duty_cycle_enable" value="false" />
+        <param key="upd_virtual_port" value ="false" />
+        <param key="haptics_priority" value ="touch_haptics" />
+        <param key="haptics_through_wsa" value ="false" />
         <param key="dummy_dev_enable" value ="true" />
     </config_params>
     <config_volume>
@@ -77,16 +83,20 @@
         <codec codec_format="CODEC_TYPE_APTX_AD_R4" codec_type="enc|dec" codec_library="lib_bt_ble.so" />
     </bt_codecs>
     <gain_db_to_level_mapping>
-        <gain_level_map db="-59" level="5"/>
-        <gain_level_map db="-17.4" level="4"/>
-        <gain_level_map db="-13.8" level="3"/>
-        <gain_level_map db="-10.2" level="2"/>
+        <gain_level_map db="-17" level="6"/>
+        <gain_level_map db="-12" level="5"/>
+        <gain_level_map db="-9" level="4"/>
+        <gain_level_map db="-6" level="3"/>
+        <gain_level_map db="-3" level="2"/>
         <gain_level_map db="0" level="1"/>
     </gain_db_to_level_mapping>
     <config_voice>
         <vsid>0xB3000000</vsid>
         <loopbackDelay>1000</loopbackDelay>
-        <maxVolIndex>5</maxVolIndex>
+        <!-- //#ifdef NT_EDIT -->
+        <!-- //#Nothing/*** add for Audio volumn ***/TFT(ARCA-143) -->
+        <maxVolIndex>7</maxVolIndex>
+        <!-- //#endif NT_EDIT -->
         <mode_map>
             <modepair key="0x11C05000" value="0xB3000001"/>
             <modepair key="0x11DC5000" value="0xB3000001"/>
@@ -97,12 +107,17 @@
     <sleep_monitor_vote_streams>
         <low_power_stream_type>PAL_STREAM_VOICE_UI</low_power_stream_type>
         <low_power_stream_type>PAL_STREAM_ACD</low_power_stream_type>
+        <low_power_stream_type>PAL_STREAM_ULTRASOUND</low_power_stream_type>
         <low_power_stream_type>PAL_STREAM_SENSOR_PCM_DATA</low_power_stream_type>
         <avoid_vote_stream_type>PAL_STREAM_CONTEXT_PROXY</avoid_vote_stream_type>
     </sleep_monitor_vote_streams>
     <perf_lock library="libqti-perfd-client.so" config="0x40400000, 0x1, 0x40800000, 0x514" />
     <silence_detection_config pcm="0" voice="0" duration="3000"/>
     <group_device_cfg>
+        <upd_rx>
+            <snd_device name="handset" />
+            <group_dev sample_rate = "0" channels="0" bit_fmt="PAL_AUDIO_FMT_PCM_S16_LE" slot_mask="1" />
+        </upd_rx>
         <handset>
             <group_dev sample_rate = "0" channels="0" bit_fmt="PAL_AUDIO_FMT_PCM_S16_LE" slot_mask="1" />
         </handset>
@@ -112,13 +127,26 @@
         <speaker_voice>
             <group_dev sample_rate = "0" channels="0" bit_fmt="PAL_AUDIO_FMT_PCM_S16_LE" slot_mask="1" />
         </speaker_voice>
+        <upd_rx_handset>
+            <snd_device name="speaker" />
+            <devicepp_mfc sample_rate="96000" channels="2" bit_width="16" />
+            <group_dev sample_rate = "96000" channels="2" bit_fmt="PAL_AUDIO_FMT_PCM_S16_LE" slot_mask="3" />
+        </upd_rx_handset>
+        <upd_rx_speaker>
+            <snd_device name="speaker" />
+            <devicepp_mfc sample_rate="96000" channels="2" bit_width="16" />
+            <group_dev sample_rate = "96000" channels="2" bit_fmt="PAL_AUDIO_FMT_PCM_S16_LE" slot_mask="3" />
+        </upd_rx_speaker>
     </group_device_cfg>
     <device_profile>
         <in-device>
             <id>PAL_DEVICE_IN_HANDSET_MIC</id>
             <back_end_name>CODEC_DMA-LPAIF_RXTX-TX-3</back_end_name>
             <max_channels>4</max_channels>
-            <channels>1</channels>
+<!--  # ifdef NT_EDIT -->
+<!-- NT_EDIT added for ARBOK-263: add for arbok audio mic -->
+            <channels>2</channels>
+<!--  # endif NT_EDIT -->
             <samplerate>48000</samplerate>
             <snd_device_name>handset-mic</snd_device_name>
             <ec_enable>0</ec_enable>
@@ -144,6 +172,41 @@
                     <channels>4</channels>
                     <snd_device_name>unprocessed-hdr-mic-inverted-portrait</snd_device_name>
                 </custom-config>
+<!--  # ifdef NT_EDIT -->
+<!-- NT_EDIT added for ARBOK-263: add for arbok audio mic -->
+                <custom-config key="cit-amic1">
+                    <channels>1</channels>
+                    <snd_device_name>amic1</snd_device_name>
+                </custom-config>
+                <custom-config key="cit-amic3">
+                    <channels>1</channels>
+                    <snd_device_name>amic3</snd_device_name>
+                </custom-config>
+                <custom-config key="cit-amic5">
+                    <channels>1</channels>
+                    <snd_device_name>amic5</snd_device_name>
+                </custom-config>
+                <custom-config key="cit-amic35">
+                    <channels>2</channels>
+                    <snd_device_name>cit-amic35</snd_device_name>
+                </custom-config>
+                <custom-config key="at-amic1">
+                    <channels>1</channels>
+                    <snd_device_name>at-amic1</snd_device_name>
+                </custom-config>
+                <custom-config key="at-amic3">
+                    <channels>1</channels>
+                    <snd_device_name>at-amic3</snd_device_name>
+                </custom-config>
+                <custom-config key="at-amic5">
+                    <channels>1</channels>
+                    <snd_device_name>at-amic5</snd_device_name>
+                </custom-config>
+                <custom-config key="at-amic35">
+                    <channels>2</channels>
+                    <snd_device_name>at-amic35</snd_device_name>
+                </custom-config>
+<!--  # endif NT_EDIT -->
             </usecase>
         <!--Uncomment these lines instead of above lines if needing to enable EC per custom key
             <usecase>
@@ -180,7 +243,7 @@
             </usecase>
             <usecase>
                 <name>PAL_STREAM_VOICE_CALL</name>
-                <priority>1</priority>
+                <priority>2</priority>
                 <sidetone_mode>HW</sidetone_mode>
                 <bit_width>16</bit_width>
                 <ec_enable>1</ec_enable>
@@ -207,6 +270,10 @@
             </usecase>
             <usecase>
                 <name>PAL_STREAM_ULTRA_LOW_LATENCY</name>
+<!--  # ifdef NT_EDIT -->
+<!-- NT_EDIT added for ARBOK-263: add for arbok audio dual mic -->
+                <snd_device_name>handset-mic-ull</snd_device_name>
+<!--  # endif NT_EDIT -->
                 <custom-config key="dual-mic">
                     <channels>2</channels>
                     <snd_device_name>handset-dmic-endfire</snd_device_name>
@@ -214,6 +281,13 @@
             </usecase>
             <usecase>
                 <name>PAL_STREAM_RAW</name>
+<!--  # ifdef NT_EDIT -->
+<!-- NT_EDIT added for ARBOK-263: add for arbok audio mic -->
+                <custom-config key="handset_mic_hdr">
+                    <channels>3</channels>
+                    <snd_device_name>handset-mic-hdr</snd_device_name>
+                </custom-config>
+<!--  # endif NT_EDIT -->
                 <snd_device_name>handset-mic-unprocessed</snd_device_name>
                 <custom-config key="unprocessed-hdr-mic-landscape">
                     <channels>4</channels>
@@ -246,7 +320,10 @@
             <back_end_name>CODEC_DMA-LPAIF_RXTX-TX-3</back_end_name>
             <max_channels>4</max_channels>
             <samplerate>48000</samplerate>
-            <channels>1</channels>
+<!--  # ifdef NT_EDIT -->
+<!-- NT_EDIT added for ARBOK-263: add for arbok audio mic -->
+            <channels>2</channels>
+<!--  # endif NT_EDIT -->
             <ec_enable>0</ec_enable>
             <snd_device_name>speaker-mic</snd_device_name>
             <usecase>
@@ -307,7 +384,7 @@
             </usecase>
             <usecase>
                 <name>PAL_STREAM_VOICE_CALL</name>
-                <priority>1</priority>
+                <priority>2</priority>
                 <sidetone_mode>OFF</sidetone_mode>
                 <bit_width>16</bit_width>
                 <ec_enable>1</ec_enable>
@@ -350,8 +427,17 @@
                 <name>PAL_STREAM_VOICE_UI</name>
                 <ec_enable>1</ec_enable>
             </usecase>
+<!--  # ifdef NT_EDIT -->
+<!-- NT_EDIT added for ARBOK-263: add for arbok audio mic -->
+            <usecase>
+                <name>PAL_STREAM_RAW</name>
+                <custom-config key="camcorder_audio_zoom">
+                    <channels>3</channels>
+                    <snd_device_name>camcorder-mic-zoom</snd_device_name>
+                </custom-config>
+            </usecase>
+<!--  # endif NT_EDIT -->
             <ec_rx_device>
-                <id>PAL_DEVICE_OUT_HANDSET</id>
                 <id>PAL_DEVICE_OUT_SPEAKER</id>
             </ec_rx_device>
         </in-device>
@@ -392,7 +478,7 @@
                 <sidetone_mode>HW</sidetone_mode>
                 <samplerate>48000</samplerate>
                 <bit_width>16</bit_width>
-                <priority>1</priority>
+                <priority>2</priority>
                 <ec_enable>1</ec_enable>
                 <custom-config key="nn-sm">
                     <channels>1</channels>
@@ -433,7 +519,7 @@
             </usecase>
             <usecase>
                 <name>PAL_STREAM_VOICE_CALL</name>
-                <priority>1</priority>
+                <priority>2</priority>
             </usecase>
             <usecase>
                 <name>PAL_STREAM_ULTRA_LOW_LATENCY</name>
@@ -510,7 +596,7 @@
             </usecase>
             <usecase>
                 <name>PAL_STREAM_VOICE_CALL</name>
-                <priority>1</priority>
+                <priority>2</priority>
                 <sidetone_mode>HW</sidetone_mode>
                 <ec_enable>1</ec_enable>
             </usecase>
@@ -520,6 +606,18 @@
             <ec_rx_device>
                 <id>PAL_DEVICE_OUT_USB_HEADSET</id>
             </ec_rx_device>
+        </in-device>
+        <in-device>
+            <id>PAL_DEVICE_IN_FM_TUNER</id>
+            <back_end_name>MI2S-LPAIF-TX-PRIMARY</back_end_name>
+            <max_channels>2</max_channels>
+            <channels>2</channels>
+            <snd_device_name>play-fm</snd_device_name>
+            <samplerate>48000</samplerate>
+            <bit_width>16</bit_width>
+            <usecase>
+                <name>PAL_STREAM_LOOPBACK</name>
+            </usecase>
         </in-device>
         <in-device>
             <id>PAL_DEVICE_IN_PROXY</id>
@@ -542,6 +640,8 @@
             </usecase>
         </in-device>
         <in-device>
+<!--  # ifdef NT_EDIT -->
+<!-- NT_EDIT added for ARBOK-149: add for arbok audio -->
             <id>PAL_DEVICE_IN_VI_FEEDBACK</id>
             <back_end_name>MI2S-LPAIF-TX-PRIMARY</back_end_name>
             <max_channels>2</max_channels>
@@ -554,6 +654,21 @@
                 <name>PAL_STREAM_VOICE_CALL</name>
                 <channels>2</channels>
                 <snd_device_name>vi-feedback</snd_device_name>
+            </usecase>
+<!--  # endif NT_EDIT -->
+        </in-device>
+        <in-device>
+            <id>PAL_DEVICE_IN_CPS_FEEDBACK</id>
+            <back_end_name>CODEC_DMA-LPAIF_WSA-TX-2</back_end_name>
+            <max_channels>2</max_channels>
+            <channels>1</channels>
+            <samplerate>24000</samplerate>
+            <bit_width>32</bit_width>
+            <snd_device_name>cps-feedback</snd_device_name>
+            <usecase>
+                <name>PAL_STREAM_VOICE_CALL</name>
+                <channels>1</channels>
+                <snd_device_name>cps-feedback-mono-2</snd_device_name>
             </usecase>
         </in-device>
         <in-device>
@@ -584,7 +699,7 @@
             </usecase>
             <usecase>
                 <name>PAL_STREAM_VOICE_CALL</name>
-                <priority>1</priority>
+                <priority>2</priority>
             </usecase>
             <usecase>
                 <name>PAL_STREAM_ULTRA_LOW_LATENCY</name>
@@ -604,13 +719,28 @@
             </usecase>
         </in-device>
         <in-device>
+            <id>PAL_DEVICE_IN_ULTRASOUND_MIC</id>
+            <back_end_name>CODEC_DMA-LPAIF_RXTX-TX-4</back_end_name>
+            <max_channels>2</max_channels>
+            <channels>1</channels>
+            <samplerate>96000</samplerate>
+            <bit_width>16</bit_width>
+            <snd_device_name>ultrasound-mic</snd_device_name>
+            <usecase>
+                <name>PAL_STREAM_ULTRASOUND</name>
+            </usecase>
+        </in-device>
+        <in-device>
             <id>PAL_DEVICE_IN_EXT_EC_REF</id>
-            <back_end_name>MI2S-LPAIF-TX-TERTIARY</back_end_name>
+<!--  # ifdef NT_EDIT -->
+<!-- NT_EDIT added for ARBOK-149: add for arbok audio -->
+            <back_end_name>MI2S-LPAIF-TX-PRIMARY</back_end_name>
             <snd_device_name>ext_ec_ref_tx</snd_device_name>
             <max_channels>2</max_channels>
             <channels>2</channels>
             <samplerate>48000</samplerate>
-            <bit_width>16</bit_width>
+            <bit_width>32</bit_width>
+<!--  # endif NT_EDIT -->
         </in-device>
         <in-device>
             <id>PAL_DEVICE_IN_ECHO_REF</id>
@@ -625,6 +755,21 @@
             </usecase>
         </in-device>
         <in-device>
+            <id>PAL_DEVICE_IN_HAPTICS_VI_FEEDBACK</id>
+<!--  # ifdef NT_EDIT -->
+<!-- NT_EDIT added for ARBOK-149: add for arbok audio -->
+            <back_end_name>MI2S-LPAIF-TX-PRIMARY</back_end_name>
+            <snd_device_name>haptics-vi-feedback-mono</snd_device_name>
+            <max_channels>2</max_channels>
+            <channels>2</channels>
+            <bit_width>32</bit_width>
+            <samplerate>48000</samplerate>
+<!--  # endif NT_EDIT -->
+            <usecase>
+                <name>PAL_STREAM_HAPTICS</name>
+            </usecase>
+        </in-device>
+        <in-device>
             <id>PAL_DEVICE_IN_DUMMY</id>
             <back_end_name>PCM_DUMMY-TX-1</back_end_name>
             <max_channels>2</max_channels>
@@ -635,15 +780,20 @@
         </in-device>
         <out-device>
             <id>PAL_DEVICE_NONE</id>
+<!--  # ifdef NT_EDIT -->
+<!-- NT_EDIT added for ARBOK-149: add for arbok audio -->
             <back_end_name>MI2S-LPAIF-RX-PRIMARY</back_end_name>
             <max_channels>2</max_channels>
-            <channels>1</channels>
+            <channels>2</channels>
             <snd_device_name>none</snd_device_name>
             <samplerate>48000</samplerate>
-            <bit_width>16</bit_width>
+            <bit_width>32</bit_width>
+<!--  # endif NT_EDIT -->
         </out-device>
         <out-device>
             <id>PAL_DEVICE_OUT_SPEAKER</id>
+<!--  # ifdef NT_EDIT -->
+<!-- NT_EDIT added for ARBOK-149: add for arbok audio -->
             <back_end_name>MI2S-LPAIF-RX-PRIMARY</back_end_name>
             <max_channels>2</max_channels>
             <channels>2</channels>
@@ -651,48 +801,178 @@
             <bit_width>32</bit_width>
             <snd_device_name>speaker</snd_device_name>
             <speaker_protection_enabled>1</speaker_protection_enabled>
+<!--  # endif NT_EDIT -->
             <fractional_sr>0</fractional_sr>
-            <cps_mode>0</cps_mode>
+            <!-- To enable external EC reference the flag extec_ref_enabled must be added as 1 -->
+            <ext_ec_ref_enabled>0</ext_ec_ref_enabled>
+            <!-- Flag to specify cps mode which is applicable
+                 Values: disable CPS: 0
+                         CPS streaming: 1
+                         ADSP control mode: 2
+            -->
+<!--  # ifdef NT_EDIT -->
+<!-- NT_EDIT added for ARBOK-149: add for arbok audio -->
+            <cps_mode>2</cps_mode>
             <vbat_enabled>0</vbat_enabled>
+<!--  # endif NT_EDIT -->
+            <!--specify the supported bit format on speaker end point -->
+            <!--this should be in the form of pal_audio_fmt_id-->
+            <!--e.g <supported_bit_format >PAL_AUDIO_FMT_PCM_S24_LE</supported_bit_format>-->
+            <!--We support 24 bit for speaker as of now, as some module in ADSP does not support Q31 format-->
+            <!--This can be changed to PAL_AUDIO_FMT_PCM_S32_LE if 32 bit e2e support is required-->
+<!--  # ifdef NT_EDIT -->
+<!-- NT_EDIT added for ARBOK-149: add for arbok audio -->
             <supported_bit_format>PAL_AUDIO_FMT_PCM_S32_LE</supported_bit_format>
+<!--  # endif NT_EDIT -->
+            <!-- RAS should be enabled with speaker protection always -->
             <ras_enabled>0</ras_enabled>
+            <!-- Flag to specify speaker in case Voice call is switched from
+                 handset to speaker with only 1 speaker.
+                 Values: Both speaker : 0
+                         Right speaker: 1
+                         Left speaker : 2
+            -->
+            <speaker_mono_right>0</speaker_mono_right>
+            <!-- Time in seconds for Quick cal. Set 0 to disable -->
+            <quick_cal_time>0</quick_cal_time>
+            <usecase>
+                <name>PAL_STREAM_LOW_LATENCY</name>
+                <priority>1</priority>
+                <custom-config key="cit-speaker-top">
+                    <snd_device_name>speaker-mono</snd_device_name>
+                </custom-config>
+                <custom-config key="cit-speaker-bot">
+                    <snd_device_name>speaker-mono-2</snd_device_name>
+                </custom-config>
+                <custom-config key="at-speaker-top">
+                    <snd_device_name>speaker-mono</snd_device_name>
+                </custom-config>
+                <custom-config key="at-speaker-bot">
+                    <snd_device_name>speaker-mono-2</snd_device_name>
+                </custom-config>
+                <custom-config key="mmi-speaker">
+                    <snd_device_name>mmi-speaker</snd_device_name>
+                </custom-config>
+            </usecase>
+            <usecase>
+                <name>PAL_STREAM_COMPRESSED</name>
+                <custom-config key="cit-speaker-top">
+                    <snd_device_name>speaker-mono</snd_device_name>
+                </custom-config>
+                <custom-config key="cit-speaker-bot">
+                    <snd_device_name>speaker-mono-2</snd_device_name>
+                </custom-config>
+                <custom-config key="at-speaker-top">
+                    <snd_device_name>speaker-mono</snd_device_name>
+                </custom-config>
+                <custom-config key="at-speaker-bot">
+                    <snd_device_name>speaker-mono-2</snd_device_name>
+                </custom-config>
+                <custom-config key="mmi-speaker">
+                    <snd_device_name>mmi-speaker</snd_device_name>
+                </custom-config>
+            </usecase>
+            <usecase>
+                <name>PAL_STREAM_PCM_OFFLOAD</name>
+                <custom-config key="cit-speaker-top">
+                    <snd_device_name>speaker-mono</snd_device_name>
+                </custom-config>
+                <custom-config key="cit-speaker-bot">
+                    <snd_device_name>speaker-mono-2</snd_device_name>
+                </custom-config>
+                <custom-config key="at-speaker-top">
+                    <snd_device_name>speaker-mono</snd_device_name>
+                </custom-config>
+                <custom-config key="at-speaker-bot">
+                    <snd_device_name>speaker-mono-2</snd_device_name>
+                </custom-config>
+                <custom-config key="mmi-speaker">
+                    <snd_device_name>mmi-speaker</snd_device_name>
+                </custom-config>
+            </usecase>
+            <usecase>
+                <name>PAL_STREAM_DEEP_BUFFER</name>
+                <custom-config key="cit-speaker-top">
+                    <snd_device_name>speaker-mono</snd_device_name>
+                </custom-config>
+                <custom-config key="cit-speaker-bot">
+                    <snd_device_name>speaker-mono-2</snd_device_name>
+                </custom-config>
+                <custom-config key="at-speaker-top">
+                    <snd_device_name>speaker-mono</snd_device_name>
+                </custom-config>
+                <custom-config key="at-speaker-bot">
+                    <snd_device_name>speaker-mono-2</snd_device_name>
+                </custom-config>
+                <custom-config key="mmi-speaker">
+                    <snd_device_name>mmi-speaker</snd_device_name>
+                </custom-config>
+            </usecase>
             <usecase>
                 <name>PAL_STREAM_VOICE_CALL</name>
-                <priority>1</priority>
+                <priority>2</priority>
+<!--  # ifdef NT_EDIT -->
+<!-- NT_EDIT added for ARBOK-149: add for arbok audio -->
                 <channels>2</channels>
                 <snd_device_name>speaker</snd_device_name>
+<!--  # endif NT_EDIT -->
+            </usecase>
+            <usecase>
+                <name>PAL_STREAM_VOICE_CALL</name>
+                <custom-config key="crsCall">
+                    <priority>2</priority>
+                    <snd_device_name>speaker</snd_device_name>
+                </custom-config>
             </usecase>
             <usecase>
                 <name>PAL_STREAM_VOIP_RX</name>
                 <priority>2</priority>
+<!--  # ifdef NT_EDIT -->
+<!-- NT_EDIT added for ARBOK-149: add for arbok audio -->
                 <channels>2</channels>
                 <snd_device_name>speaker</snd_device_name>
+<!--  # endif NT_EDIT -->
+            </usecase>
+            <usecase>
+                <name>PAL_STREAM_ULTRASOUND</name>
+                <priority>4</priority>
+                <samplerate>96000</samplerate>
             </usecase>
         </out-device>
         <out-device>
             <id>PAL_DEVICE_OUT_HANDSET</id>
+<!--  # ifdef NT_EDIT -->
+<!-- NT_EDIT added for ARBOK-149: add for arbok audio -->
             <back_end_name>MI2S-LPAIF-RX-PRIMARY</back_end_name>
             <max_channels>2</max_channels>
             <channels>2</channels>
+            <!-- To enable external EC reference the flag extec_ref_enabled must be added as 1 -->
+            <ext_ec_ref_enabled>0</ext_ec_ref_enabled>
             <samplerate>48000</samplerate>
             <bit_width>32</bit_width>
+<!--  # endif NT_EDIT -->
             <fractional_sr>0</fractional_sr>
             <snd_device_name>handset</snd_device_name>
             <handset_protection_enabled>0</handset_protection_enabled>
-            <usecase>
-                <name>PAL_STREAM_VOICE_CALL</name>
-                <priority>1</priority>
-                <custom-config key="HAC">
-                    <snd_device_name>voice-handset-hac</snd_device_name>
-                </custom-config>
-            </usecase>
-            <usecase>
-                <name>PAL_STREAM_VOIP_RX</name>
-                <priority>2</priority>
-                <custom-config key="HAC">
-                    <snd_device_name>voice-handset-hac</snd_device_name>
-                </custom-config>
-            </usecase>
+          <usecase>
+              <name>PAL_STREAM_VOICE_CALL</name>
+              <priority>2</priority>
+              <custom-config key="HAC">
+                 <snd_device_name>voice-handset-hac</snd_device_name> <!-- override sound device name with HAC handset -->
+              </custom-config>
+          </usecase>
+          <usecase>
+              <name>PAL_STREAM_VOIP_RX</name>
+              <priority>2</priority>
+              <custom-config key="HAC">
+                 <snd_device_name>voice-handset-hac</snd_device_name> <!-- override sound device name with HAC handset for voip -->
+              </custom-config>
+          </usecase>
+          <usecase>
+              <name>PAL_STREAM_ULTRASOUND</name>
+              <priority>4</priority>
+              <samplerate>96000</samplerate>
+          </usecase>
         </out-device>
         <out-device>
             <id>PAL_DEVICE_OUT_WIRED_HEADPHONE</id>
@@ -723,7 +1003,7 @@
         -->
            <usecase>
                <name>PAL_STREAM_VOICE_CALL</name>
-               <priority>1</priority>
+               <priority>2</priority>
                <samplerate>48000</samplerate>
                <bit_width>16</bit_width>
            </usecase>
@@ -763,7 +1043,7 @@
         -->
            <usecase>
                <name>PAL_STREAM_VOICE_CALL</name>
-               <priority>1</priority>
+               <priority>2</priority>
                <samplerate>48000</samplerate>
                <bit_width>16</bit_width>
            </usecase>
@@ -784,7 +1064,7 @@
             <bit_width>16</bit_width>
             <usecase>
                 <name>PAL_STREAM_VOICE_CALL</name>
-                <priority>1</priority>
+                <priority>2</priority>
             </usecase>
         </out-device>
         <out-device>
@@ -797,7 +1077,7 @@
             <bit_width>16</bit_width>
             <usecase>
                 <name>PAL_STREAM_VOICE_CALL</name>
-                <priority>1</priority>
+                <priority>2</priority>
             </usecase>
         </out-device>
         <out-device>
@@ -819,7 +1099,43 @@
             <bit_width>16</bit_width>
             <usecase>
                 <name>PAL_STREAM_VOICE_CALL</name>
-                <priority>1</priority>
+                <priority>2</priority>
+            </usecase>
+        </out-device>
+        <out-device>
+            <id>PAL_DEVICE_OUT_AUX_DIGITAL</id>
+            <back_end_name>DISPLAY_PORT-RX-0</back_end_name>
+            <max_channels>32</max_channels>
+            <channels>2</channels>
+            <snd_device_name>display-port</snd_device_name>
+            <fractional_sr>1</fractional_sr>
+            <!--specify the supported bit format on DP end point -->
+            <!--this should be in the form of pal_audio_fmt_id-->
+            <!--e.g <supported_bit_format >PAL_AUDIO_FMT_PCM_S24_3LE</supported_bit_format>-->
+            <!--We support 24 bit for DP as of now, as SPF needs to conform to IEC 60958 packet format -->
+            <!--This can be changed to PAL_AUDIO_FMT_PCM_S32_LE if 32 bit e2e support is required-->
+            <supported_bit_format>PAL_AUDIO_FMT_PCM_S24_3LE</supported_bit_format>
+            <usecase>
+                <name>PAL_STREAM_VOICE_CALL</name>
+                <priority>2</priority>
+            </usecase>
+        </out-device>
+        <out-device>
+            <id>PAL_DEVICE_OUT_HDMI</id>
+            <back_end_name>DISPLAY_PORT-RX</back_end_name>
+            <max_channels>32</max_channels>
+            <channels>2</channels>
+            <fractional_sr>1</fractional_sr>
+            <snd_device_name>display-port</snd_device_name>
+            <!--specify the supported bit format on HDMI end point -->
+            <!--this should be in the form of pal_audio_fmt_id-->
+            <!--e.g <supported_bit_format >PAL_AUDIO_FMT_PCM_S24_3LE</supported_bit_format>-->
+            <!--We support 24 bit for HDMI as of now, as SPF needs to conform to IEC 60958 packet format -->
+            <!--This can be changed to PAL_AUDIO_FMT_PCM_S32_LE if 32 bit e2e support is required-->
+            <supported_bit_format>PAL_AUDIO_FMT_PCM_S24_3LE</supported_bit_format>
+            <usecase>
+                <name>PAL_STREAM_VOICE_CALL</name>
+                <priority>2</priority>
             </usecase>
         </out-device>
         <out-device>
@@ -831,7 +1147,7 @@
             <fractional_sr>1</fractional_sr>
             <usecase>
                 <name>PAL_STREAM_VOICE_CALL</name>
-                <priority>1</priority>
+                <priority>2</priority>
             </usecase>
         </out-device>
         <out-device>
@@ -843,7 +1159,25 @@
             <fractional_sr>1</fractional_sr>
             <usecase>
                 <name>PAL_STREAM_VOICE_CALL</name>
-                <priority>1</priority>
+                <priority>2</priority>
+            </usecase>
+        </out-device>
+        <out-device>
+            <id>PAL_DEVICE_OUT_AUX_DIGITAL_1</id>
+            <back_end_name>DISPLAY_PORT-RX-1</back_end_name>
+            <max_channels>8</max_channels>
+            <channels>2</channels>
+            <snd_device_name>display-port1</snd_device_name>
+            <fractional_sr>1</fractional_sr>
+            <!--specify the supported bit format on DP end point -->
+            <!--this should be in the form of pal_audio_fmt_id-->
+            <!--e.g <supported_bit_format >PAL_AUDIO_FMT_PCM_S24_3LE</supported_bit_format>-->
+            <!--We support 24 bit for DP as of now, as SPF needs to conform to IEC 60958 packet format -->
+            <!--This can be changed to PAL_AUDIO_FMT_PCM_S32_LE if 32 bit e2e support is required-->
+            <supported_bit_format>PAL_AUDIO_FMT_PCM_S24_3LE</supported_bit_format>
+            <usecase>
+                <name>PAL_STREAM_VOICE_CALL</name>
+                <priority>2</priority>
             </usecase>
         </out-device>
         <out-device>
@@ -856,7 +1190,7 @@
             <samplerate>48000</samplerate>
             <usecase>
                 <name>PAL_STREAM_VOICE_CALL</name>
-                <priority>1</priority>
+                <priority>2</priority>
             </usecase>
         </out-device>
         <out-device>
@@ -869,7 +1203,7 @@
             <samplerate>48000</samplerate>
             <usecase>
                 <name>PAL_STREAM_VOICE_CALL</name>
-                <priority>1</priority>
+                <priority>2</priority>
             </usecase>
         </out-device>
         <out-device>
@@ -881,7 +1215,74 @@
             <fractional_sr>0</fractional_sr>
             <usecase>
                 <name>PAL_STREAM_VOICE_CALL</name>
-                <priority>1</priority>
+                <priority>2</priority>
+            </usecase>
+        </out-device>
+        <out-device>
+            <id>PAL_DEVICE_OUT_HAPTICS_DEVICE</id>
+            <back_end_name>CODEC_DMA-LPAIF_RXTX-RX-6</back_end_name>
+            <max_channels>2</max_channels>
+            <channels>1</channels>
+            <snd_device_name>haptics-dev</snd_device_name>
+            <haptics_protection_enabled>0</haptics_protection_enabled>
+            <usecase>
+                <name>PAL_STREAM_HAPTICS</name>
+                <custom-config key="haptics-over-wsa">
+                    <backend_name>CODEC_DMA-LPAIF_WSA2-RX-1</backend_name>
+                    <snd_device_name>haptics-dev</snd_device_name>
+                    <samplerate>48000</samplerate>
+                    <bit_width>16</bit_width>
+                </custom-config>
+            </usecase>
+        </out-device>
+        <out-device>
+            <id>PAL_DEVICE_OUT_ULTRASOUND</id>
+<!--  # ifdef NT_EDIT -->
+<!-- NT_EDIT added for ARBOK-149: add for arbok audio -->
+            <back_end_name>MI2S-LPAIF-RX-PRIMARY</back_end_name>
+            <max_channels>2</max_channels>
+            <channels>2</channels>
+            <snd_device_name>ultrasound-handset</snd_device_name>
+            <samplerate>48000</samplerate>
+            <bit_width>32</bit_width>
+<!--  # endif NT_EDIT -->
+            <usecase>
+                <name>PAL_STREAM_SENSOR_PCM_RENDERER</name>
+                <custom-config key="stereo-spkr">
+                    <snd_device_name>speaker</snd_device_name>
+                    <channels>2</channels>
+                </custom-config>
+                <custom-config key="top-spkr">
+                    <snd_device_name>handset</snd_device_name>
+                </custom-config>
+                <custom-config key="bottom-spkr">
+                    <snd_device_name>speaker-mono-2</snd_device_name>
+                </custom-config>
+            </usecase>
+        </out-device>
+        <out-device>
+            <id>PAL_DEVICE_OUT_ULTRASOUND_DEDICATED</id>
+<!--  # ifdef NT_EDIT -->
+<!-- NT_EDIT added for ARBOK-149: add for arbok audio -->
+            <back_end_name>MI2S-LPAIF-RX-PRIMARY</back_end_name>
+            <max_channels>2</max_channels>
+            <channels>2</channels>
+            <snd_device_name>handset</snd_device_name>
+            <samplerate>48000</samplerate>
+            <bit_width>32</bit_width>
+<!--  # endif NT_EDIT -->
+            <usecase>
+                <name>PAL_STREAM_SENSOR_PCM_RENDERER</name>
+                <custom-config key="stereo-spkr">
+                    <snd_device_name>speaker</snd_device_name>
+                    <channels>2</channels>
+                </custom-config>
+                <custom-config key="top-spkr">
+                    <snd_device_name>handset</snd_device_name>
+                </custom-config>
+                <custom-config key="bottom-spkr">
+                    <snd_device_name>speaker-mono-2</snd_device_name>
+                </custom-config>
             </usecase>
         </out-device>
         <out-device>
@@ -891,7 +1292,10 @@
             <channels>2</channels>
             <snd_device_name>dummy-dev</snd_device_name>
             <samplerate>48000</samplerate>
-            <bit_width>16</bit_width>
+<!--  # ifdef NT_EDIT -->
+<!-- NT_EDIT added for ARBOK-149: add for arbok audio -->
+            <bit_width>32</bit_width>
+<!--  # endif NT_EDIT -->
         </out-device>
     </device_profile>
     <in_streams>
@@ -1372,9 +1776,9 @@
                 <param bit_width="16" />
                 <!-- Module output channels -->
                 <param out_channels="1" />
-                <!-- Uncomment param lpi_enable="false" to run usecase in NLPI by default by default-->
+                <!-- Uncomment param lpi_enable="false" to run usecase in NLPI by default -->
                 <!-- move stream container in ACDB to NLPI when this is uncommented -->
-                <param lpi_enable="false" />
+                <!--param lpi_enable="false" /-->
                 <operating_modes>
                     <low_power capture_profile_handset="SINGLE_MIC_16KHZ_16BIT_LPI" capture_profile_headset="SINGLE_MIC_16KHZ_16BIT_HEADSET_LPI" />
                     <high_performance capture_profile_handset="SINGLE_MIC_48KHZ_16BIT_FFECNS" capture_profile_headset="SINGLE_MIC_48KHZ_16BIT_HEADSET_FFECNS" />
@@ -1589,7 +1993,7 @@
                 <name>HOTWORD_VOICE_UI</name>
                 <param vendor_uuid="7038ddc8-30f2-11e6-b0ac-40a8f03d3f15" />
                 <param interface_plugin_lib="libhotword_intf.so" />
-                <param get_module_version="false" />
+                <param get_module_version="true" />
                 <param merge_first_stage_sound_models="false" />
                 <param capture_keyword="2000" />
                 <param client_capture_read_delay="2000" />
