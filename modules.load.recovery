@@ -297,7 +297,6 @@ thermal_pause.ko
 tmecom-intf.ko
 touch_event_notifier.ko
 ucsi_qti_glink.ko
-uefi-log.ko
 ufs-qcom.ko
 ufshcd-crypto-qti.ko
 usb_f_ccid.ko
