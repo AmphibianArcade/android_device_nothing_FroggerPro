@@ -295,7 +295,7 @@ tcsrcc-tuna.ko
 thermal_config.ko
 thermal_pause.ko
 tmecom-intf.ko
-touch_event_notifier.ko
+nt_display_notifier.ko
 ucsi_qti_glink.ko
 ufs-qcom.ko
 ufshcd-crypto-qti.ko

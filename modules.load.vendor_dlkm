@@ -190,7 +190,7 @@ goodix_fp.ko
 hapticdrv.ko
 awinic_haptic.ko
 sgm38120-regulator.ko
-touch_event_notifier.ko
+nt_display_notifier.ko
 adsp_loader_dlkm.ko
 audio_pkt_dlkm.ko
 audio_prm_dlkm.ko
