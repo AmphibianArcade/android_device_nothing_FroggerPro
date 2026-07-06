@@ -113,7 +113,6 @@ lt9611uxc.ko
 max31760_fan.ko
 mdt_loader.ko
 mem-hooks.ko
-mem-offline.ko
 mem_buf.ko
 mem_buf_dev.ko
 mem_buf_msgq.ko
