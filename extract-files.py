@@ -60,6 +60,7 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/libstandbyfeature.so',
         'vendor/lib64/libvideooptfeature.so',
         'vendor/lib64/soundfx/libquasar.so',
+        'vendor/lib64/hw/libaudioeffecthal.qti.so',
     ): blob_fixup()
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
     'vendor/etc/init/qms.rc': blob_fixup()
