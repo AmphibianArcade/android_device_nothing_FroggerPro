@@ -104,6 +104,9 @@
     <!-- If this is true, the screen will come on when you unplug usb/power/whatever. -->
     <bool name="config_unplugTurnsOnScreen">true</bool>
 
+    <!-- Type of the tap sensor. Empty if tap is not supported. -->
+    <string name="config_dozeTapSensorType" translatable="false">org.lineageos.sensor.single_tap</string>
+
     <!-- Whether the scroll haptic feedback implementation is enabled for
     {@link InputDevice#SOURCE_TOUCHSCREEN}s. -->
     <bool name="config_viewTouchScreenHapticScrollFeedbackEnabled">true</bool>
