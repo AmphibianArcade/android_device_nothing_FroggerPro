@@ -987,7 +987,6 @@ vendor/etc/vintf/manifest/vendor.qti.qccvndhal_aidl-service.xml
 vendor/etc/vintf/manifest/vendor.qti.qspmhal-service.xml
 vendor/etc/vintf/manifest/vendor.qti.syshealthmon-service.xml
 vendor/etc/wifi/p2p_supplicant_overlay.conf
-vendor/etc/wifi/qca6750/WCNSS_qcom_cfg.ini;SYMLINK=vendor/firmware/wlan/qca_cld/qca6750/WCNSS_qcom_cfg.ini
 vendor/etc/wifi/wpa_supplicant_overlay.conf
 vendor/etc/xtwifi.conf
 vendor/firmware/aw882xx_acf.bin
