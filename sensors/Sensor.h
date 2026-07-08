@@ -138,6 +138,18 @@ class SingleTapSensor : public SysfsPollingOneShotSensor {
               static_cast<SensorType>(SENSOR_TYPE_BASE + 1)) {}
 };
 
+const std::string kTsUdfpsPressedPath = kTsPath + "fts_fod_pressed";
+const std::string kTsUdfpsEnabledPath = kTsPath + "fts_fod_enabled";
+
+class UdfpsSensor : public SysfsPollingOneShotSensor {
+  public:
+    UdfpsSensor(int32_t sensorHandle, ISensorsEventCallback* callback)
+        : SysfsPollingOneShotSensor(
+              sensorHandle, callback, kTsUdfpsPressedPath, kTsUdfpsEnabledPath,
+              "UDFPS Sensor", "org.lineageos.sensor.udfps",
+              static_cast<SensorType>(SENSOR_TYPE_BASE + 3)) {}
+};
+
 }  // namespace implementation
 }  // namespace subhal
 }  // namespace V2_1
