@@ -1,5 +1,6 @@
 # Audio
 ro.audio.ihaladaptervendorextension_enabled=true
+ro.audio.spatializer_enabled=false
 
 # Bluetooth
 bluetooth.core.le.max_number_of_concurrent_connections=10
