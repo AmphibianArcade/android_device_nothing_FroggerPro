@@ -1,0 +1,2 @@
+# Sensors
+vendor.noth.hardware.sensor.sensor_extension.ISensorExtension/default    u:object_r:hal_sensors_service:s0
