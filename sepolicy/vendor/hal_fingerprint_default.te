@@ -1,0 +1,10 @@
+hal_client_domain(hal_fingerprint_default, vendor_hal_perf)
+set_prop(hal_fingerprint_default, vendor_fingerprint_prop)
+
+allow hal_fingerprint_default fingerprint_device:chr_file rw_file_perms;
+allow hal_fingerprint_default self:netlink_socket create_socket_perms_no_ioctl;
+allow hal_fingerprint_default tee_device:chr_file rw_file_perms;
+allow hal_fingerprint_default vendor_dmabuf_qseecom_heap_device:chr_file r_file_perms;
+allow hal_fingerprint_default vendor_dmabuf_qseecom_ta_heap_device:chr_file r_file_perms;
+allow hal_fingerprint_default vendor_proc_fingerprint:file rw_file_perms;
+allow hal_fingerprint_default vendor_sysfs_fingerprint:file rw_file_perms;
