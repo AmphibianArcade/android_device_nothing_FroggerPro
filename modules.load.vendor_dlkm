@@ -109,6 +109,7 @@ i3c-master-msm-geni.ko
 qcom-pon.ko
 reboot-mode.ko
 qti_battery_charger.ko
+nothing_virtual_ntc.ko
 qcom-spmi-temp-alarm.ko
 qti_qmi_sensor_v2.ko
 qti_qmi_cdev.ko
