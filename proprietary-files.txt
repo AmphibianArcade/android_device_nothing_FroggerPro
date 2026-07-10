@@ -1948,7 +1948,6 @@ vendor/etc/vintf/manifest/vendor.qti.hardware.qconfig-service.xml
 vendor/etc/vintf/manifest/vendor.qti.hardware.servicetrackeraidl-service.xml
 vendor/etc/vintf/manifest/vendor.qti.memory.pasrmanager-service.xml
 vendor/etc/vintf/manifest/vendor.qti.syshealthmon-service.xml
-vendor/lib64/android.hardware.common-V2-ndk_platform.so
 vendor/lib64/deviceInfoServiceModuleNr.so
 vendor/lib64/hw/mbedtls_qti.so
 vendor/lib64/hw/qc_bcs_lib.so
