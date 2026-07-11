@@ -1826,6 +1826,10 @@ vendor/etc/thermal-engine.conf
 vendor/lib64/liblmthermallistner.so
 vendor/lib64/libthermalclient.so 
 
+# Thermal (Sltntc)
+vendor/etc/sltntc/sltntc.conf
+system_ext/bin/sltntc
+
 # Time services
 vendor/app/TimeService/TimeService.apk
 vendor/bin/time_daemon

@@ -33,3 +33,6 @@ ro.camerax.extensions.enabled=true
 
 # Radio
 masterclear.allow_retain_esim_profiles_after_fdr=true
+
+# Sltntc
+persist.sys.sltntc.enable=1

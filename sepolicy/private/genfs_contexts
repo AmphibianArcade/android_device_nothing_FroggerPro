@@ -1,0 +1,2 @@
+# Thermal 
+genfscon sysfs /devices/virtual/virtual_temp/shell/data      u:object_r:sysfs_virtual_temp:s0

@@ -1,0 +1,2 @@
+# Thermal
+type sysfs_virtual_temp, fs_type, sysfs_type;
