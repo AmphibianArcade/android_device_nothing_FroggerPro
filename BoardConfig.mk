@@ -104,10 +104,9 @@ TARGET_USES_VULKAN := true
 BOARD_BOOTCONFIG := \
     androidboot.hardware=qcom \
     androidboot.load_modules_parallel=true \
-    androidboot.selinux=permissive \
     androidboot.usbcontroller=a600000.dwc3
+    
 BOARD_KERNEL_CMDLINE := \
-    androidboot.selinux=permissive \
     androidboot.serialconsole=0 \
     firmware_class.path=/vendor/firmware,/vendor/firmware_mnt/image,/firmware/image \
     log_buf_len=1M \
