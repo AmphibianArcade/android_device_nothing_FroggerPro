@@ -1,0 +1,16 @@
+type hal_nt_charger, domain;
+type hal_nt_charger_exec, file_type, exec_type, vendor_file_type;
+type vendor_hal_charge_service, service_manager_type;
+
+init_daemon_domain(hal_nt_charger)
+
+add_service(hal_nt_charger, vendor_hal_charge_service)
+binder_call(hal_nt_charger, servicemanager)
+binder_use(hal_nt_charger)
+allow hal_nt_charger servicemanager:binder transfer;
+
+rw_dir_file(hal_nt_charger, vendor_sysfs_usb_supply)
+rw_dir_file(hal_nt_charger, vendor_sysfs_battery_supply)
+rw_dir_file(hal_nt_charger, vendor_proc_power_supply)
+r_dir_file(hal_nt_charger, sysfs_thermal)
+allow hal_nt_charger kmsg_device:chr_file { read write getattr open };

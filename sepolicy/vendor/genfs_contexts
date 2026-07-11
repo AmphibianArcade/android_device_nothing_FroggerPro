@@ -1,5 +1,7 @@
 # Battery
+genfscon proc /touchpanel/TP_charger_flags   u:object_r:vendor_proc_power_supply:s0
 genfscon sysfs /class/qcom-battery u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs /class/qcom-battery/usb_real_type u:object_r:vendor_sysfs_battery_supply:s0
 
 # Fingerprint
 genfscon proc /touchpanel/fod_mode         u:object_r:vendor_proc_fingerprint:s0

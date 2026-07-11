@@ -841,6 +841,12 @@ vendor/firmware/CAMERA_ICP_970.elf
 vendor/firmware/CAMERA_ICP_970.mbn
 vendor/firmware/CAMERA_ICP_970.mdt
 
+# Charging
+vendor/bin/hw/vendor.noth.hardware.charge-service
+vendor/etc/init/vendor.noth.hardware.charge-service.rc
+vendor/etc/vintf/manifest/vendor.noth.hardware.charge-service.xml
+vendor/lib64/vendor.noth.hardware.charge-V1-ndk.so
+
 # CNE
 vendor/app/CACertService/CACertService.apk
 vendor/app/CneApp/CneApp.apk

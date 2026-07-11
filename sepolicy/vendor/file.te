@@ -1,2 +1,5 @@
+# Charging
+type vendor_proc_power_supply, fs_type, proc_type;
+
 # Fingerprint
 type vendor_proc_fingerprint, fs_type, proc_type;

@@ -44,3 +44,12 @@ on property:sys.boot_completed=1 && property:persist.sys.sltntc.enable=1
 
 on boot
     chown system system /sys/devices/virtual/virtual_temp/shell/data
+
+# Offline charging (NtChg)
+on charger
+    start vendor.charge-default-poweroff
+
+service vendor.charge-default-poweroff /vendor/bin/hw/vendor.noth.hardware.charge-service
+    class core
+    group system
+    disabled
