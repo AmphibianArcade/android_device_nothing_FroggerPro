@@ -5,6 +5,10 @@
 # Charger
 /vendor/bin/hw/vendor\.noth\.hardware\.charge-service                 u:object_r:hal_nt_charger_exec:s0
 
+# NTF
+/dev/ntfeature             u:object_r:vendor_ntf_file:s0
+/vendor/bin/ntf-service    u:object_r:vendor_ntf_exec:s0
+
 # Sensors
 /vendor/bin/hw/vendor\.noth\.hardware\.sensor\.sensor_extension-service    u:object_r:hal_sensors_default_exec:s0
 
