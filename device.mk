@@ -235,6 +235,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.hardware_keystore_V3.xml
 
+# LiveDisplay
+$(call soong_config_set_bool,livedisplay_sdm,enable_dm,false)
+
+PRODUCT_PACKAGES += \
+    vendor.lineage.livedisplay-service.sdm
+
 # Media
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
