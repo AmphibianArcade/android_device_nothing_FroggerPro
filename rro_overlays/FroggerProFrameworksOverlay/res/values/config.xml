@@ -199,6 +199,13 @@
         <item>200</item>
     </integer-array>
 
+     <!-- Indicate available ColorDisplayManager.COLOR_MODE_xxx. -->
+    <integer-array name="config_availableColorModes">
+        <item>260</item>
+        <item>1</item>
+        <item>0</item>
+    </integer-array>
+
     <!-- Colors to configure the camera privacy light at different brightnesses. This array must
          have exactly one more entry than config_cameraPrivacyLightAlsLuxThresholds,
          or a length of zero if the feature isn't supported. If nonempty and the device doesn't have
