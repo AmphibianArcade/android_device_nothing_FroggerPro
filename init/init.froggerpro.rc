@@ -3,6 +3,10 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+on init
+    # Property used for sku specific sysconfig and permissions
+    setprop ro.boot.product.hardware.sku ${ro.boot.hardware.sku}
+
 on post-fs-data
     mkdir /data/vendor/camera 0775 camera camera
 
