@@ -55,3 +55,7 @@ service vendor.charge-default-poweroff /vendor/bin/hw/vendor.noth.hardware.charg
     class core
     group system
     disabled
+
+on property:sys.boot_completed=1
+ # Enable PowerHAL hint processing
+    setprop vendor.powerhal.init 1

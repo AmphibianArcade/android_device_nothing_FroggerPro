@@ -705,7 +705,6 @@ vendor/lib64/libarcsoft_triple_fusion.so
 vendor/lib64/libarcsoft_triple_sat.so
 vendor/lib64/libarcsoft_triple_zoomtranslator.so
 vendor/lib64/libcamerapostproc.so
-vendor/lib64/libcamerapoweroptfeature.so
 vendor/lib64/libcamxcommonutils.so
 vendor/lib64/libcamxcoreutils.so
 vendor/lib64/libcamxcsl.so
@@ -762,7 +761,6 @@ vendor/lib64/libqshcamera.so
 vendor/lib64/libtriplecam_optical_zoom_control.so
 vendor/lib64/libtriplecam_optical_zoom_fusion.so
 vendor/lib64/libtriplecam_video_optical_zoom.so
-vendor/lib64/libvideooptfeature.so
 vendor/lib64/vendor.noth.hardware.sensor.sensor_extension-V1-ndk_platform.so
 vendor/lib64/vendor.qti.hardware.camera.aon-service-impl.so
 vendor/lib64/vendor.qti.hardware.camera.offlinecamera-service-impl.so
@@ -1323,73 +1321,21 @@ vendor/lib64/libpdmapper.so
 vendor/lib64/libpdnotifier.so
 
 # Performance
-vendor/bin/hw/vendor.qti.hardware.perf2-hal-service
-vendor/bin/hw/vendor.qti.memory.pasrmanager-service
-vendor/bin/hw/vendor.qti.psiclient@1.0-service
-vendor/etc/init/vendor.qti.hardware.perf2-hal-service.rc
-vendor/etc/init/vendor.qti.memory.pasrmanager-service.rc
-vendor/etc/init/vendor.qti.psiclient@1.0-service.rc
-vendor/etc/lm/AppClassifierFeature.xml
-vendor/etc/lm/LightningLaunchesFeature.xml
-vendor/etc/lm/PrefAppsFeature.xml
-vendor/etc/lm/prekill/prekill_2GB.data
-vendor/etc/lm/prekill/prekill_4GB.data
-vendor/etc/lm/prekill/prekill_6GB.data
-vendor/etc/lm/PreKillFeature.xml
-vendor/etc/lm/ProCompFeature.xml
-vendor/etc/lm/QAPE.xml
-vendor/etc/lm/QGPE.xml
-vendor/etc/lm/QGPEActionMap.xml
-vendor/etc/lm/SilkyScrollsFeature.xml
 vendor/etc/perf/avcsysnodesconfigs.xml
 vendor/etc/perf/commonresourceconfigs.xml
 vendor/etc/perf/commonsysnodesconfigs.xml
 vendor/etc/perf/factorsconfig.xml
 vendor/etc/perf/perfboostsconfig.xml
 vendor/etc/perf/perfconfigstore.xml
-vendor/etc/perf/qapeboostsconfig.xml
-vendor/etc/perf/qapeconfigstore.xml
 vendor/etc/perf/targetavcsysnodesconfigs.xml
 vendor/etc/perf/targetconfig.xml
 vendor/etc/perf/targetresourceconfigs.xml
 vendor/etc/perf/targetsysnodesconfigs.xml
 vendor/etc/perf/testcommonresourceconfigs.xml
 vendor/etc/perf/testtargetresourceconfigs.xml
-vendor/etc/powerhint.xml
-vendor/etc/pwr/CameraPowerOptFeature.xml
-vendor/etc/pwr/GamePowerOptFeature.xml
-vendor/etc/pwr/OffScreenPowerOptFeature.xml
 vendor/etc/pwr/PowerFeatureConfig.xml
-vendor/etc/pwr/PSMPowerOptFeature.xml
-vendor/etc/pwr/VideoPowerOptFeature.xml
-vendor/etc/vintf/manifest/vendor.qti.hardware.perf2.xml
-vendor/lib64/hw/vendor.qti.memory.pasrmanager-impl.so
-vendor/lib64/libappclassifier.so
 vendor/lib64/libgame_enhance.so
-vendor/lib64/libgamepoweroptfeature.so
 vendor/lib64/libkernelmanager.so
-vendor/lib64/liblearningmodule.so
-vendor/lib64/liblightninglaunches.so
-vendor/lib64/libmemperfd.so
-vendor/lib64/libmeters-ns.so
-vendor/lib64/libmeters.so
-vendor/lib64/libpasrutils.so
-vendor/lib64/libperfconfig.so
-vendor/lib64/libperfdb.so
-vendor/lib64/libperfioctl.so
-vendor/lib64/libprefapps.so
-vendor/lib64/libprekill.so
-vendor/lib64/libqti-appclassifier.so
-vendor/lib64/libqti-perfd-client.so
-vendor/lib64/libqti-perfd.so
-vendor/lib64/libqti-perfextn-intf.so
-vendor/lib64/libsilkyscrolls.so
-vendor/lib64/libskewknob.so
-vendor/lib64/vendor.qti.hardware.iop@2.0.so
-vendor/lib64/vendor.qti.hardware.perf2-V1-ndk.so
-vendor/lib64/vendor.qti.memory.pasrmanager-V1-ndk.so
-vendor/lib64/vendor.qti.memory.pasrmanager@1.0.so
-vendor/lib64/vendor.qti.memory.pasrmanager@1.1.so
 vendor/lib64/vendor.qti.snapdragonServices-V1-ndk.so
 vendor/lib64/vendor.qti.snapdragonServices.qape-V1-ndk.so
 
@@ -1407,11 +1353,6 @@ vendor/etc/init/vendor.qti.hardware.alarm-service.rc
 vendor/etc/vintf/manifest/vendor.qti.hardware.alarm.xml
 vendor/lib64/hw/vendor.qti.hardware.alarm-impl.so
 vendor/lib64/vendor.qti.hardware.alarm-V1-ndk.so
-
-# Poweropt
-vendor/bin/poweropt-service
-vendor/etc/init/poweropt-service.rc
-vendor/lib64/libpowercore.so
 
 # QCC
 vendor/bin/qcc-vendor
@@ -1829,7 +1770,6 @@ vendor/etc/init/vendor.qti.tftp.rc
 vendor/bin/thermal-engine-v2
 vendor/etc/init/init_thermal-engine-v2.rc
 vendor/etc/thermal-engine.conf
-vendor/lib64/liblmthermallistner.so
 vendor/lib64/libthermalclient.so 
 
 # Thermal (Sltntc)
@@ -1891,7 +1831,6 @@ vendor/bin/hw/android.hardware.authsecret-service.thales-qti
 vendor/bin/hw/android.hardware.identity-service-qti
 vendor/bin/hw/qconfigservice
 vendor/bin/hw/vendor.qti.hardware.c2pa-aidl-service-qti
-vendor/bin/hw/vendor.qti.hardware.servicetrackeraidl-service
 vendor/bin/hw/vendor.qti.hardware.spu-service
 vendor/bin/init.qti.keymaster.sh
 vendor/bin/ipacm-diag
@@ -1953,15 +1892,11 @@ vendor/etc/vintf/manifest/snapdragon_services.xml
 vendor/etc/vintf/manifest/vendor.qti.hardware.c2pa-aidl-service.xml
 vendor/etc/vintf/manifest/vendor.qti.hardware.data.connectionaidl.xml
 vendor/etc/vintf/manifest/vendor.qti.hardware.data.iwlandata.xml
-vendor/etc/vintf/manifest/vendor.qti.hardware.power.powermodule.xml
 vendor/etc/vintf/manifest/vendor.qti.hardware.qconfig-service.xml
-vendor/etc/vintf/manifest/vendor.qti.hardware.servicetrackeraidl-service.xml
-vendor/etc/vintf/manifest/vendor.qti.memory.pasrmanager-service.xml
 vendor/etc/vintf/manifest/vendor.qti.syshealthmon-service.xml
 vendor/lib64/deviceInfoServiceModuleNr.so
 vendor/lib64/hw/mbedtls_qti.so
 vendor/lib64/hw/qc_bcs_lib.so
-vendor/lib64/hw/vendor.qti.hardware.servicetrackeraidl-impl.so
 vendor/lib64/libCB.so
 vendor/lib64/libDcfHalFramework.so
 vendor/lib64/libDcfHalLogger.so
@@ -1969,7 +1904,6 @@ vendor/lib64/libQtiSocket.so
 vendor/lib64/libTxPwrJni.so
 vendor/lib64/libaidenoiser.so
 vendor/lib64/libaidenoiserv2.so
-vendor/lib64/libapengine.so
 vendor/lib64/libarc.ion.so
 vendor/lib64/libbatching.so
 vendor/lib64/libbitmlengine.so
@@ -2005,7 +1939,6 @@ vendor/lib64/libkcl_a730.so
 vendor/lib64/libllvm-glnext.so
 vendor/lib64/libllvm-qcom.so
 vendor/lib64/libllvm-qgl.so
-vendor/lib64/liblmutils-ns.so
 vendor/lib64/libmctfengine_stub.so
 vendor/lib64/libmdsprpc.so
 vendor/lib64/libmfGhostDetection.so
@@ -2017,7 +1950,6 @@ vendor/lib64/libnoteengine.so
 vendor/lib64/libnspextensionsuperresolutionservice.so
 vendor/lib64/libntofflinepostproc.so
 vendor/lib64/libofestriping.so
-vendor/lib64/liboffscreenpoweroptfeature.so
 vendor/lib64/libois_channel_stub.so
 vendor/lib64/liboischannel.so
 vendor/lib64/libopencv.so
@@ -2027,12 +1959,9 @@ vendor/lib64/libopencv_imgproc.so
 vendor/lib64/libopestriping.so
 vendor/lib64/libpfr.so
 vendor/lib64/libpnc.so
-vendor/lib64/libprocomp.so
 vendor/lib64/libproj_qmot_tracker.so
 vendor/lib64/libproj_sot.so
-vendor/lib64/libpsmoptfeature.so
 vendor/lib64/libq-perflog.so
-vendor/lib64/libqapesdk.so
 vendor/lib64/libqconfigclient.so
 vendor/lib64/libqfdadapter.so
 vendor/lib64/libqfdservice.so
@@ -2042,12 +1971,7 @@ vendor/lib64/libqms.so
 vendor/lib64/libqseed3.so
 vendor/lib64/libqsegnet.so
 vendor/lib64/libqsocket.so
-vendor/lib64/libqti-lllite.so
 vendor/lib64/libqti-qesdk-secure.so
-vendor/lib64/libqti-s3tf.so
-vendor/lib64/libqti-scenariod.so
-vendor/lib64/libqti-sslite.so
-vendor/lib64/libqti-util.so
 vendor/lib64/libqti-utils.so
 vendor/lib64/libqtiidentitycredential.so
 vendor/lib64/libqwes.so
