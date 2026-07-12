@@ -10,6 +10,9 @@ genfscon sysfs /class/qcom-battery/usb_real_type u:object_r:vendor_sysfs_battery
 genfscon proc /touchpanel/fod_mode         u:object_r:vendor_proc_fingerprint:s0
 genfscon sysfs /panel_feature/fp_status    u:object_r:vendor_sysfs_fingerprint:s0
 
+# Scheduler (Walt)
+genfscon proc /sys/walt u:object_r:proc_sched_walt:s0
+
 # Touch
 genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_2_geni_se/880000.spi/spi_master/spi8/spi8.0/fts_gesture_single_tap_enabled    u:object_r:vendor_sysfs_touch:s0
 genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_2_geni_se/880000.spi/spi_master/spi8/spi8.0/fts_gesture_single_tap_pressed    u:object_r:vendor_sysfs_touch:s0

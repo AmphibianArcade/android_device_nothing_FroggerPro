@@ -9,3 +9,6 @@ type vendor_ntf_file, file_type, dev_type;
 
 # Vibrator
 type vendor_sysfs_vibrator, fs_type, sysfs_type;
+
+# Walt
+type proc_sched_walt, fs_type, proc_type;
