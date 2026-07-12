@@ -1,3 +1,4 @@
 allow hal_vibrator_default aac_richtap_device:{file chr_file} rw_file_perms;
+rw_dir_file(hal_vibrator_default, vendor_sysfs_vibrator)
 
 r_dir_file(hal_vibrator_default, vendor_persist_data_file)
