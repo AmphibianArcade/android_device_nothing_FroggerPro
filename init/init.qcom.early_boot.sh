@@ -411,7 +411,7 @@ case "$target" in
         setprop vendor.display.supports_background_blur 1
         case "$soc_hwid" in
             655|681|659|694|686)
-                setprop vendor.display.supports_background_blur 0
+               # setprop vendor.display.supports_background_blur 0
                 ;;
         esac
         ;;
