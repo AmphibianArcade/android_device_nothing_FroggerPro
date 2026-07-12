@@ -224,7 +224,10 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
 DEVICE_MANIFEST_FILE += \
     $(DEVICE_PATH)/vintf/manifest.xml \
     $(AUDIO_HAL_DIR)/configs/sun/manifest_audio_qti_services.xml
-    
+
+ODM_MANIFEST_FILES += $(DEVICE_PATH)/vintf/manifest_FroggerPro.xml    
+ODM_MANIFEST_SKUS += JPN
+ODM_MANIFEST_JPN_FILES += $(DEVICE_PATH)/vintf/manifest_JPN.xml
 
 # Wi-Fi
 BOARD_WLAN_DEVICE := qcwcn

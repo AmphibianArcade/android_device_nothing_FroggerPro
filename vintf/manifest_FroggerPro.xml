@@ -1,0 +1,5 @@
+<manifest version="1.0" type="device" target-level="202404">
+    <hal format="aidl" override="true">
+        <name>android.hardware.secure_element</name>
+    </hal>
+</manifest>
