@@ -346,63 +346,6 @@
             "ResetOnInit": true
         },
         {
-            "Name": "sysDevicesSystemCpuCpu0CpufreqWaltTargetLoadThresh",
-            "Path": "/sys/devices/system/cpu/cpu0/cpufreq/walt/target_load_thresh",
-            "Values": [
-                "0"
-            ],
-            "DefaultIndex": 0,
-            "ResetOnInit": true
-        },
-        {
-            "Name": "sysDevicesSystemCpuCpu3CpufreqWaltTargetLoadThresh",
-            "Path": "/sys/devices/system/cpu/cpu3/cpufreq/walt/target_load_thresh",
-            "Values": [
-                "0"
-            ],
-            "DefaultIndex": 0,
-            "ResetOnInit": true
-        },
-        {
-            "Name": "sysDevicesSystemCpuCpu7CpufreqWaltTargetLoadThresh",
-            "Path": "/sys/devices/system/cpu/cpu7/cpufreq/walt/target_load_thresh",
-            "Values": [
-                "0"
-            ],
-            "DefaultIndex": 0,
-            "ResetOnInit": true
-        },
-        {
-            "Name": "sysDevicesSystemCpuCpu0CpufreqWaltTargetLoadShift",
-            "Path": "/sys/devices/system/cpu/cpu0/cpufreq/walt/target_load_shift",
-            "Values": [
-                "0",
-                "4"
-            ],
-            "DefaultIndex": 0,
-            "ResetOnInit": true
-        },
-        {
-            "Name": "sysDevicesSystemCpuCpu3CpufreqWaltTargetLoadShift",
-            "Path": "/sys/devices/system/cpu/cpu3/cpufreq/walt/target_load_shift",
-            "Values": [
-                "0",
-                "4"
-            ],
-            "DefaultIndex": 0,
-            "ResetOnInit": true
-        },
-        {
-            "Name": "sysDevicesSystemCpuCpu7CpufreqWaltTargetLoadShift",
-            "Path": "/sys/devices/system/cpu/cpu7/cpufreq/walt/target_load_shift",
-            "Values": [
-                "0",
-                "4"
-            ],
-            "DefaultIndex": 0,
-            "ResetOnInit": true
-        },
-        {
             "Name": "procSysWaltSchedUpmigrate",
             "Path": "/proc/sys/walt/sched_upmigrate",
             "Values": [
@@ -737,42 +680,6 @@
             "PowerHint": "CAMERA_STREAMING_LOW",
             "Node": "sysDevicesSystemCpuCpu0CpufreqWaltPl",
             "Value": "0",
-            "Duration": 0
-        },
-        {
-            "PowerHint": "CAMERA_STREAMING_LOW",
-            "Node": "sysDevicesSystemCpuCpu0CpufreqWaltTargetLoadThresh",
-            "Value": "0",
-            "Duration": 0
-        },
-        {
-            "PowerHint": "CAMERA_STREAMING_LOW",
-            "Node": "sysDevicesSystemCpuCpu3CpufreqWaltTargetLoadThresh",
-            "Value": "0",
-            "Duration": 0
-        },
-        {
-            "PowerHint": "CAMERA_STREAMING_LOW",
-            "Node": "sysDevicesSystemCpuCpu7CpufreqWaltTargetLoadThresh",
-            "Value": "0",
-            "Duration": 0
-        },
-        {
-            "PowerHint": "CAMERA_STREAMING_LOW",
-            "Node": "sysDevicesSystemCpuCpu0CpufreqWaltTargetLoadShift",
-            "Value": "4",
-            "Duration": 0
-        },
-        {
-            "PowerHint": "CAMERA_STREAMING_LOW",
-            "Node": "sysDevicesSystemCpuCpu3CpufreqWaltTargetLoadShift",
-            "Value": "4",
-            "Duration": 0
-        },
-        {
-            "PowerHint": "CAMERA_STREAMING_LOW",
-            "Node": "sysDevicesSystemCpuCpu7CpufreqWaltTargetLoadShift",
-            "Value": "4",
             "Duration": 0
         },
         {
