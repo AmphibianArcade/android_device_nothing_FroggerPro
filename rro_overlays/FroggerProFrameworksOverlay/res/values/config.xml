@@ -113,6 +113,9 @@
     <!-- Whether to enable fp unlock when screen turns off on udfps devices -->
     <bool name="config_screen_off_udfps_enabled">true</bool>
 
+    <!-- Doze: should the TYPE_PICK_UP_GESTURE sensor be used as a pulse signal. -->
+    <bool name="config_dozePulsePickup">true</bool>
+
     <!-- Whether the scroll haptic feedback implementation is enabled for
     {@link InputDevice#SOURCE_TOUCHSCREEN}s. -->
     <bool name="config_viewTouchScreenHapticScrollFeedbackEnabled">true</bool>
