@@ -42,6 +42,11 @@ on property:sys.boot_completed=1 && property:persist.sys.sltntc.enable=1
 on boot
     chown system system /sys/devices/virtual/virtual_temp/shell/data
 
+# NtChg    
+on property:sys.boot_completed=1
+    chown system system /sys/class/qcom-battery/usb_real_type
+    restorecon /sys/class/qcom-battery/usb_real_type
+
 # Offline charging (NtChg)
 on charger
     start vendor.charge-default-poweroff
