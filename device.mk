@@ -167,11 +167,10 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.memtrack-service
 
 # eUICC
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_EEA/android.hardware.telephony.euicc.xml \
-    frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_JPN/android.hardware.telephony.euicc.xml \
-    frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_ROW/android.hardware.telephony.euicc.xml \
-    frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_TUR/android.hardware.telephony.euicc.xml
+$(foreach sku, EEA JPN ROW TUR, \
+    $(eval PRODUCT_COPY_FILES += \
+        frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_$(sku)/android.hardware.telephony.euicc.xml))
+
 
 # Fastboot
 PRODUCT_PACKAGES += \
@@ -345,12 +344,10 @@ PRODUCT_PACKAGES += \
     sensors.dynamic_sensor_hal
 
 # SKUs
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/sku/build_EEA.prop:$(TARGET_COPY_OUT_ODM)/etc/build_EEA.prop \
-    $(LOCAL_PATH)/sku/build_IND.prop:$(TARGET_COPY_OUT_ODM)/etc/build_IND.prop \
-    $(LOCAL_PATH)/sku/build_JPN.prop:$(TARGET_COPY_OUT_ODM)/etc/build_JPN.prop \
-    $(LOCAL_PATH)/sku/build_TUR.prop:$(TARGET_COPY_OUT_ODM)/etc/build_TUR.prop
-
+$(foreach sku, EEA JPN IND TUR, \
+    $(eval PRODUCT_COPY_FILES += \
+        $(LOCAL_PATH)/sku/build_$(sku).prop:$(TARGET_COPY_OUT_ODM)/etc/build_$(sku).prop))
+        
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
