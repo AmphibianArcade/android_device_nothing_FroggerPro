@@ -32,7 +32,7 @@ media.stagefright.audio.deep=false
 ro.product.property_source_order=odm,vendor,product,system_ext,system
 
 # Telephony
-ro.telephony.sim_slots.count=3
+ro.telephony.sim_slots.count=2
 telephony.active_modems.max_count=2  
 
 # Vnd FWK
