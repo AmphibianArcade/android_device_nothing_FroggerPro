@@ -51,4 +51,22 @@
     <!-- IWLAN network service package name to bind to by default. If none is specified in an
          overlay, an empty string is passed in -->
     <string translatable="false" name="config_wlan_network_service_package">vendor.qti.iwlan</string>
+
+         <!-- Device-specific array of SIM slot indexes which are are embedded eUICCs.
+     e.g. If a device has two physical slots with indexes 0, 1, and slot 1 is an
+     eUICC, then the value of this array should be:
+          <integer-array name="non_removable_euicc_slots">
+               <item>1</item>
+          </integer-array>
+     If a device has three physical slots and slot 1 and 2 are eUICCs, then the value of
+     this array should be:
+          <integer-array name="non_removable_euicc_slots">
+               <item>1</item>
+               <item>2</item>
+          </integer-array>
+     This is used to differentiate between removable eUICCs and built in eUICCs, and should
+     be set by OEMs for devices which use eUICCs. -->
+     <integer-array name="non_removable_euicc_slots">
+        <item>1</item>
+    </integer-array>
 </resources>
