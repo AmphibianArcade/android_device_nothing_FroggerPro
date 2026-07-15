@@ -1464,7 +1464,11 @@ product/etc/permissions/UimService.xml
 product/framework/uimgbalibrary.jar
 product/framework/uimservicelibrary.jar
 system_ext/app/atfwd/atfwd.apk
+system_ext/priv-app/QtiTelephony/QtiTelephony.apk
 system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
+system_ext/framework/qti-telephony-common.jar
+system_ext/framework/qcrilhook.jar
+system_ext/etc/permissions/qcrilhook.xml
 vendor/bin/embmsslServer
 vendor/bin/hw/qcrilNrd
 vendor/bin/init.qcrild.sh
