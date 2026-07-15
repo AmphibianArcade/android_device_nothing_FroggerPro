@@ -6,7 +6,10 @@
 package org.lineageos.settings.esimswitcher
 
 import android.content.Context
+import android.os.Handler
+import android.os.Looper
 import android.os.SystemProperties
+import android.telephony.TelephonyManager
 import android.util.Log
 import com.qti.extphone.Client
 import com.qti.extphone.ExtPhoneCallbackListener
@@ -58,6 +61,12 @@ class EsimController private constructor(private val context: Context) {
                 if (expectedSim2Type != -1 && typeVal != expectedSim2Type) {
                     Log.w(TAG, "Modem state ($typeVal) mismatch. Enforcing ($expectedSim2Type)")
                     enforceCorrectState()
+                } else if (expectedSim2Type != -1) {
+                    Log.w(TAG, "Config accepted. Bouncing radio to apply hardware switch.")
+                    bounceRadio()
+
+                    // Reset expected state so we don't bounce the radio on random modem events
+                    expectedSim2Type = -1
                 }
             }
         }
@@ -67,6 +76,24 @@ class EsimController private constructor(private val context: Context) {
         expectedSim2Type = SystemProperties.getInt(PROPERTY_ESIM_SWITCH, -1)
         extTelephonyManager = ExtTelephonyManager.getInstance(context)
         extTelephonyManager?.connectService(serviceCallback)
+    }
+    
+    fun bounceRadio() {
+        val tm = context.getSystemService(TelephonyManager::class.java)
+        if (tm == null) {
+            Log.e(TAG, "TelephonyManager is null, cannot bounce radio")
+            return
+        }
+
+        // Request a radio power off for the modem to apply new SIM state.
+        Log.w(TAG, "Powering radio OFF")
+        tm.requestRadioPowerOffForReason(TelephonyManager.RADIO_POWER_REASON_USER)
+
+        // Wait 3 seconds for the baseband to tear down the connection, might not be needed ?
+        Handler(Looper.getMainLooper()).postDelayed({
+            Log.w(TAG, "Powering radio ON")
+            tm.clearRadioPowerOffForReason(TelephonyManager.RADIO_POWER_REASON_USER)
+        }, 3000)
     }
 
     fun getEsimEnabled(): Boolean {
