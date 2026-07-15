@@ -8,6 +8,7 @@
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.SECURE_ELEMENT_PRIVILEGED_OPERATION" />
+    <uses-permission android:name="com.qualcomm.qti.permission.USE_EXT_TELEPHONY_SERVICE" />
 
     <application
         android:directBootAware="true"
