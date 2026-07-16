@@ -15,9 +15,9 @@ android_app {
     platform_apis: true,
     system_ext_specific: true,
     privileged: true,
-    privapp_allowlist: "org.lineageos.settings.esimswitcher.xml",
+    privapp_allowlist: "org.lineageos.settings.device.esimswitcher.xml",
 
-    required: ["default-permissions-org.lineageos.settings.esimswitcher"],
+    required: ["default-permissions-org.lineageos.settings.device.esimswitcher"],
 
     static_libs: [
         "androidx.core_core",
@@ -34,8 +34,8 @@ android_app {
 }
 
 prebuilt_etc {
-    name:  "default-permissions-org.lineageos.settings.esimswitcher",
-    src: "default-permissions-org.lineageos.settings.esimswitcher.xml",
+    name:  "default-permissions-org.lineageos.settings.device.esimswitcher",
+    src: "default-permissions-org.lineageos.settings.device.esimswitcher.xml",
     sub_dir: "default-permissions",
     system_ext_specific: true,
 }

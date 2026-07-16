@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.settings.esimswitcher
+package org.lineageos.settings.device.esimswitcher
 
 import android.content.Context
 import android.os.Handler
