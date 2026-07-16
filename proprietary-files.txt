@@ -1071,6 +1071,9 @@ vendor/lib64/ese_weaver_thales.so
 vendor/lib64/hw/libEseUtils.so
 vendor/lib64/libGPQeSE.so
 
+# Euicc
+product/priv-app/EuiccGoogle/EuiccGoogle.apk;REQUIRED=privapp-permissions-google-euicc
+
 # Fingerprint
 vendor/bin/hw/vendor.nothing.hardware.biometrics.fingerprint-service
 vendor/etc/init/vendor.nothing.hardware.biometrics.fingerprint-service.rc

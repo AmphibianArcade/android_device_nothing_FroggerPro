@@ -1,0 +1,6 @@
+prebuilt_etc {
+    name: "privapp-permissions-google-euicc",
+    src: "privapp-permissions-google-euicc.xml",
+    sub_dir: "permissions",
+    product_specific: true
+}
