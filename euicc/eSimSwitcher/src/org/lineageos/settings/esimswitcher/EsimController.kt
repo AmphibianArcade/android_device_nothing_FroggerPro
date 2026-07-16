@@ -20,8 +20,12 @@ import com.qti.extphone.ServiceCallback
 class EsimController private constructor(private val context: Context) {
     private var extTelephonyManager: ExtTelephonyManager? = null
     private var client: Client? = null
-    private var isConnected = false
-    private var expectedSim2Type = -1
+    @Volatile private var isConnected = false
+    @Volatile private var expectedSim2Type = -1
+
+    private val mainHandler = Handler(Looper.getMainLooper())
+    private val pendingCallbacks = mutableListOf<(Boolean) -> Unit>()
+    private var pendingBounce: Runnable? = null
 
     private val serviceCallback =
         object : ServiceCallback {
@@ -36,7 +40,6 @@ class EsimController private constructor(private val context: Context) {
                             intArrayOf(ExtPhoneCallbackListener.EVENT_ON_SIM_TYPE_CHANGED),
                         )
                 }
-                enforceCorrectState()
             }
 
             override fun onDisconnected() {
@@ -54,30 +57,70 @@ class EsimController private constructor(private val context: Context) {
                 val typeVal = simTypes[1].get()
                 Log.d(TAG, "onSimTypeChanged: SIM2 is now $typeVal")
 
-                // Sync hardware state to system property
                 SystemProperties.set(PROPERTY_ESIM_SWITCH, typeVal.toString())
 
-                // Prevent modem from reverting unexpectedly
-                if (expectedSim2Type != -1 && typeVal != expectedSim2Type) {
-                    Log.w(TAG, "Modem state ($typeVal) mismatch. Enforcing ($expectedSim2Type)")
-                    enforceCorrectState()
-                } else if (expectedSim2Type != -1) {
-                    Log.w(TAG, "Config accepted. Bouncing radio to apply hardware switch.")
-                    bounceRadio()
-
-                    // Reset expected state so we don't bounce the radio on random modem events
+                if (expectedSim2Type != -1) {
+                    if (typeVal != expectedSim2Type) {
+                        Log.w(TAG, "Modem reported $typeVal, expected $expectedSim2Type for in-flight toggle")
+                    } else {
+                        Log.d(TAG, "Toggle confirmed by modem, bouncing radio to apply")
+                        bounceRadio()
+                    }
                     expectedSim2Type = -1
                 }
             }
         }
 
-    fun init() {
-        Log.d(TAG, "init: Binding ExtTelephony")
-        expectedSim2Type = SystemProperties.getInt(PROPERTY_ESIM_SWITCH, -1)
-        extTelephonyManager = ExtTelephonyManager.getInstance(context)
-        extTelephonyManager?.connectService(serviceCallback)
+        private fun flushPendingCallbacks(success: Boolean) {
+            val callbacks = synchronized(pendingCallbacks) {
+                val copy = pendingCallbacks.toList()
+                pendingCallbacks.clear()
+                copy
+            }
+            callbacks.forEach { it(success) }
+        }
+
+
+        fun ensureBound(timeoutMs: Long = 5000, callback: (Boolean) -> Unit) {
+        if (isConnected && client != null) {
+            callback(true)
+            return
+        }
+
+        synchronized(pendingCallbacks) { pendingCallbacks.add(callback) }
+
+        val manager = extTelephonyManager ?: ExtTelephonyManager.getInstance(context)
+        if (manager == null) {
+            Log.e(TAG, "ExtTelephonyManager still unavailable")
+            flushPendingCallbacks(success = false)
+            return
+        }
+        extTelephonyManager = manager
+
+        try {
+            manager.connectService(serviceCallback)
+        } catch (e: Exception) {
+            Log.e(TAG, "connectService failed from ensureBound", e)
+            flushPendingCallbacks(success = false)
+            return
+        }
+
+        mainHandler.postDelayed({
+            if (!isConnected) {
+                Log.e(TAG, "ensureBound timed out after ${timeoutMs}ms")
+                flushPendingCallbacks(success = false)
+            }
+        }, timeoutMs)
     }
-    
+
+    fun init() {
+        Log.d(TAG, "init: Attempting to bind to ExtTelephony...")
+        expectedSim2Type = SystemProperties.getInt(PROPERTY_ESIM_SWITCH, -1)
+        ensureBound {success -> 
+            if (success) Log.i(TAG, "Bind success")
+        }
+    }
+
     fun bounceRadio() {
         val tm = context.getSystemService(TelephonyManager::class.java)
         if (tm == null) {
@@ -85,15 +128,37 @@ class EsimController private constructor(private val context: Context) {
             return
         }
 
-        // Request a radio power off for the modem to apply new SIM state.
-        Log.w(TAG, "Powering radio OFF")
-        tm.requestRadioPowerOffForReason(TelephonyManager.RADIO_POWER_REASON_USER)
+        try {
+            Log.w(TAG, "Powering radio OFF")
+            tm.requestRadioPowerOffForReason(TelephonyManager.RADIO_POWER_REASON_USER)
+        } catch (e: Exception) {
+            Log.e(TAG, "requestRadioPowerOffForReason failed", e)
+            return
+        }
 
-        // Wait 3 seconds for the baseband to tear down the connection, might not be needed ?
-        Handler(Looper.getMainLooper()).postDelayed({
-            Log.w(TAG, "Powering radio ON")
-            tm.clearRadioPowerOffForReason(TelephonyManager.RADIO_POWER_REASON_USER)
-        }, 3000)
+        cancelPendingBounce() // avoid stacking multiple pending bounces
+
+        val bounceBack = Runnable {
+            pendingBounce = null
+            val tm2 = context.getSystemService(TelephonyManager::class.java)
+            if (tm2 == null) {
+                Log.e(TAG, "TelephonyManager gone by bounce-back time, skipping")
+                return@Runnable
+            }
+            try {
+                Log.w(TAG, "Powering radio ON")
+                tm2.clearRadioPowerOffForReason(TelephonyManager.RADIO_POWER_REASON_USER)
+            } catch (e: Exception) {
+                Log.e(TAG, "clearRadioPowerOffForReason failed", e)
+            }
+        }
+        pendingBounce = bounceBack
+        mainHandler.postDelayed(bounceBack, 3000)
+    }
+
+    private fun cancelPendingBounce() {
+        pendingBounce?.let { mainHandler.removeCallbacks(it) }
+        pendingBounce = null
     }
 
     fun getEsimEnabled(): Boolean {
@@ -121,25 +186,7 @@ class EsimController private constructor(private val context: Context) {
             extTelephonyManager?.setSimType(client, config)
         } catch (e: Exception) {
             Log.e(TAG, "Failed to call setSimType", e)
-        }
-    }
-
-    private fun enforceCorrectState() {
-        if (expectedSim2Type == -1) return
-        val currentTypes = extTelephonyManager?.currentSimType
-
-        if (
-            currentTypes != null &&
-                currentTypes.size == 2 &&
-                currentTypes[1].get() != expectedSim2Type
-        ) {
-            val config =
-                arrayOf(QtiSimType(QtiSimType.SIM_TYPE_PHYSICAL), QtiSimType(expectedSim2Type))
-            try {
-                extTelephonyManager?.setSimType(client, config)
-            } catch (e: Exception) {
-                Log.e(TAG, "Failed to enforce correct SIM type", e)
-            }
+            expectedSim2Type = -1
         }
     }
 

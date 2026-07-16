@@ -26,23 +26,27 @@ class EsimSettingsFragment :
 
     override fun onPreferenceChange(preference: Preference, newValue: Any?): Boolean {
         val enable = newValue as Boolean
-        if (enable) {
-            AlertDialog.Builder(requireContext())
-                .setMessage(R.string.esim_toggle_dialog)
-                .setNegativeButton(R.string.esim_toggle_dialog_cancel) { dialog, _ ->
-                    dialog.dismiss()
+        EsimController.getInstance(requireContext()).ensureBound { success ->
+            if (success) {
+                if (enable) {
+                    AlertDialog.Builder(requireContext())
+                        .setMessage(R.string.esim_toggle_dialog)
+                        .setNegativeButton(R.string.esim_toggle_dialog_cancel) { dialog, _ ->
+                            dialog.dismiss()
+                        }
+                        .setPositiveButton(R.string.esim_toggle_dialog_ok) { dialog, _ ->
+                            dialog.dismiss()
+                            controller.setEsimEnabled(enable)
+                            (preference as? SwitchPreferenceCompat)?.isChecked = true
+                        }
+                        .show()
+                } else {
+                    controller.setEsimEnabled(enable)
+                    (preference as? SwitchPreferenceCompat)?.isChecked = false
                 }
-                .setPositiveButton(R.string.esim_toggle_dialog_ok) { dialog, _ ->
-                    dialog.dismiss()
-                    controller.setEsimEnabled(true)
-                    (preference as? SwitchPreferenceCompat)?.isChecked = true
-                }
-                .show()
-            return false
-        } else {
-            controller.setEsimEnabled(false)
-            return true
-        }
+            }
+        } 
+        return false
     }
 
     companion object {
