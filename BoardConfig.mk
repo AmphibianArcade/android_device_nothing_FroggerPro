@@ -229,6 +229,8 @@ ODM_MANIFEST_FILES += $(DEVICE_PATH)/vintf/manifest_FroggerPro.xml
 ODM_MANIFEST_SKUS += JPN
 ODM_MANIFEST_JPN_FILES += $(DEVICE_PATH)/vintf/manifest_JPN.xml
 
+DEVICE_MATRIX_FILE += hardware/qcom-caf/common/compatibility_matrix.xml
+
 # Wi-Fi
 BOARD_WLAN_DEVICE := qcwcn
 BOARD_HOSTAPD_DRIVER := NL80211
