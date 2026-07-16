@@ -17,6 +17,8 @@ android_app {
     privileged: true,
     privapp_allowlist: "org.lineageos.settings.esimswitcher.xml",
 
+    required: ["default-permissions-org.lineageos.settings.esimswitcher"],
+
     static_libs: [
         "androidx.core_core",
         "androidx.preference_preference",
@@ -29,4 +31,11 @@ android_app {
         proguard_flags_files: ["proguard.flags"],
         shrink_resources: true,
     },
+}
+
+prebuilt_etc {
+    name:  "default-permissions-org.lineageos.settings.esimswitcher",
+    src: "default-permissions-org.lineageos.settings.esimswitcher.xml",
+    sub_dir: "default-permissions",
+    system_ext_specific: true,
 }
