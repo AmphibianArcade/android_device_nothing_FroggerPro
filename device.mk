@@ -172,6 +172,7 @@ $(foreach sku, EEA JPN ROW TUR, \
         frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_$(sku)/android.hardware.telephony.euicc.xml))
 
 PRODUCT_PACKAGES += \
+    EuiccPolicy \
     NothingEsimSwitcher
 
 # Fastboot
@@ -270,6 +271,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_PACKAGES += \
     FroggerProApertureDevOverlay \
     FroggerProApertureOverlay \
+    FroggerProEuiccOverlay \
     FroggerProFrameworksOverlay \
     FroggerProSettingsOverlay \
     FroggerProSettingsProviderOverlay \
