@@ -8,6 +8,8 @@ DEVICE_PATH := device/nothing/FroggerPro
 include build/make/target/board/BoardConfigMainlineCommon.mk
 include vendor/nothing/FroggerPro/BoardConfigVendor.mk
 
+include hardware/nothing/config.mk
+
 # A/B
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
