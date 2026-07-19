@@ -1,2 +1,0 @@
-# eSim Switcher
-user=_app seinfo=platform isPrivApp=true name=org.lineageos.settings.device.esimswitcher domain=nt_esim_app type=privapp_data_file levelFrom=all
