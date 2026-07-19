@@ -237,6 +237,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.hardware_keystore_V3.xml
 
+# Lineage Health
+$(call soong_config_set,lineage_health,charging_control_charging_path,/proc/charger/usb_charger_en)
+
+PRODUCT_PACKAGES += \
+    vendor.lineage.health-service.default   
+
 # LiveDisplay
 $(call soong_config_set_bool,livedisplay_sdm,enable_dm,false)
 
