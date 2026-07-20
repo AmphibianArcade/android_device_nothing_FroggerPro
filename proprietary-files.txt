@@ -1194,6 +1194,16 @@ vendor/lib64/libxtadapter.so
 vendor/lib64/vendor.qti.gnss-service.so
 vendor/lib64/vendor.qti.gnss-V7-ndk.so
 
+# FeliCa 
+product/app/MobileFeliCaClient/MobileFeliCaClient.apk;PRESIGNED
+product/app/MobileFeliCaMenuMainApp/MobileFeliCaMenuMainApp.apk;PRESIGNED
+product/app/MobileFeliCaSettingApp/MobileFeliCaSettingApp.apk;PRESIGNED
+product/app/MobileFeliCaWebPluginBoot/MobileFeliCaWebPluginBoot.apk;PRESIGNED
+vendor/etc/felica/common.cfg
+vendor/etc/felica/mfm.cfg
+vendor/etc/felica/mfs.cfg
+product/etc/sysconfig/felica-allowlist.xml
+
 # Graphics
 vendor/app/com.qualcomm.qti.gpudrivers.sun.api35/com.qualcomm.qti.gpudrivers.sun.api35.apk
 vendor/lib64/egl/eglSubDriverAndroid.so
