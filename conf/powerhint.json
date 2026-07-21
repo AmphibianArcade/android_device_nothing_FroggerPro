@@ -465,6 +465,28 @@
             ],
             "DefaultIndex": 0,
             "ResetOnInit": true
+        },
+                {
+            "Name": "UclampTAMin",
+            "Path": "/dev/cpuctl/top-app/cpu.uclamp.min",
+            "Values": [
+                "0",
+                "20",
+                "25",
+                "35",
+                "50"
+            ],
+            "DefaultIndex": 0,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "UclampTALatency",
+            "Path": "/dev/cpuctl/top-app/cpu.uclamp.latency_sensitive",
+            "Values": [
+                "1",
+                "0"
+            ],
+            "ResetOnInit": true
         }
     ],
     "Actions": [
