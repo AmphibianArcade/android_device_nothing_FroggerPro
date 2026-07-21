@@ -222,6 +222,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fstab.default \
     fstab.default.vendor_ramdisk \
+    fstab.zram.2g \
     init.class_main.sh \
     init.froggerpro.rc \
     init.qcom.early_boot.sh \

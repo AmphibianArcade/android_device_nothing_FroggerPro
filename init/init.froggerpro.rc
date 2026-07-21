@@ -64,3 +64,6 @@ service vendor.charge-default-poweroff /vendor/bin/hw/vendor.noth.hardware.charg
 on property:sys.boot_completed=1
  # Enable PowerHAL hint processing
     setprop vendor.powerhal.init 1
+
+# ZRAM 
+    swapon_all /odm/etc/fstab.zram.2g   
