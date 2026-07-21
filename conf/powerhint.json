@@ -1023,6 +1023,18 @@
             "Node": "sysKernelMsmPerformanceParametersCpuMinFreq",
             "Value": "0:1843200 1:1843200 2:1843200 3:2400000 4:2400000 5:2400000 6:2400000 7:2803200",
             "Duration": 1000
+        },
+        {
+        "PowerHint": "EXPENSIVE_RENDERING",
+        "Node": "UclampTAMin",
+        "Duration": 0,
+        "Value": "20"
+        },
+        {
+        "PowerHint": "EXPENSIVE_RENDERING",
+        "Node": "UclampTALatency",
+        "Duration": 0,
+        "Value": "1"
         }
     ]
 }
