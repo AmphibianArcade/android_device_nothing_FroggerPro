@@ -323,6 +323,9 @@
         <item>/vendor/lib64/libsdmextension.so</item>
     </string-array>
 
+    <!-- Bytes that the PinnerService will pin for WebView -->
+    <integer name="config_pinnerWebviewPinBytes">20971520</integer>
+
     <!-- List of paths to serial ports that are available to the serial manager.
          for example, /dev/ttyUSB0
     -->
