@@ -110,7 +110,6 @@ ro.frp.pst=/dev/block/bootdevice/by-name/frp
 persist.sys.fuse.passthrough.enable=true
 
 # Graphics
-debug.egl.hw=0
 debug.graphics.game_default_frame_rate.disabled=0
 debug.hwui.8bit_hdr_headroom=8
 debug.sf.auto_latch_unsignaled=1
@@ -121,7 +120,6 @@ debug.sf.earlyGl.app.duration=13666666
 debug.sf.earlyGl.sf.duration=10500000
 debug.sf.enable_advanced_sf_phase_offset=1
 debug.sf.enable_gl_backpressure=1
-debug.sf.hw=0
 debug.sf.latch_unsignaled=0
 debug.sf.late.app.duration=13666666
 debug.sf.late.sf.duration=10500000
