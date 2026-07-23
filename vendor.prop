@@ -173,10 +173,6 @@ ro.mediaserver.64b.enable=true
 # Oem Unlock
 ro.oem_unlock_supported=1
 
-# PASR
-vendor.pasr.activemode.enabled=false
-vendor.power.pasr.enabled=false
-
 # Performance
 ro.vendor.extension_library=libqti-perfd-client.so
 ro.vendor.perf-hal.ver=3.0
