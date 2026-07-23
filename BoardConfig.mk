@@ -121,13 +121,14 @@ BOARD_KERNEL_PAGESIZE := 4096
 BOARD_RAMDISK_USE_LZ4 := true
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
 
-TARGET_KERNEL_SOURCE := kernel/nothing/sm7750
+TARGET_KERNEL_SOURCE := kernel/nothing/sm8750
 TARGET_KERNEL_CONFIG := \
     gki_defconfig \
     vendor/sun_perf.config \
+    vendor/noth_common.config \
     vendor/froggerpro_perf.config
 
-TARGET_KERNEL_EXT_MODULE_ROOT := kernel/nothing/sm7750-modules
+TARGET_KERNEL_EXT_MODULE_ROOT := kernel/nothing/sm8750-modules
 TARGET_KERNEL_EXT_MODULES := \
     qcom/opensource/mmrm-driver \
     qcom/opensource/mm-drivers/hw_fence \
