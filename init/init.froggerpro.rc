@@ -28,7 +28,6 @@ on post-fs-data
 
 on property:vendor.all.modules.ready=1
     chown system system /proc/touchpanel/fod_mode
-    write /proc/touchpanel/fod_mode 0
     chown system system /sys/panel_feature/fp_status
 
 # Sltntc
