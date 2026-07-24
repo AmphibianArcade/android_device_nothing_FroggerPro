@@ -27,7 +27,6 @@ on post-fs-data
     chown cameraserver audio /data/vendor/camera/bokeh_caldata_tele_golden.bin
 
 on property:vendor.all.modules.ready=1
-    chown system system /proc/touchpanel/fod_mode
     chown system system /sys/panel_feature/fp_status
 
 # Sltntc

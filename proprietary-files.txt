@@ -1075,9 +1075,6 @@ vendor/lib64/libGPQeSE.so
 product/priv-app/EuiccGoogle/EuiccGoogle.apk;REQUIRED=privapp-permissions-google-euicc
 
 # Fingerprint
-vendor/bin/hw/vendor.nothing.hardware.biometrics.fingerprint-service
-vendor/etc/init/vendor.nothing.hardware.biometrics.fingerprint-service.rc
-vendor/etc/vintf/manifest/vendor.nothing.hardware.biometrics.fingerprint-service.xml
 vendor/lib64/hw/fingerprint.default.so
 vendor/lib64/libgf_hal.so
 vendor/lib64/libvendor.goodix.hardware.biometrics.fingerprint.so

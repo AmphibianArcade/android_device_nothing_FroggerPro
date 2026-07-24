@@ -109,6 +109,10 @@ ro.frp.pst=/dev/block/bootdevice/by-name/frp
 # FUSE
 persist.sys.fuse.passthrough.enable=true
 
+# Fingerprint
+ro.vendor.fingerprint.type=udfps_optical
+ro.vendor.fingerprint.sensor_location=630|2553|106
+
 # Graphics
 debug.graphics.game_default_frame_rate.disabled=0
 debug.hwui.8bit_hdr_headroom=8
