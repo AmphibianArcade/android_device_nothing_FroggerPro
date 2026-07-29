@@ -14,7 +14,7 @@
 
 # Sensors
 /vendor/bin/hw/vendor\.noth\.hardware\.sensor\.sensor_extension-service    u:object_r:hal_sensors_default_exec:s0
-/vendor/bin/hw/android\.hardware\.sensors-service\.froggerpro-multihal      u:object_r:hal_sensors_default_exec:s0
+/vendor/bin/hw/android\.hardware\.sensors-service\.nothing-multihal      u:object_r:hal_sensors_default_exec:s0
 
 # Vibrator
 /dev/aw86927_haptic                                                          u:object_r:aac_richtap_device:s0
