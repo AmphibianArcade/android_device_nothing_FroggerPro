@@ -362,9 +362,17 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.light.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/sku_kera/android.hardware.sensor.light.xml \
     frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/sku_kera/android.hardware.sensor.gyroscope.xml
 
+TP_SYSFS_PATH := /sys/devices/platform/soc/8c0000.qcom,qupv3_2_geni_se/880000.spi/spi_master/spi8/spi8.0
+
+$(call soong_config_set,nothing_sensors,tp_single_tap_path,$(TP_SYSFS_PATH)/fts_gesture_single_tap_pressed)
+$(call soong_config_set,nothing_sensors,tp_single_tap_enabled_path,$(TP_SYSFS_PATH)/fts_gesture_single_tap_enabled)
+
+$(call soong_config_set,nothing_sensors,tp_udfps_path,$(TP_SYSFS_PATH)/fts_fod_pressed)
+$(call soong_config_set,nothing_sensors,tp_udfps_enabled_path,$(TP_SYSFS_PATH)/fts_fod_enabled)
+
 PRODUCT_PACKAGES += \
     android.hardware.sensors-service.froggerpro-multihal \
-    sensors.froggerpro \
+    sensors.nothing \
     sensors.dynamic_sensor_hal
 
 # SKUs
