@@ -1,6 +1,2 @@
 hal_client_domain(hal_camera_default, vendor_hal_qspmhal)
-
 allow hal_camera_default vendor_hal_qspmhal_service:service_manager find;
-
-type vendor_hal_camera_service, service_manager_type; 
-add_service(hal_camera_default, vendor_hal_camera_service)

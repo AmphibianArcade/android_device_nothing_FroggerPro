@@ -1,8 +1,0 @@
-# Camera 
-com.nothing.camera.postproc.IPostProcService/default    u:object_r:vendor_hal_camera_service:s0
-
-# Charging
-vendor.noth.hardware.charge.ICharge/default     u:object_r:vendor_hal_charge_service:s0
-
-# Sensors
-vendor.noth.hardware.sensor.sensor_extension.ISensorExtension/default    u:object_r:hal_sensors_service:s0

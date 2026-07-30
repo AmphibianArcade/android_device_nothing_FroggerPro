@@ -1,14 +1,2 @@
-# Charging
-type vendor_proc_power_supply, fs_type, proc_type;
-
-# NTF
-type vendor_ntf_file, file_type, dev_type;
-
-# Vibrator
-type vendor_sysfs_vibrator, fs_type, sysfs_type;
-
-# Walt
-type proc_sched_walt, fs_type, proc_type;
-
 # ZRAM
 type per_boot_file, file_type, data_file_type, core_data_file_type;
