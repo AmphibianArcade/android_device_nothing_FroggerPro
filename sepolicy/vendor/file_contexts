@@ -3,7 +3,6 @@
 
 # Vibrator
 /dev/aw86927_haptic                                                          u:object_r:aac_richtap_device:s0
-/vendor/bin/hw/android\.hardware\.vibrator\.service\.froggerpro-richtap    u:object_r:hal_vibrator_default_exec:s0
 
 # ZRAM
 /data/per_boot(/.*)?    u:object_r:per_boot_file:s0

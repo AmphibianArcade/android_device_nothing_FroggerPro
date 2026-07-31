@@ -452,7 +452,7 @@ PRODUCT_COPY_FILES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator.service.froggerpro-richtap
+    android.hardware.vibrator.service.nothing-rt_ics
 
 # Wi-Fi
 PRODUCT_COPY_FILES += \

@@ -220,6 +220,9 @@ vendor.usb.rndis.func.name=gsi
 vendor.usb.use_ffs_mtp=1
 vendor.usb.use_gadget_hal=1
 
+# Vibrator
+vendor.vibrator.device=/dev/aw86927_haptic
+
 # Virtual AB
 ro.virtual_ab.compression.threads=true
 ro.virtual_ab.merge_delay_seconds=180
