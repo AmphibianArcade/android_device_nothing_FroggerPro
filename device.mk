@@ -369,7 +369,6 @@ $(call soong_config_set,nothing_sensors,tp_single_tap_enabled_path,$(TP_SYSFS_PA
 $(call soong_config_set,nothing_sensors,tp_single_tap_coords_path,/proc/touchpanel/gesture_code)
 
 $(call soong_config_set,nothing_sensors,tp_udfps_path,$(TP_SYSFS_PATH)/fts_fod_pressed)
-$(call soong_config_set,nothing_sensors,tp_udfps_enabled_path,$(TP_SYSFS_PATH)/fts_fod_enabled)
 
 PRODUCT_PACKAGES += \
     android.hardware.sensors-service.nothing-multihal \
