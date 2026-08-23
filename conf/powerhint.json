@@ -111,6 +111,7 @@
             "Path": "/sys/devices/system/cpu/cpu0/core_ctl/min_cpus",
             "Values": [
                 "1",
+                "2",
                 "3"
             ],
             "DefaultIndex": 0,
@@ -568,7 +569,7 @@
         {
             "PowerHint": "INTERACTION",
             "Node": "sysDevicesSystemCpuCpu0CoreCtlMinCpus",
-            "Value": "3",
+            "Value": "2",
             "Duration": 90
         },
         {
