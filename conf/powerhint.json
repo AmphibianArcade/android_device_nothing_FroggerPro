@@ -494,7 +494,7 @@
             "PowerHint": "INTERACTION",
             "Node": "LittleClusterMinFreq",
             "Value": "1228800",
-            "Duration": 0
+            "Duration": 90
         },
         {
             "PowerHint": "LAUNCH",
@@ -518,97 +518,97 @@
             "PowerHint": "INTERACTION",
             "Node": "sysDevicesSystemCpuBusDcvsDdr24091000QcomBwmonDdrMinFreq",
             "Value": "681000",
-            "Duration": 0
+            "Duration": 90
         },
         {
             "PowerHint": "INTERACTION",
             "Node": "sysDevicesSystemCpuCpufreqPolicy0WaltAdaptiveHighFreq",
             "Value": "1593600",
-            "Duration": 0
+            "Duration": 90
         },
         {
             "PowerHint": "INTERACTION",
             "Node": "sysDevicesSystemCpuCpufreqPolicy0WaltAdaptiveLowFreq",
             "Value": "1228800",
-            "Duration": 0
+            "Duration": 90
         },
         {
             "PowerHint": "INTERACTION",
             "Node": "sysDevicesSystemCpuCpufreqPolicy0WaltAdaptiveLevel1",
             "Value": "787200",
-            "Duration": 0
+            "Duration": 90
         },
         {
             "PowerHint": "INTERACTION",
             "Node": "sysDevicesSystemCpuCpufreqPolicy7WaltAdaptiveHighFreq",
             "Value": "1324800",
-            "Duration": 0
+            "Duration": 90
         },
         {
             "PowerHint": "INTERACTION",
             "Node": "sysDevicesSystemCpuCpufreqPolicy7WaltAdaptiveLowFreq",
             "Value": "960000",
-            "Duration": 0
+            "Duration": 90
         },
         {
             "PowerHint": "INTERACTION",
             "Node": "sysDevicesSystemCpuCpufreqPolicy7WaltAdaptiveLevel1",
             "Value": "787200",
-            "Duration": 0
+            "Duration": 90
         },
         {
             "PowerHint": "INTERACTION",
             "Node": "procSysWaltSchedBoost",
             "Value": "2",
-            "Duration": 0
+            "Duration": 90
         },
         {
             "PowerHint": "INTERACTION",
             "Node": "sysDevicesSystemCpuCpu0CoreCtlMinCpus",
             "Value": "3",
-            "Duration": 0
+            "Duration": 90
         },
         {
             "PowerHint": "INTERACTION",
             "Node": "procSysWaltSchedMinTaskUtilForColocation",
             "Value": "0",
-            "Duration": 0
+            "Duration": 90
         },
         {
             "PowerHint": "INTERACTION",
             "Node": "procSysWaltSchedMinTaskUtilForBoost",
             "Value": "0",
-            "Duration": 0
+            "Duration": 90
         },
         {
             "PowerHint": "INTERACTION",
             "Node": "procSysWaltSchedBusyHysteresisEnableCpus",
             "Value": "240",
-            "Duration": 0
+            "Duration": 90
         },
         {
             "PowerHint": "INTERACTION",
             "Node": "procSysWaltSchedBusyHystNs",
             "Value": "39",
-            "Duration": 0
+            "Duration": 90
         },
         {
             "PowerHint": "INTERACTION",
             "Node": "sysDevicesSystemCpuCpu0CoreCtlEnable",
             "Value": "0",
-            "Duration": 0
+            "Duration": 90
         },
         {
             "PowerHint": "INTERACTION",
             "Node": "sysDevicesSystemCpuCpu7CoreCtlEnable",
             "Value": "0",
-            "Duration": 0
+            "Duration": 90
         },
         {
             "PowerHint": "INTERACTION",
             "Node": "sysDevicesSystemCpuBusDcvsLlcc240b7400QcomBwmonLlccMaxFreq",
             "Value": "933000",
-            "Duration": 0
+            "Duration": 90
         },
         {
             "PowerHint": "LAUNCH",
