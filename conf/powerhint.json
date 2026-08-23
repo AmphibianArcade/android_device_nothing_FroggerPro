@@ -496,7 +496,7 @@
         {
             "PowerHint": "INTERACTION",
             "Node": "LittleClusterScalingMinFreq",
-            "Value": "1228800",
+            "Value": "1113600",
             "Duration": 90
         },
         {
