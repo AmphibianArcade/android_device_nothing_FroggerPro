@@ -11,8 +11,8 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "fstab.zram.2g",
-    src: "fstab.zram.2g",
+    name: "fstab.zram.4g",
+    src: "fstab.zram.4g",
     device_specific: true,
 }
 

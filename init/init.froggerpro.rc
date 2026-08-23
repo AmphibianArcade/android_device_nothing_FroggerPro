@@ -71,4 +71,4 @@ on property:sys.boot_completed=1
     setprop vendor.powerhal.init 1
 
 # ZRAM 
-    swapon_all /odm/etc/fstab.zram.2g   
+    swapon_all /odm/etc/fstab.zram.4g   
