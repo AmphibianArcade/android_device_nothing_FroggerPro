@@ -160,7 +160,8 @@
             "Name": "sysDevicesSystemCpuCpu0CoreCtlEnable",
             "Path": "/sys/devices/system/cpu/cpu0/core_ctl/enable",
             "Values": [
-                "0"
+                "0",
+                "1"
             ],
             "DefaultIndex": 0,
             "ResetOnInit": true
@@ -595,7 +596,7 @@
         {
             "PowerHint": "INTERACTION",
             "Node": "sysDevicesSystemCpuCpu0CoreCtlEnable",
-            "Value": "0",
+            "Value": "1",
             "Duration": 90
         },
         {
