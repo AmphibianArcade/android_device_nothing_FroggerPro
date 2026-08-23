@@ -563,7 +563,7 @@
         {
             "PowerHint": "INTERACTION",
             "Node": "procSysWaltSchedBoost",
-            "Value": "2",
+            "Value": "1",
             "Duration": 90
         },
         {
