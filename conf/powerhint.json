@@ -447,7 +447,7 @@
             "HoldFd": true
         },
         {
-            "Name": "LittleClusterMinFreq",
+            "Name": "LittleClusterScalingMinFreq",
             "Path": "/sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq",
             "Values": [
                 "787200",
@@ -492,13 +492,13 @@
     "Actions": [
         {
             "PowerHint": "INTERACTION",
-            "Node": "LittleClusterMinFreq",
+            "Node": "LittleClusterScalingMinFreq",
             "Value": "1228800",
             "Duration": 90
         },
         {
             "PowerHint": "LAUNCH",
-            "Node": "LittleClusterMinFreq",
+            "Node": "LittleClusterScalingMinFreq",
             "Value": "1017600",
             "Duration": 200
         },
