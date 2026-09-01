@@ -26,8 +26,8 @@ PRODUCT_NAME := lineage_FroggerPro
 PRODUCT_GMS_CLIENTID_BASE := android-nothing
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="qssi_64-user 16 BQ2A.250913.001-BP2A.250605.031.A3 2603231635 release-keys" \
-    BuildFingerprint=Nothing/FroggerPro/FroggerPro:16/BQ2A.250913.001-BP2A.250605.031.A3/2603231635:user/release-keys \
+    BuildDesc="qssi_64-user 16 BQ2A.250913.001-BP2A.250605.031.A3 2607231820 release-keys" \
+    BuildFingerprint=Nothing/FroggerPro/FroggerPro:16/BQ2A.250913.001-BP2A.250605.031.A3/2607231820:user/release-keys \
     DeviceName=FroggerPro \
     DeviceProduct=FroggerPro \
     SystemDevice=FroggerPro \
