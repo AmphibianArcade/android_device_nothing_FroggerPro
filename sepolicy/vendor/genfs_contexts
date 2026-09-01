@@ -18,6 +18,7 @@ genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_2_geni_se/880000.spi/spi_
 genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a88000.i2c/i2c-2/2-005f/leds/vibrator_nt u:object_r:sysfs_vibrator:s0
 
 # Wakeup
+genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a80000.i2c/i2c-0/0-0020/wakeup         u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_2_geni_se/880000.spi/spi_master/spi8/spi8.0/wakeup       u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:goodix_fp/wakeup   u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,dsi-display-primary/wakeup     u:object_r:sysfs_wakeup:s0
