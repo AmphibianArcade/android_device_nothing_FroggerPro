@@ -61,6 +61,11 @@ persist.vendor.qcom.bluetooth.lossless_aptx_adaptive_le.enabled=true
 ro.bluetooth.a2dp_offload.supported=true
 ro.vendor.bluetooth.btconfigstore=false
 
+# Camera
+ro.camerax.extensions.enabled=true
+ro.camera.enableCamera1MaxZsl=1
+ro.camera.disableHeicUltraHDR=true
+
 # Data
 persist.vendor.data.mutualex.mode=wifipreferred
 persist.vendor.data.qms.stx_disable=true

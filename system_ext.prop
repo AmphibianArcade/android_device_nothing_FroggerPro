@@ -26,6 +26,9 @@ persist.vendor.dpm.feature=11
 media.recorder.show_manufacturer_and_model=true
 media.stagefright.audio.deep=false
 
+# NFC
+ro.camera.notify_nfc=1
+
 # Property order
 ro.product.property_source_order=odm,vendor,product,system_ext,system
 
