@@ -204,6 +204,10 @@ PRODUCT_COPY_FILES += \
 # Graphics
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator-V1-ndk.vendor
+    
+# Glyph
+PRODUCT_PACKAGES += \
+    HieroGlyphFroggerPro
 
 # HIDL
 PRODUCT_HIDL_ENABLED := true
@@ -388,7 +392,10 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/interfaces \
     hardware/google/pixel \
     hardware/lineage/interfaces/power-libperfmgr \
-    hardware/qcom-caf/common/libqti-perfd-client
+    hardware/qcom-caf/common/libqti-perfd-client \
+    vendor/nothing/NanoGlyph \
+    packages/apps/HieroGlyph \
+    packages/apps/GlyphBridge
 
 # Storage
 PRODUCT_CHARACTERISTICS := nosdcard
