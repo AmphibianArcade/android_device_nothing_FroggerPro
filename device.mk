@@ -308,6 +308,9 @@ PRODUCT_PACKAGES += \
     FroggerProTelephonyOverlay \
     FroggerProWifiOverlay
 
+PRODUCT_PACKAGES += \
+    EvolutionSettingsOverlay
+
 # Page Size
 PRODUCT_CHECK_PREBUILT_MAX_PAGE_SIZE := false
 
