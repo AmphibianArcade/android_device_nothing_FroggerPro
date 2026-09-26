@@ -129,6 +129,10 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libbluetooth_audio_session_aidl.so', 'libbluetooth_audio_session_aidl_prebuilt.so'),
     'vendor/etc/init/vendor.qti.media.c2@1.0-service.rc': blob_fixup()
         .regex_replace(r'writepid\s+/dev/cpuset/foreground/tasks', 'task_profiles ProcessCapacityHigh HighPerformance'),
+    (   
+        'vendor/etc/seccomp_policy/syshealthmon.policy',
+    ): blob_fixup()
+        .add_line_if_missing('lseek: 1'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
