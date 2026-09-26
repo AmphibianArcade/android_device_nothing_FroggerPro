@@ -1,0 +1,9 @@
+// SPDX-FileCopyrightText: 2023-2024 The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+runtime_resource_overlay {
+    name: "EvolutionSettingsOverlay",
+    sdk_version: "current",
+    resource_dirs: ["res"],
+    device_specific: true,
+}
