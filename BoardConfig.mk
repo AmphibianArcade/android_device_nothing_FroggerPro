@@ -210,7 +210,7 @@ TARGET_RECOVERY_UI_MARGIN_HEIGHT := 100
 TARGET_USERIMAGES_USE_F2FS := true
 
 # SELinux
--include vendor/nothing/NanoGlyph/sepolicy/config.mk
+include vendor/nothing/NanoGlyph/sepolicy/config.mk
 include hardware/nothing/config.mk
 include device/qcom/sepolicy_vndr/SEPolicy.mk
 include device/lineage/sepolicy/libperfmgr/sepolicy.mk
@@ -222,7 +222,8 @@ BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 # VINTF
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     $(DEVICE_PATH)/vintf/framework_matrix_nothing.xml \
-    hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml
+    hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
+    $(NANOGLYPH_PATH)/matrix/vintf/framework_matrix_nanoglyph.xml
 
 DEVICE_MANIFEST_FILE += \
     $(DEVICE_PATH)/vintf/manifest.xml \
