@@ -1,0 +1,8 @@
+[
+  {
+    "repository" : "Evolution-X-Devices/packages_apps_AxionFx",
+    "remote"     : "github-non-los",
+    "branch"     : "cnb",
+    "target_path": "packages/apps/AxionFx"
+  }
+]
