@@ -144,6 +144,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.config-V2-ndk.vendor
 
+# Lineage charger
+$(call soong_config_set,lineage_health,charging_control_charging_path,proc/charger/usb_charger_en)
+$(call soong_config_set,lineage_health,charging_control_charging_enabled,1)
+$(call soong_config_set,lineage_health,charging_control_charging_disabled,0)
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey
