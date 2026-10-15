@@ -8,6 +8,9 @@ genfscon sysfs /class/qcom-battery/usb_real_type u:object_r:vendor_sysfs_battery
 genfscon proc /charger   u:object_r:vendor_proc_power_supply:s0
 genfscon proc /charger/usb_charger_en u:object_r:vendor_proc_power_supply:s0
 
+# Glyph
+genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a80000.i2c/i2c-0/0-0020/leds/matrix-leds u:object_r:vendor_sysfs_leds:s0
+
 # Touch
 genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_2_geni_se/880000.spi/spi_master/spi8/spi8.0/fts_gesture_single_tap_enabled    u:object_r:vendor_sysfs_touch:s0
 genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_2_geni_se/880000.spi/spi_master/spi8/spi8.0/fts_gesture_single_tap_pressed    u:object_r:vendor_sysfs_touch:s0
