@@ -30,9 +30,6 @@ PRODUCT_VIRTUAL_AB_COMPRESSION_METHOD := lz4
 # API
 PRODUCT_SHIPPING_API_LEVEL := 36
 
-# ART
-PRODUCT_ENABLE_UFFD_GC := true
-
 # Adreno
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml \
