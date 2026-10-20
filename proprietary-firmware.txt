@@ -13,6 +13,7 @@ keymaster.img;AB
 modem.img;AB
 multiimgoem.img;AB
 multiimgqti.img;AB
+pvmfw.img;AB
 qupfw.img;AB
 shrm.img;AB
 soccp_dcd.img;AB

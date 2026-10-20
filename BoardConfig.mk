@@ -44,6 +44,11 @@ BOARD_AVB_RECOVERY_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 
 BOARD_AVB_VBMETA_SYSTEM := product system system_ext
+# Stock's vbmeta_system also carries the pvmfw descriptor; the bootloader
+# rejects the chain without it once verification is enabled.
+FROGGERPRO_PVMFW_IMAGE := vendor/nothing/FroggerPro/radio/pvmfw.img
+BOARD_AVB_MAKE_VBMETA_SYSTEM_IMAGE_ARGS += \
+    --include_descriptors_from_image $(FROGGERPRO_PVMFW_IMAGE)
 BOARD_AVB_VBMETA_SYSTEM_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
 BOARD_AVB_VBMETA_SYSTEM_ALGORITHM := SHA256_RSA4096
 BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
