@@ -1,5 +1,5 @@
 ## All proprietary files from this list, unless pinned and noted otherwise,
-## are from the B4.1-260907-1153 release for the Nothing Phone (4a) Pro.
+## are from the C5.0-261021-1625 release for the Nothing Phone (4a) Pro.
 
 # ADSP
 vendor/bin/adsprpcd
@@ -731,6 +731,7 @@ vendor/lib64/libchinodeevautils.so
 vendor/lib64/libchinodehmeutils.so
 vendor/lib64/libcom.qti.chinodeutils.so
 vendor/lib64/libcommonchiutils.so
+vendor/lib64/libextensionpluginmodule.so
 vendor/lib64/libhyperzoom.arcsoft.so
 vendor/lib64/liblivephotosr.arcsoft.so
 vendor/lib64/libmmcamera_bestats.so
@@ -761,6 +762,7 @@ vendor/lib64/libqshcamera.so
 vendor/lib64/libtriplecam_optical_zoom_control.so
 vendor/lib64/libtriplecam_optical_zoom_fusion.so
 vendor/lib64/libtriplecam_video_optical_zoom.so
+vendor/lib64/vendor.noth.hardware.camera-V2-ndk.so
 vendor/lib64/vendor.noth.hardware.sensor.sensor_extension-V1-ndk_platform.so
 vendor/lib64/vendor.qti.hardware.camera.aon-service-impl.so
 vendor/lib64/vendor.qti.hardware.camera.offlinecamera-service-impl.so
@@ -1475,7 +1477,6 @@ product/framework/uimgbalibrary.jar
 product/framework/uimservicelibrary.jar
 system_ext/app/atfwd/atfwd.apk
 system_ext/priv-app/QtiTelephony/QtiTelephony.apk
-system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
 system_ext/framework/qti-telephony-common.jar
 system_ext/framework/qcrilhook.jar
 system_ext/etc/permissions/qcrilhook.xml
@@ -1620,11 +1621,12 @@ system_ext/lib64/lib-imsvideocodec.so
 system_ext/lib64/lib-imsvt.so
 system_ext/lib64/lib-imsvtextutils.so
 system_ext/lib64/lib-imsvtutils.so
-system_ext/lib64/libimscamera_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/libimscamera_jni.so
 system_ext/lib64/libimsmedia_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/libimsmedia_jni.so
+system_ext/lib64/libSurfaceUtil_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/libSurfaceUtil_jni.so
 system_ext/lib64/vendor.qti.ImsRtpService-V2-ndk.so
 system_ext/lib64/vendor.qti.imsrtpservice@3.0.so
 system_ext/lib64/vendor.qti.imsrtpservice@3.1.so
+system_ext/lib64/vendor.qti.ImsVtService-ndk.so
 system_ext/priv-app/ims/ims.apk
 vendor/bin/ims_rtp_daemon
 vendor/bin/ims-dataservice-daemon
