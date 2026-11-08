@@ -66,6 +66,7 @@ ro.vendor.bluetooth.btconfigstore=false
 ro.camerax.extensions.enabled=true
 ro.camera.enableCamera1MaxZsl=1
 ro.camera.disableHeicUltraHDR=true
+vendor.camera.nothing.sensormode=1
 
 # Data
 persist.vendor.data.mutualex.mode=wifipreferred
