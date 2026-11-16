@@ -146,7 +146,21 @@ PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey
 
 # Dalvik
-$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
+PRODUCT_PRODUCT_PROPERTIES += \
+    dalvik.vm.heapstartsize?=16m \
+    dalvik.vm.heapgrowthlimit?=384m \
+    dalvik.vm.heapsize?=512m \
+    dalvik.vm.heaptargetutilization?=0.5 \
+    dalvik.vm.heapminfree?=8m \
+    dalvik.vm.heapmaxfree?=64m \
+    dalvik.vm.enable_time_based_gc_trigger?=true \
+    dalvik.vm.jitmaxsize?=128m \
+    dalvik.vm.jitinitialsize?=16m \
+    dalvik.vm.parallel-image-loading?=true \
+    dalvik.vm.madvise.vdexfile.size?=157286400 \
+    dalvik.vm.madvise.odexfile.size?=157286400 \
+    dalvik.vm.usap_pool_enabled?=true \
+    dalvik.vm.usap_pool_size_max?=3
 
 # DeviceExtras
 PRODUCT_PACKAGES += \
