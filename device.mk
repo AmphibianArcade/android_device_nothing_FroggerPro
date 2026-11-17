@@ -322,6 +322,7 @@ PRODUCT_CHECK_PREBUILT_MAX_PAGE_SIZE := false
 
 # Perf
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/conf/task_profiles.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json \
     $(LOCAL_PATH)/conf/perf/perfconfigstore.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perfconfigstore.xml
 
 # Partitions
