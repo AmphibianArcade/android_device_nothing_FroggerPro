@@ -1334,11 +1334,7 @@ vendor/lib64/libpdnotifier.so
 
 # Performance
 vendor/bin/hw/vendor.qti.hardware.perf2-hal-service
-vendor/bin/hw/vendor.qti.memory.pasrmanager-service
-vendor/bin/hw/vendor.qti.psiclient@1.0-service
 vendor/etc/init/vendor.qti.hardware.perf2-hal-service.rc
-vendor/etc/init/vendor.qti.memory.pasrmanager-service.rc
-vendor/etc/init/vendor.qti.psiclient@1.0-service.rc
 vendor/etc/perf/commonresourceconfigs.xml
 vendor/etc/perf/commonsysnodesconfigs.xml
 vendor/etc/perf/perfboostsconfig.xml
@@ -1346,18 +1342,14 @@ vendor/etc/perf/targetconfig.xml
 vendor/etc/perf/targetresourceconfigs.xml
 vendor/etc/perf/targetsysnodesconfigs.xml
 vendor/etc/vintf/manifest/vendor.qti.hardware.perf2.xml
-vendor/lib64/hw/vendor.qti.memory.pasrmanager-impl.so
 vendor/lib64/libgame_enhance.so
 vendor/lib64/libkernelmanager.so
-vendor/lib64/libpasrutils.so
 vendor/lib64/libperfconfig.so
 vendor/lib64/libperfioctl.so
 vendor/lib64/libqti-perfd-client.so
 vendor/lib64/libqti-perfd.so
 vendor/lib64/vendor.qti.hardware.perf2-V1-ndk.so
 vendor/lib64/vendor.qti.memory.pasrmanager-V1-ndk.so
-vendor/lib64/vendor.qti.memory.pasrmanager@1.0.so
-vendor/lib64/vendor.qti.memory.pasrmanager@1.1.so
 vendor/lib64/vendor.qti.snapdragonServices-V1-ndk.so
 vendor/lib64/vendor.qti.snapdragonServices.qape-V1-ndk.so
 
@@ -1918,7 +1910,6 @@ vendor/etc/vintf/manifest/vendor.qti.hardware.data.connectionaidl.xml
 vendor/etc/vintf/manifest/vendor.qti.hardware.data.iwlandata.xml
 vendor/etc/vintf/manifest/vendor.qti.hardware.qconfig-service.xml
 vendor/etc/vintf/manifest/vendor.qti.hardware.servicetrackeraidl-service.xml
-vendor/etc/vintf/manifest/vendor.qti.memory.pasrmanager-service.xml
 vendor/etc/vintf/manifest/vendor.qti.syshealthmon-service.xml
 vendor/lib64/deviceInfoServiceModuleNr.so
 vendor/lib64/hw/mbedtls_qti.so
