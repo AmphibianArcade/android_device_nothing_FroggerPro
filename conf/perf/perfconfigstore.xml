@@ -15,6 +15,6 @@
         <Prop Name="ro.vendor.perf.ssv2" Value="false" />
         <Prop Name="ro.vendor.perf.dplh" Value="false" />
         <Prop Name="ro.vendor.perf.attach.hint.ll" Value="false" />
-        <Prop Name="vendor.perf.fps_switch_hyst_time_secs" Value="6" />
+        <Prop Name="vendor.perf.fps_switch_hyst_time_secs" Value="10" />
     </PerfConfigs>
 </PerfConfigsStore>
