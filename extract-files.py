@@ -38,11 +38,6 @@ lib_fixups: lib_fixups_user_type = {
 
 blob_fixups: blob_fixups_user_type = {
     (
-        'vendor/bin/hw/android.hardware.security.keymint-service-spu-qti',
-        'vendor/lib64/libspukeymint.so',
-    ): blob_fixup()
-        .replace_needed('android.hardware.security.sharedsecret-V2-ndk.so', 'android.hardware.security.sharedsecret-V1-ndk.so'),
-    (
         'vendor/bin/hw/android.hardware.security.keymint-service.strongbox-thales',
         'vendor/lib64/libjc_keymint-thales.so',
     ): blob_fixup()
@@ -100,8 +95,6 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libnativewindow.so'),
     'vendor/lib64/libqcodec2_core.so': blob_fixup()
         .replace_needed('android.hardware.graphics.common-V5-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
-    'vendor/lib64/libspukeymintprovision.so': blob_fixup()
-        .replace_needed('android.hardware.security.keymint-V2-ndk.so', 'android.hardware.security.keymint-V3-ndk.so'),
     'vendor/lib64/soundfx/libbundleaidl.so':blob_fixup()
         .replace_needed('libaudio_aidl_conversion_common_ndk.so', 'libaudio_aidl_conversion_common_ndk_prebuilt.so'),
     'vendor/lib64/hw/libaudiocorehal.qti.so':blob_fixup()

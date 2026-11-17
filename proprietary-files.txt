@@ -1125,12 +1125,8 @@ vendor/lib64/vendor.qti.hardware.fm@1.0.so
 
 # Gatekeeper
 vendor/bin/hw/android.hardware.gatekeeper-service-qti
-vendor/bin/hw/android.hardware.gatekeeper-service-spu-qti
 vendor/etc/init/android.hardware.gatekeeper-service-qti.rc
-vendor/etc/init/android.hardware.gatekeeper-service-spu-qti.rc
 vendor/lib64/hw/libqtigatekeeper.so
-vendor/lib64/hw/libspuqtigatekeeper.so
-vendor/lib64/vendor.qti.hardware.spu-V2-ndk.so
 
 # GNSS
 vendor/bin/edgnss-daemon
@@ -1247,24 +1243,15 @@ vendor/etc/init/hw/init.qti.kernel.target.rc
 
 # Keymaster
 vendor/bin/hw/android.hardware.security.keymint-service-qti
-vendor/bin/hw/android.hardware.security.keymint-service-spu-qti
 vendor/bin/hw/android.hardware.security.keymint-service.strongbox-thales
-vendor/bin/hw/android.hardware.weaver-service-spu-qti
 vendor/bin/hw/android.hardware.weaver-service.thales
 vendor/etc/init/android.hardware.security.keymint-service-qti.rc
-vendor/etc/init/android.hardware.security.keymint-service-spu-qti.rc
-vendor/etc/init/android.hardware.weaver-service-spu-qti.rc
-vendor/etc/init/init.vendor.qti.hardware.spu.service.rc
 vendor/etc/vintf/manifest/android.hardware.security.keymint-service-qti.xml
 vendor/lib64/libjc_keymint_transport-thales.so
 vendor/lib64/libjc_keymint-thales.so
 vendor/lib64/libkeymasterdeviceutils.so
 vendor/lib64/libkeymasterutils.so
 vendor/lib64/libqtikeymint.so
-vendor/lib64/libspukeymint.so
-vendor/lib64/libspukeymintdeviceutils.so
-vendor/lib64/libspukeymintprovision.so
-vendor/lib64/libspukeymintutils.so
 
 # Media
 vendor/bin/hw/vendor.qti.media.c2@1.0-service
@@ -1849,7 +1836,6 @@ vendor/bin/hw/android.hardware.identity-service-qti
 vendor/bin/hw/qconfigservice
 vendor/bin/hw/vendor.qti.hardware.c2pa-aidl-service-qti
 vendor/bin/hw/vendor.qti.hardware.servicetrackeraidl-service
-vendor/bin/hw/vendor.qti.hardware.spu-service
 vendor/bin/init.qti.keymaster.sh
 vendor/bin/ipacm-diag
 vendor/bin/qms
@@ -1993,7 +1979,6 @@ vendor/lib64/libqti-s3tf.so
 vendor/lib64/libqti-scenariod.so
 vendor/lib64/libqti-sslite.so
 vendor/lib64/libqti-util.so
-vendor/lib64/libqti-utils.so
 vendor/lib64/libqtiidentitycredential.so
 vendor/lib64/libqwes.so
 vendor/lib64/librcmask.so
