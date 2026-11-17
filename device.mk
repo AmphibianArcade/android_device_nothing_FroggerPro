@@ -320,6 +320,10 @@ PRODUCT_PACKAGES += \
 # Page Size
 PRODUCT_CHECK_PREBUILT_MAX_PAGE_SIZE := false
 
+# Perf
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/conf/perf/perfconfigstore.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perfconfigstore.xml
+
 # Partitions
 PRODUCT_BUILD_PVMFW_IMAGE := true
 PRODUCT_BUILD_RECOVERY_IMAGE := true
