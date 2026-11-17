@@ -332,11 +332,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service.lineage-libperfmgr \
-    libqti-perfd-client
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/conf/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+    android.hardware.power-service-qti
 
 # Properties
 TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
@@ -401,11 +397,6 @@ $(foreach sku, EEA JPN IND TUR, \
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    hardware/google/interfaces \
-    hardware/google/pixel/pixelstats \
-    hardware/google/pixel/power-libperfmgr \
-    hardware/lineage/interfaces/power-libperfmgr \
-    hardware/qcom-caf/common/libqti-perfd-client \
     vendor/nothing/NanoGlyph \
     packages/apps/HieroGlyph \
     packages/apps/GlyphBridge
