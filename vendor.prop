@@ -169,7 +169,6 @@ ro.crypto.metadata_init_delete_all_keys.enabled=true
 ro.hardware.keystore_desede=true
 vendor.gatekeeper.is_security_level_spu=0
 vendor.keymint.retry_timer=5
-vendor.spu.rkp_enabled=true
 
 # Media
 debug.c2.use_dmabufheaps=1
